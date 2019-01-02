@@ -41,15 +41,15 @@ const NavigationLink = styled(GatsbyLink)`
   ${props =>
     props.active === 't' &&
     `
-    border-color: #f75b4b !important;
-    background-color: #ffeeed;
+    border-color: #6E3C1B !important;
+    background-color: #F5F5F5;
   `}
 
   :hover {
     text-decoration: none;
     color: black;
-    background-color: #eeeeee;
-    border-color: #eeeeee;
+    background-color: #FAFAFA;
+    border-color: #A37659 !important;
     //filter: brightness(0.5);
   }
 `
@@ -71,7 +71,7 @@ const ItemTitleWrapper = styled.div`
   }
 
   &.active-section {
-    background-color: #ffdfdf;
+    background-color: #F5F5F5;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     a {

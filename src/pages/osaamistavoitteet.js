@@ -34,7 +34,7 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>1</TableCell>
               <TableCell>
-                Tunnet käsitteet tieto, tietokannanhallintajärjestelmä, relaatiotietokanta, tietokanta, tietokantataulu, pääavain ja viiteavain. Tunnet tietokantakyselyiden muodostamiseen käytettävän SQL-kielen toimintaperiaatteet. Osaat hakea SQL-kielen avulla tietoa yhdestä tai useammasta tietokantataulusta ja osaat rajata kyselyiden tuloksia. 
+                Tunnet käsitteet tieto, tietokannanhallintajärjestelmä, relaatiotietokanta, tietokanta, tietokantataulu, pääavain ja viiteavain. Tunnet tietokantakyselyiden muodostamiseen käytettävän SQL-kielen toimintaperiaatteet. Osaat hakea SQL-kielen avulla tietoa yhdestä tai useammasta tietokantataulusta ja osaat rajata kyselyiden tuloksia.
               </TableCell>
             </TableRow>
             <TableRow>
@@ -64,13 +64,13 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>6</TableCell>
               <TableCell>
-                Osaat luoda tietokantaa käyttävän Java-kielisen sovelluksen. Tunnet sekvenssikaaviot ja osaat kuvata sovelluksesi toimintaa sekvenssikaavioiden avulla. Osaat hyödyntää tietokannanhallintajärjestelmän tarjoamaa toimintaa osana sovellustasi. Tunnet käsitteen SQL-injektio ja tunnet menetelmiä SQL-injektioiden estämiseen. 
+                Osaat luoda tietokantaa käyttävän Java-kielisen sovelluksen. Tunnet sekvenssikaaviot ja osaat kuvata sovelluksesi toimintaa sekvenssikaavioiden avulla. Osaat hyödyntää tietokannanhallintajärjestelmän tarjoamaa toimintaa osana sovellustasi. Tunnet käsitteen SQL-injektio ja tunnet menetelmiä SQL-injektioiden estämiseen.
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>7</TableCell>
               <TableCell>
-                Tunnet Data Access Object (DAO) -suunnittelumallin. Tunnet joitakin kirjastoja yksinkertaisten SQL-kyselyiden automatisointiin. Tunnet pinnallisesti muutamia NoSQL- ja NewSQL-tietokantoja. Tunnet GDPR-lainsäädännön ja tiedät miten se vaikuttaa henkilötietojen tallentamiseen ja käsittelyyn.
+                Tunnet Data Access Object (DAO) -suunnittelumallin. Tunnet joitakin kirjastoja yksinkertaisten SQL-kyselyiden automatisointiin. Tunnet pinnallisesti muutamia NoSQL- ja NewSQL-tietokantoja. Tunnet GDPR-lainsäädännön ja tiedät miten se vaikuttaa henkilöihin liittyvän tiedon tallentamiseen ja käsittelyyn.
               </TableCell>
             </TableRow>
           </TableBody>
