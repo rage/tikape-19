@@ -7,7 +7,7 @@ import uuidv4 from 'uuid/v4'
 const { fetch } = fetchPonyfill()
 const BASE_URL = 'https://tmc.mooc.fi/api/v8'
 const ORGANIZATION = 'mooc'
-const COURSE = '2019-ohjelmointi'
+const COURSE = 'tikape-k19'
 
 const tmcClient = new TmcClient(
   '59a09eef080463f90f8c2f29fbf63014167d13580e1de3562e57b9e6e4515182',
@@ -43,7 +43,7 @@ export function createAccount(data) {
   data.username = uuidv4()
   const body = {
     user: data,
-    origin: 'Ohjelmoinnin MOOC 2019',
+    origin: 'Tietokantojen perusteet 2019',
     language: 'fi',
   }
   return new Promise((resolve, reject) => {
@@ -103,7 +103,7 @@ export function onLoginStateChanged(callback) {
 
 export async function userDetails() {
   const res = await axios.get(
-    `${BASE_URL}/users/current?show_user_fields=true&extra_fields=ohjelmoinnin-mooc-2019`,
+    `${BASE_URL}/users/current?show_user_fields=true&extra_fields=tietokantojen-perusteet-2019`,
     {
       headers: {
         'Content-Type': 'application/json',
@@ -144,7 +144,7 @@ export async function updateUserDetails({ extraFields, userField }) {
     {
       user: {
         extra_fields: {
-          namespace: 'ohjelmoinnin-mooc-2019',
+          namespace: 'tietokantojen-perusteet-2019',
           data: extraFields,
         },
       },

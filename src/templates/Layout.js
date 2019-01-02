@@ -117,12 +117,12 @@ class Layout extends React.Component {
                     {
                       name: 'description',
                       content:
-                        'Helsingin yliopiston kaikille avoin ja ilmainen ohjelmoinnin perusteet opettava verkkokurssi. Kurssilla perehdytään nykyaikaisen ohjelmoinnin perusideoihin sekä ohjelmoinnissa käytettävien työvälineiden lisäksi algoritmien laatimiseen. Kurssille osallistuminen ei vaadi ennakkotietoja ohjelmoinnista.',
+                        'Tietokantojen perusteet on kaikille avoin ja ilmainen nimensä mukaisesti tietokantojen perusteet opettava verkkokurssi. Kurssilla perehdytään Structured Query Language (SQL) -kieleen, tiedon kuvausmenetelmiin, tietokantojen suunnitteluun sekä tietokantaa käyttävien sovellusten toteutukseen. Kurssille osallistuminen vaatii ennakkotiedot ohjelmoinnista Helsingin yliopiston Ohjelmoinnin MOOC -kurssin laajuudessa (vastaa kursseja Ohjelmoinnin perusteet ja Ohjelmoinnin jatkokurssi).',
                     },
                     {
                       name: 'keywords',
                       content:
-                        'ohjelmointi, java, programming, CS1, MOOC, 2019, ohjelmointikurssi, avoin, ilmainen, helsingin yliopisto',
+                        'tietokanta, tietokannat, tietokantojen perusteet, MOOC, 2019, avoin, ilmainen, helsingin yliopisto',
                     },
                   ]}
                 />
