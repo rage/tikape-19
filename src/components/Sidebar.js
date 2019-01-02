@@ -94,7 +94,7 @@ var content2 = [
     path: '/osaamistavoitteet',
   },
   {
-    title: 'Arvostelu',
+    title: 'Arvostelu ja kokeet',
     path: '/arvostelu',
   },
   { title: 'Tukiväylät', path: '/tukivaylat' },
