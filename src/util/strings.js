@@ -21,3 +21,16 @@ export function stringToBoolean(string) {
   }
   return true;
 }
+
+export function normalizeExerciseId(string) {
+  return encodeURIComponent(
+    string
+      .toLowerCase()
+      .replace(/ö/g, "o")
+      .replace(/Ö/g, "O")
+      .replace(/ä/g, "a")
+      .replace(/Ä/g, "A")
+      .replace(/\s+/g, "-")
+      .replace(/[^A-Za-z0-9_-]/g, ""),
+  )
+}
