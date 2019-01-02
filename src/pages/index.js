@@ -89,7 +89,7 @@ const IndexPage = () => (
 
         <p>
           <b>
-            Viikoittaisten tehtävien määräajat ovat aina maanantaisin klo 23:55:00. . Virallisena määräaikana käytetään aina tehtäviä vastaanottavan palvelimen kelloa, joka on Suomen ajassa. Huomaa, että oman koneesi kello voi olla jäljessä tai edellä, joten älä jätä tehtävien tekemistä ja palauttamista viime hetkeen.
+            Viikoittaisten tehtävien määräajat ovat aina maanantaisin klo 23:55:00. Virallisena määräaikana käytetään aina tehtäviä vastaanottavan palvelimen kelloa, joka on Suomen ajassa. Huomaa, että oman koneesi kello voi olla jäljessä tai edellä, joten älä jätä tehtävien tekemistä ja palauttamista viime hetkeen.
           </b>
         </p>
       </section>

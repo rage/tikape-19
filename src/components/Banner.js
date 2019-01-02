@@ -51,7 +51,7 @@ const SubHeading = styled.div`
 const Banner = () => (
   <BannerWrapper>
     <Heading>Tietokantojen perusteet</Heading>
-    <SubHeading>SELECT * FROM OpittavatAiheet</SubHeading>
+    <SubHeading>Digitalisaation kulmakivi tutuksi -- menetelmiä tiedon tallentamiseen ja hakemiseen </SubHeading>
   </BannerWrapper>
 )
 
