@@ -12,8 +12,9 @@ const IndexPage = () => (
       <Helmet title="Tukiväylät" />
       <h1>Tukiväylät</h1>
       <p>
-        Kurssilla on Telegram-keskustelukanava sekä kurssin Moodle-alueella oleva keskustelualue. Tukiväylät perustuvat vertaistukeen.
+        Kurssilla on Telegram-keskustelukanava sekä kurssin Moodle-alueella oleva keskustelualue. Tukiväylät perustuvat vertaistukeen. Lisätietoja näistä myöhemmin.
       </p>
+      {/*
       <h2>Keskustelukanava</h2>
       <p>
         Kurssilla on käytössä Telegram-keskusteluhuone. Suosittelemme, että
@@ -58,6 +59,7 @@ const IndexPage = () => (
         ikkunasta "<code>Send</code>". Tämän jälkeen saat linkin koodiisi, jonka
         voit jakaa keskustelukanavalla apupyynnön yhteydessä.
       </p>
+       */}
     </Container>
   </Layout>
 )
