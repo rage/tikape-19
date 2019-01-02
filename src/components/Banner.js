@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Bruce from '../images/banner.svg'
+import Background from '../images/books3.jpg'
 import withSimpleErrorBoundary from '../util/withSimpleErrorBoundary'
 
 const BannerWrapper = styled.header`
@@ -12,7 +12,8 @@ const BannerWrapper = styled.header`
   align-items: center;
   margin-bottom: 2rem;
   background-color: #c0392b;
-  background-image: url(${Bruce});
+  background-image: url(${Background});
+  background-size: cover;
   text-align: center;
   h1 {
   }
@@ -26,7 +27,7 @@ const Heading = styled.div`
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   font-weight: 500;
   font-size: 2rem;
-  color: #c0392b;
+  color: #6E3C1B;
   background: white;
   padding: 0.5rem;
   margin: 1rem;
@@ -41,7 +42,7 @@ const SubHeading = styled.div`
       Roboto, 'Helvetica Neue', Arial, Noto Sans, sans-serif, 'Apple Color Emoji',
       'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     font-weight: 500;
-    color: #c0392b;
+    color: #6E3C1B;
     background: white;
     padding .5rem;
     font-size: 1.4rem;

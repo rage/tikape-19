@@ -69,7 +69,7 @@ const Brand = styled.div`
   padding: 1rem;
   padding-top: 2rem;
   font-weight: bold;
-  color: #c0392b;
+  color: #6A3E23;
   font-size: 1.3rem;
 `
 
