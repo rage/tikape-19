@@ -16,6 +16,7 @@ import { updateUserDetails, userDetails } from '../../services/moocfi'
 
 import styled from 'styled-components'
 import withSimpleErrorBoundary from '../../util/withSimpleErrorBoundary'
+import { stringToBoolean } from '../../util/strings';
 
 const Row = styled.div`
   margin-bottom: 1.5rem;
@@ -40,9 +41,10 @@ class CourseOptionsEditor extends React.Component {
         first_name: data.user_field?.first_name,
         last_name: data.user_field?.last_name,
         student_number: data.user_field?.organizational_id,
-        applies_for_study_right: data.extra_fields?.applies_for_study_right,
-        digital_education_for_all: data.extra_fields?.digital_education_for_all,
-        marketing: data.extra_fields?.marketing,
+        digital_education_for_all: stringToBoolean(data.extra_fields?.digital_education_for_all),
+        open_university_student: stringToBoolean(data.extra_fields?.open_university_student),
+        university_of_helsinki_student: stringToBoolean(data.extra_fields?.university_of_helsinki_student),
+        marketing: stringToBoolean(data.extra_fields?.marketing),
         research: data.extra_fields?.research,
         loading: false,
       },
@@ -56,8 +58,9 @@ class CourseOptionsEditor extends React.Component {
     e.preventDefault()
     this.setState({ submitting: true })
     const extraFields = {
-      applies_for_study_right: this.state.applies_for_study_right,
       digital_education_for_all: this.state.digital_education_for_all,
+      open_university_student: this.state.open_university_student,
+      university_of_helsinki_student: this.state.university_of_helsinki_student,
       marketing: this.state.marketing,
       research: this.state.research,
     }
@@ -78,8 +81,9 @@ class CourseOptionsEditor extends React.Component {
     submitting: false,
     error: true,
     errorObj: {},
-    applies_for_study_right: false,
     digital_education_for_all: false,
+    open_university_student: false,
+    university_of_helsinki_student: false,
     marketing: false,
     research: undefined,
     first_name: undefined,
@@ -197,13 +201,41 @@ class CourseOptionsEditor extends React.Component {
                 <FormControlLabel
                   control={
                     <Checkbox
+                      checked={this.state.university_of_helsinki_student}
+                      onChange={this.handleCheckboxInput}
+                      name="university_of_helsinki_student"
+                      value="1"
+                    />
+                  }
+                  label="Olen tällä hetkellä Helsingin yliopiston opiskelija. Olen ilmoittautunut kurssille WebOodissa."
+                />
+              </Row>
+
+              <Row>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      checked={this.state.open_university_student}
+                      onChange={this.handleCheckboxInput}
+                      name="open_university_student"
+                      value="1"
+                    />
+                  }
+                  label="Olen Helsingin yliopiston Avoimen yliopiston opiskelija. Olen ilmoittautunut kurssille osoitteessa https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231."
+                />
+              </Row>
+
+              <Row>
+                <FormControlLabel
+                  control={
+                    <Checkbox
                       checked={this.state.digital_education_for_all}
                       onChange={this.handleCheckboxInput}
                       name="digital_education_for_all"
                       value="1"
                     />
                   }
-                  label="Olen tällä hetkellä opiskelijana Digital Education for All -hankkeessa. Jätä tämä valitsematta mikäli et tiedä kyseisestä hankkeesta."
+                  label="Olen tällä hetkellä opiskelijana Digital Education for All -hankkeessa. Olen ilmoittautunut kurssille osoitteessa https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=124756797"
                 />
               </Row>
 

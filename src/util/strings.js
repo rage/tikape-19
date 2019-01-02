@@ -11,3 +11,13 @@ export function nthIndex(str, pat, n){
 export function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+export function stringToBoolean(string) {
+  if (string === "f") {
+    return false
+  }
+  if (string === undefined || string === null || string === false) {
+    return false
+  }
+  return true;
+}
