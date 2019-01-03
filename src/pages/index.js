@@ -22,8 +22,8 @@ const IndexPage = () => (
       <section id="yleistä">
         <h1>Tietoa kurssista</h1>
         <p>
-          Tietokantojen perusteet on kaikille avoin ja ilmainen nimensä mukaisesti tietokantojen perusteet opettava verkkokurssi. 
-          Kurssilla perehdytään Structured Query Language (SQL) -kieleen, tiedon kuvausmenetelmiin, tietokantojen suunnitteluun sekä tietokantaa käyttävien sovellusten toteutukseen. 
+          Tietokantojen perusteet on kaikille avoin ja ilmainen nimensä mukaisesti tietokantojen perusteet opettava verkkokurssi.
+          Kurssilla perehdytään Structured Query Language (SQL) -kieleen, tiedon kuvausmenetelmiin, tietokantojen suunnitteluun sekä tietokantaa käyttävien sovellusten toteutukseen.
           Kurssille osallistuminen vaatii ennakkotiedot ohjelmoinnista Helsingin yliopiston Ohjelmoinnin MOOC -kurssin laajuudessa (vastaa kursseja Ohjelmoinnin perusteet ja Ohjelmoinnin jatkokurssi).
         </p>
         <p>
@@ -35,7 +35,7 @@ const IndexPage = () => (
       <section id="sisältö-ja-aikataulu">
         <h2>Sisältö ja aikataulu</h2>
         <p>
-          Kurssi koostuu seitsemästä tehtäviä sisältävästä osasta, kahdesta projektista sekä kokeesta. Kunkin osan opiskeluun sekä siihen liittyvien tehtävien tekemiseen kannattaa varata noin 5-20 tuntia. Varaamme oikeuden aikataulun ja aiheiden muutoksiin. 
+          Kurssi koostuu seitsemästä tehtäviä sisältävästä osasta, kahdesta projektista sekä kokeesta. Kunkin osan opiskeluun sekä siihen liittyvien tehtävien tekemiseen kannattaa varata noin 5-20 tuntia. Varaamme oikeuden aikataulun ja aiheiden muutoksiin.
         </p>
         <p>
           Kurssin sisältö tarkentuu kurssin edetessä. Alla on kuvattuna osakohtainen materiaalin julkaisuaikataulu sekä tehtävien viimeiset palautuspäivämäärät.
@@ -104,7 +104,7 @@ const IndexPage = () => (
             Helsingin yliopiston opiskelijat ilmoittautuvat kurssille suoraan WebOodin kautta.
           </li>
           <li>
-            Helsingin yliopiston Avoimen yliopiston opiskelijat ilmoittautuvat osoitteessa <a href="https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231" target="_blank">https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231</a>
+            Helsingin yliopiston Avoimen yliopiston nykyiset ja tulevat opiskelijat ilmoittautuvat osoitteessa <a href="https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231" target="_blank">https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231</a>
           </li>
           <li>
             DEFA-hankkeeseen osallistuvat opiskelijat ilmoittautuvat osoitteessa <a href="https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=124756797" target="_blank">https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=124756797</a>
@@ -118,7 +118,7 @@ const IndexPage = () => (
       <section id="kokeet">
         <h2>Kokeet</h2>
         <p>
-          Kurssista järjestetään yksi koe sekä kaksi uusintaa. Kokeen hyväksytty suorittaminen johtaa kurssin läpäisyyn, mikäli kurssin tehtävät ja projektit on suorittanut tarpeeksi hyvin. Arvosana määräytyy tehtyjen tehtävien ja projektien perusteella. 
+          Kurssista järjestetään yksi koe sekä kaksi uusintaa. Kokeen hyväksytty suorittaminen johtaa kurssin läpäisyyn, mikäli kurssin tehtävät ja projektit on suorittanut tarpeeksi hyvin. Arvosana määräytyy tehtyjen tehtävien ja projektien perusteella.
         </p>
         <ul>
           <li>Kurssikoe: Lauantai 9.3.2019 klo 10-14</li>
@@ -132,7 +132,7 @@ const IndexPage = () => (
           Helsingin yliopiston opiskelijat voivat suorittaa kurssin myös erillistentillä Examinariumissa. Tenttimateriaalina on kurssin materiaali (ml. tehtävät ja projektit).
         </p>
       </section>
-      
+
     </Container>
   </Layout>
 )
