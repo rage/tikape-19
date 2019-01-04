@@ -1,6 +1,7 @@
 ---
 path: '/osa-1/3-tiedon-hakeminen-yhdesta-tietokantataulusta'
 title: 'Tiedon hakeminen yhdestä tietokantataulusta'
+hidden: true
 ---
 
 
@@ -11,36 +12,22 @@ title: 'Tiedon hakeminen yhdestä tietokantataulusta'
 </text-box>
 
 
-
 ##  Structured Query Language (SQL)
 
 
-Materiaalin ensimmäisen osan esimerkeissä tarkasteltiin tietokoneen kiintolevyllä sijaitsevan tiedon käsittelyä ohjelmallisesti -- käytännössä esimerkki käsitteli **fyysistä näkymää tiedon tallennukseen**. Esimerkeissä määritettiin tiedon rakenne sekä muuttujien maksimipituus: jos muuttujan todellinen arvo ei vastaa maksimipituutta, tyhjä tila täytetään esimerkiksi välilyönneillä. Tällä tavoin ohjelmoija voi olettaa, että tiettyyn muuttujaan liittyvä arvo alkaa aina samasta kohtaa. Laajemmin ajatellen, ohjelmoija tietää myös, että samaisen muuttujan arvo on samassa kohdassa jokaiselle tallennetulle tietueelle (tai oliolle).
-
-
-
-Ensimmäisen osan esimerkeissä tiedon käsittelijän tai tiedon hakijan tulee tuntea käsite indeksi sekä osata hyödyntää indeksiä tiedon hakemisessa. Samalla, jos tiedon hakija haluaa vaikkapa useamman muuttujan arvon, tulee ohjelmaa sekä siinä käytettyjä indeksejä päivittää sopivasti. *Ohjelmallisessa tiedon käsittelyssä tulee siis osata ohjelmointia.*
-
-
-
-Kun tietokantoja käytetään osana jokapäiväistä työtä, ei oletus "jokaisen tietokantaa käyttävän tulee osata ohjelmoida" ole kovin mielekäs. Tämä käytännössä vaatisi jokaiselta ohjelmointiosaamista sekä ymmärrystä tallennetusta tiedosta ja tiedon fyysisestä esitysmuodosta. Tiedon fyysinen esitysmuoto vaihtelee tallennettavan tiedon mukaan, joten tiedon käsittelyyn tarvitaan parempi ratkaisu. Tätä ongelmaa ja työläyttä ratkaisemaan on luotu useampia korkeamman abstraktiotason esitystapoja, joita käytetään tietokannassa olevan tiedon hakemiseen ja tiedon muokkaamiseen.
-
+Kun tietokantoja käytetään osana jokapäiväistä työtä, ei oletus jokaisen tietokantaa käyttävän tulee osata ohjelmoida" ole kovin mielekäs. Tämä käytännössä vaatisi jokaiselta ohjelmointiosaamista sekä ymmärrystä tallennetusta tiedosta ja tiedon fyysisestä esitysmuodosta. Tiedon fyysinen esitysmuoto vaihtelee tallennettavan tiedon mukaan, joten tiedon käsittelyyn tarvitaan parempi ratkaisu. Tätä ongelmaa ja työläyttä ratkaisemaan on luotu useampia korkeamman abstraktiotason esitystapoja, joita käytetään tietokannassa olevan tiedon hakemiseen ja tiedon muokkaamiseen.
 
 
 Tällä kurssilla keskitytään Structured Query Language (**SQL**) -kieleen. Structured Query Language (jatkossa SQL) on 1980-luvulla standardoitu kieli tietokantakyselyiden tekemiseen. SQL-kielen avulla voidaan määritellä tallennettavan tiedon muoto, luoda ja muokata tietokantatauluja, lisätä tietoa tietokantatauluihin, muokata tietokantatauluissa olevaa tietoa sekä hakea tietoa tietokannoista. Merkittävä osa tällä hetkellä käytössä olevista tietokannanhallintajärjestelmistä mahdollistaa SQL-kielellä tehtyjen kyselyiden käyttämisen tietokannanhallintajärjestelmässä olevien tietokantojen ja tietokantataulujen käsittelyyn. Voidaan ajatella, että SQL-kielellä tehdyt kyselyt ovat kuvattu *rakenteellisella abstraktiotasolla*, eli SQL-kieltä käytettäessä tiedon lopulliseen esitysmuotoon kiintolevyllä ei oteta kantaa.
 
 
-
 Vuosien mittaan standardista on julkaistu useita versioita, joista viimeisin on vuodelta <a href="https://en.wikipedia.org/wiki/SQL:2016" target="_blank" norel>2016</a>. Tietokannanhallintajärjestelmät ja niiden eri versiot noudattavat SQL-kielen standardeja vaihtelevasti. Yhtä tietokannanhallintajärjestelmää varten luodut kyselyt eivät ole aina suoraan siirrettävissä toiseen tietokannanhallintajärjestelmään. On siis syytä huomioida että tietokannanhallintajärjestelmästä toiseen siirryttäessä joudutaan usein myös tekemään SQL-kyselyihin (pieniä) muutoksia. Tyypillisimpiä tietotyyppejä, joiden käsittelytapa vaihtelee eri tietokannanhallintajärjestelmien välillä ovat päivämäärät.
-
 
 
 Kurssin toisessa osassa tutustutaan yhden tietokantataulun käsittelyyn SQL-kielellä. Opettelemme luomaan tietokantataulun, lisäämään tietokantatauluun tietoa, hakemaan tietokantataulusta tietoa sekä päivittämään ja poistamaan tietokantataulussa olevaa tietoa.
 
 
-
 Käytämme tässä osassa SQLite-nimistä tietokannanhallintajärjestelmää.
-
 
 
 <% partial 'partials/hint', locals: { name: 'SQLiten lataaminen ja käyttöönotto' } do %>
@@ -151,7 +138,7 @@ SELECT *sarake1*, *sarake2* FROM *TAULUN_NIMI*
 Rajausehdon kanssa kyselyn rakenne on seuraava.
 
 ```sql
-SELECT <em>sarake1</em>, *sarake2* FROM *TAULUN_NIMI*
+SELECT sarake FROM Taulu WHERE rajausehto
 WHERE *rajausehto*
 ```
 

@@ -1,6 +1,7 @@
 ---
 path: '/osa-7/3-muita-tietokannanhallintajarjestelmia'
 title: 'Muita tietokannanhallintajärjestelmiä'
+hidden: true
 ---
 
 

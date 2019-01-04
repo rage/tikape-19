@@ -1,6 +1,7 @@
 ---
 path: '/osa-7/1-data-access-object'
 title: 'Data Access Object -suunnittelumalli'
+hidden: true
 ---
 
 

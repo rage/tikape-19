@@ -1,6 +1,7 @@
 ---
 path: '/osa-6/2-sekvenssikaaviot'
 title: 'Sekvenssikaaviot'
+hidden: true
 ---
 
 

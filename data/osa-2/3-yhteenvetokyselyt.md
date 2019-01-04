@@ -1,6 +1,7 @@
 ---
 path: '/osa-2/3-yhteenvetokyselyt'
 title: 'Yhteenvetokyselyiden tekeminen'
+hidden: true
 ---
 
 

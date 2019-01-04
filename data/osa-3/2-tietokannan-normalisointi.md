@@ -1,6 +1,7 @@
 ---
 path: '/osa-3/1-tietokannan-normalisointi'
 title: 'Tietokannan normalisointi'
+hidden: true
 ---
 
 

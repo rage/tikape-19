@@ -1,6 +1,7 @@
 ---
 path: '/osa-2/2-taulujen-luominen-ja-poistaminen'
 title: 'Tietokantataulujen luominen ja poistaminen'
+hidden: true
 ---
 
 

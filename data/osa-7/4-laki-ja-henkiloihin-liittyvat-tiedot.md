@@ -1,6 +1,7 @@
 ---
 path: '/osa-7/4-laki-ja-henkiloihin-liittyvat-tiedot'
 title: 'Laki ja henkilöihin liittyvien tietojen käsittely'
+hidden: true
 ---
 
 

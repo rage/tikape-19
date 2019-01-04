@@ -1,6 +1,7 @@
 ---
 path: '/osa-2/1-tiedon-lisaaminen-ja-paivittaminen'
 title: 'Tiedon lisääminen ja päivittäminen'
+hidden: true
 ---
 
 

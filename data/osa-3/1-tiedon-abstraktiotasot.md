@@ -1,6 +1,7 @@
 ---
 path: '/osa-3/1-tiedon-abstraktiotasot'
 title: 'Tiedon abstraktiotasot'
+hidden: true
 ---
 
 

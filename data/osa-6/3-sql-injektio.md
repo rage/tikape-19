@@ -1,6 +1,7 @@
 ---
 path: '/osa-6/3-sql-injektiot'
 title: 'SQL-injektiot'
+hidden: true
 ---
 
 

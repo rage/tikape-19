@@ -2,6 +2,7 @@
 path: '/osa-3'
 title: 'Osa 3'
 overview: true
+hidden: true
 ---
 
 <deadline>4.2.2019</deadline>

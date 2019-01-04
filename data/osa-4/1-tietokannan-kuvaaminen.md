@@ -1,6 +1,7 @@
 ---
 path: '/osa-4/1-tietokannan-kuvaaminen'
 title: 'Tietokannan kuvaamistekniikoita'
+hidden: true
 ---
 
 
@@ -686,7 +687,8 @@ title: 'Tietokannan kuvaamistekniikoita'
 										 [Ravintola|(pk) id:Integer;nimi:String;puhelinnumero:String;katuosoite:String;postinumero:Integer;postitoimipaikka:String]
 										 [Annos|(pk) id:Integer;(fk) ravintola_id:Ravintola;nimi:String;koko:String;hinta:double]
 										 [Tilaus|(pk) id:Integer;(fk) asiakas_id:Asiakas;aika:Date;kuljetustapa:String;vastaanotettu:Boolean;toimitettu:Boolean]
-										 [RaakaAine|(pk) id:Integer;nimi:String]
+
+        						 [RaakaAine|(pk) id:Integer;nimi:String]
 										 [AnnosRaakaAine|(fk) annos_id:Annos;(fk) raaka_aine_id:RaakaAine]
 										 [TilausAnnos|(fk) tilaus_id:Tilaus;(fk) annos_id:Annos]
 

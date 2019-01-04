@@ -1,6 +1,7 @@
 ---
 path: '/osa-1/1-johdanto'
 title: 'Johdanto'
+hidden: true
 ---
 
 

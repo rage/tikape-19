@@ -1,6 +1,7 @@
 ---
 path: '/osa-7/2-tietokantakyselyiden-automatisointi'
 title: 'Tietokantakyselyiden automatisointi'
+hidden: true
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 path: '/osa-1/2-tietokannanhallintajarjestelma'
 title: 'Tietokannanhallintajärjestelmä, tietokanta ja tietokantataulu'
+hidden: true
 ---
 
 

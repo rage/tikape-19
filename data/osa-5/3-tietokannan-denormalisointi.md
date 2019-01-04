@@ -1,6 +1,7 @@
 ---
 path: '/osa-5/3-tietokannan-denormalisointi'
 title: 'Tietokannan denormalisointi'
+hidden: true
 ---
 
 

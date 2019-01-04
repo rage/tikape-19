@@ -1,6 +1,7 @@
 ---
 path: '/osa-1/5-tiedon-hakeminen-useammasta-tietokantataulusta'
 title: 'Tiedon hakeminen useammasta tietokantataulusta'
+hidden: true
 ---
 
 

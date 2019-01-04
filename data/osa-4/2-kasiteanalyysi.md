@@ -1,6 +1,7 @@
 ---
 path: '/osa-4/2-kasiteanalyysi'
 title: 'Käsiteanalyysi'
+hidden: true
 ---
 
 

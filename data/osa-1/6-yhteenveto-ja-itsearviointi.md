@@ -1,6 +1,7 @@
 ---
 path: '/osa-1/6-yhteenveto-ja-itsearviointi'
 title: 'Yhteenveto ja itsearviointi'
+hidden: true
 ---
 
 <text-box variant='learningObjectives' name='Oppimistavoitteet'>

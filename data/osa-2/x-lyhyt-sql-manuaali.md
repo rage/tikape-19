@@ -2,6 +2,7 @@
 path: '/osa-2/x-sql-komennot'
 title: 'Yhteenveto SQL-komennoista'
 overview: true
+hidden: true
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 path: '/osa-6/1-tietokannan-kaytto-ohjelmallisesti'
 title: 'Tietokannan käyttö ohjelmallisesti'
+hidden: true
 ---
 
 
