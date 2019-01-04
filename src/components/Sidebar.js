@@ -137,9 +137,12 @@ const MobileWrapperOrFragment = props => {
 
 class Sidebar extends React.Component {
   render() {
-    const edges =
+    let edges =
       this.props.data?.allMarkdownRemark?.edges.map(o => o.node?.frontmatter) ||
       []
+    if (process.env.NODE_ENV === "production") {
+      edges = edges.filter(o => !o.hidden)
+    }
     let content = content2.concat(edges)
     content = content.concat(futurePages)
     return (
@@ -189,6 +192,7 @@ const query = graphql`
           frontmatter {
             title
             path
+            hidden
           }
         }
       }
