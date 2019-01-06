@@ -1,5 +1,5 @@
 ---
-path: '/osa-4/1-tietokannan-kuvaaminen'
+path: '/osa-3/1-tietokannan-kuvaaminen'
 title: 'Tietokannan kuvaamistekniikoita'
 hidden: true
 ---

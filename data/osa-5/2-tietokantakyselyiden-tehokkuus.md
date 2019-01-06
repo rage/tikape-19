@@ -1,5 +1,5 @@
 ---
-path: '/osa-5/1-tietokantakyselyiden-tehokkuus'
+path: '/osa-5/2-tietokantakyselyiden-tehokkuus'
 title: 'Tietokantakyselyiden tehokkuuden tarkastelu'
 hidden: true
 ---
@@ -11,6 +11,8 @@ hidden: true
 
 </text-box>
 
+
+- kun tietokantakysely suoritetaan, tietokannanhallintajärjestelmä määrittelee ensin suunnitelman sille, miten tietoa haetaan (query plan) --> tapa voi vaikuttaa kyselyn suoritusnopeuteen merkittävästi (tästä pari esimerkkiä)
 
 <% partial 'partials/material_heading' do %>
   Tietokantakyselyiden tehokkuudesta

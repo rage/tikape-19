@@ -1,5 +1,5 @@
 ---
-path: '/osa-2/4-tietokannanhallintajarjestelmia'
+path: '/osa-2/3-tietokannanhallintajarjestelmia'
 title: 'Muutamia tietokannanhallintajärjestelmiä'
 hidden: true
 ---

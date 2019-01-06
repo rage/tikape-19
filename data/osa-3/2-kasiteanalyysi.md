@@ -1,5 +1,5 @@
 ---
-path: '/osa-4/2-kasiteanalyysi'
+path: '/osa-3/2-kasiteanalyysi'
 title: 'Käsiteanalyysi'
 hidden: true
 ---

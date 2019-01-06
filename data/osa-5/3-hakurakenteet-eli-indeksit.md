@@ -1,5 +1,5 @@
 ---
-path: '/osa-5/2-hakurakenteet-eli-indeksit'
+path: '/osa-5/3-hakurakenteet-eli-indeksit'
 title: 'Hakurakenteet eli indeksit'
 hidden: true
 ---

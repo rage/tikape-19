@@ -1,5 +1,5 @@
 ---
-path: '/osa-2/5-yhteenveto-ja-itsearviointi'
+path: '/osa-1/3-yhteenveto-ja-itsearviointi'
 title: 'Yhteenveto ja itsearviointi'
 hidden: true
 ---

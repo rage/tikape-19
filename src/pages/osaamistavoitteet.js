@@ -34,31 +34,31 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>1</TableCell>
               <TableCell>
-                Tunnet käsitteet tieto, tietokannanhallintajärjestelmä, relaatiotietokanta, tietokanta, tietokantataulu, pääavain ja viiteavain. Tiedät että tietoa voi esittää useammalla eri abstraktiotasolla. Tunnet tietokantakyselyiden muodostamiseen käytettävän SQL-kielen toimintaperiaatteet. Osaat hakea SQL-kielen avulla tietoa yhdestä tai useammasta tietokantataulusta ja osaat rajata ja järjestää kyselyiden tuloksia.
+                Tunnet käsitteet tieto, tietokannanhallintajärjestelmä, relaatiotietokanta, tietokanta, tietokantataulu, pääavain ja viiteavain. Tunnet tietokantakyselyiden muodostamiseen käytettävän SQL-kielen toimintaperiaatteet. Osaat hakea SQL-kielen avulla tietoa yhdestä tai useammasta tietokantataulusta ja osaat rajata ja järjestää kyselyiden tuloksia.
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>2</TableCell>
               <TableCell>
-                Osaat lisätä tietoa tietokantatauluun ja osaat muokata tietokantataulun sisältöä. Osaat luoda ja poistaa tietokantatauluja. Osaat tehdä yhteenvetokyselyitä ja rajata yhteenvetokyselyiden tuloksia. Tiedät joitakin olemassaolevia tietokannanhallintajärjestelmiä.
+                Osaat lisätä tietokantaan tietoa ja osaat muokata tietokannassa olevaa tietoa. Osaat luoda ja poistaa tietokantatauluja. Osaat tehdä yhteenvetokyselyitä ja rajata yhteenvetokyselyiden tuloksia. Tiedät joitakin olemassaolevia tietokannanhallintajärjestelmiä ja olet kokeillut niiden käyttämistä.
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>3</TableCell>
               <TableCell>
-                Tiedät mitä tietokannan normalisointi tarkoittaa. Tunnet käsitteen normaalimuoto ja osaat perustella onko annettu tietokantataulu ensimmäisessä, toisessa tai kolmannessa normaalimuodossa. Osaat muuntaa annetun tietokantataulun kolmanteen normaalimuotoon.
+                Tunnet menetelmiä tiedon ja tietokannan kuvaamiseen. Tunnet käsiteanalyysin askeleet ja osaat luoda ongelma-alueen kuvauksesta tietokannan käsiteanalyysin askeleita noudattaen.
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>4</TableCell>
               <TableCell>
-                Tunnet menetelmiä tietokannan sekä tietokannan käsitteiden kuvaamiseen. Tunnet käsiteanalyysin askeleet ja osaat luoda ongelma-alueen kuvauksesta tietokannan käsiteanalyysin askeleita noudattaen.
+                Tiedät mitä tietokannan normalisointi tarkoittaa. Tunnet käsitteen normaalimuoto ja osaat perustella onko annettu tietokantataulu ensimmäisessä, toisessa tai kolmannessa normaalimuodossa. Osaat muuntaa annetun tietokantataulun kolmanteen normaalimuotoon.
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>5</TableCell>
               <TableCell>
-                Tunnet menetelmiä tietokantakyselyiden tehokkuuden tarkasteluun. Tiedät mitä indeksit ovat ja tiedät milloin tietokantatauluihin tulee määritellä indeksejä. Tiedät mitä tietokannan denormalisointi tarkoittaa. Tunnet käsitteen tietokannan eheys ja tietokantatransaktio, ja tiedät milloin tietokantatransaktioita käytetään. Tiedät tietokannanhallintajärjestelmältä vaadittuja ominaisuuksia, joita tarvitaan tietokantatransaktioiden toimintaan.
+                Tunnet käsitteen tietokannan eheys ja tietokantatransaktio, ja tiedät milloin tietokantatransaktioita käytetään. Tiedät tietokannanhallintajärjestelmältä vaadittuja ominaisuuksia, joita tarvitaan tietokantatransaktioiden toimintaan. Tunnet menetelmiä tietokantakyselyiden tehokkuuden tarkasteluun. Tiedät mitä indeksit ovat ja tiedät milloin tietokantatauluihin kannattaa määritellä indeksejä. Tiedät mitä tietokannan denormalisointi tarkoittaa.
               </TableCell>
             </TableRow>
             <TableRow>
@@ -70,7 +70,7 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>7</TableCell>
               <TableCell>
-                Tunnet Data Access Object (DAO) -suunnittelumallin. Tunnet joitakin kirjastoja yksinkertaisten SQL-kyselyiden automatisointiin ja tiedät näihin liittyviä ongelmia. Tunnet pinnallisesti muutamia NoSQL- ja NewSQL-tietokantoja. Tunnet termit käsitteellinen abstraktiotaso, rakenteellinen abstraktiotaso ja fyysinen abstraktiotaso, ja osaat kertoa näistä esimerkkejä. Tunnet GDPR-lainsäädännön ja tiedät miten se vaikuttaa henkilöihin liittyvän tiedon tallentamiseen ja käsittelyyn.
+                Tunnet Data Access Object (DAO) -suunnittelumallin. Tunnet joitakin kirjastoja yksinkertaisten SQL-kyselyiden automatisointiin ja tiedät näihin liittyviä ongelmia. Tunnet pinnallisesti muutamia NoSQL- ja NewSQL-tietokantoja. Tunnet GDPR-lainsäädännön ja tiedät miten se vaikuttaa henkilöihin liittyvän tiedon tallentamiseen ja käsittelyyn.
               </TableCell>
             </TableRow>
           </TableBody>

@@ -7,9 +7,9 @@ hidden: true
 
 <deadline>4.2.2019</deadline>
 
-Tiedät, että tietoa voidaan käsitellä ja esittää erilaisilla abstraktiotasoilla. Tunnet termit käsitteellinen abstraktiotaso, rakenteellinen abstraktiotaso ja fyysinen abstraktiotaso. Tunnet käsitteen normaalimuoto ja osaat perustella onko annettu tietokantataulu ensimmäisessä, toisessa tai kolmannessa normaalimuodossa. Osaat muuntaa annetun tietokantataulun kolmanteen normaalimuotoon.
 
-TODO: sopiiko abstraktiotasot tänne?
+Tunnet menetelmiä tiedon ja tietokannan kuvaamiseen. Tunnet käsiteanalyysin askeleet ja osaat luoda ongelma-alueen kuvauksesta tietokannan käsiteanalyysin askeleita noudattaen.
+
 
 <please-login></please-login>
 

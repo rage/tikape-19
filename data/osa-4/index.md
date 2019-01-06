@@ -7,10 +7,7 @@ hidden: true
 
 <deadline>11.2.2019</deadline>
 
-
-Tiedät miten luokkakaavio kuvataan UML-kielellä ja tunnet menetelmiä tietokannan kuvaamiseen. Tunnet käsiteanalyysin askeleet ja osaat luoda ongelma-alueen kuvauksesta luokkakaavion käsiteanalyysin askeleita noudattaen. Osaat luoda luokkakaaviosta tietokantakaavion, ja tietokantakaaviosta tietokannan. Osaat luoda tietokannan kuvauksesta luokkakaavion.
-
-TODO: toiseen suuntaan ehkä harkkana?
+Tiedät mitä tietokannan normalisointi tarkoittaa. Tunnet käsitteen normaalimuoto ja osaat perustella onko annettu tietokantataulu ensimmäisessä, toisessa tai kolmannessa normaalimuodossa. Osaat muuntaa annetun tietokantataulun kolmanteen normaalimuotoon.
 
 
 <please-login></please-login>

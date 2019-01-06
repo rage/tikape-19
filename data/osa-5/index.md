@@ -8,7 +8,7 @@ hidden: true
 <deadline>18.2.2019</deadline>
 
 
-Tunnet menetelmiä tietokantakyselyiden tehokkuuden tarkasteluun. Tiedät mitä indeksit ovat ja tiedät milloin tietokantatauluihin tulee määritellä indeksejä. Tunnet käsitteen tietokannan eheys ja tietokantatransaktio. Tiedät milloin tietokantatransaktioita käytetään. Tiedät tietokannanhallintajärjestelmältä vaadittuja ominaisuuksia, joita tarvitaan tietokantatransaktioiden toimintaan.
+Tunnet käsitteen tietokannan eheys ja tietokantatransaktio, ja tiedät milloin tietokantatransaktioita käytetään. Tiedät tietokannanhallintajärjestelmältä vaadittuja ominaisuuksia, joita tarvitaan tietokantatransaktioiden toimintaan. Tunnet menetelmiä tietokantakyselyiden tehokkuuden tarkasteluun. Tiedät mitä indeksit ovat ja tiedät milloin tietokantatauluihin kannattaa määritellä indeksejä. Tiedät mitä tietokannan denormalisointi tarkoittaa.
 
 
 <please-login></please-login>

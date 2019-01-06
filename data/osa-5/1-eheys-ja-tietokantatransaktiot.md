@@ -1,5 +1,5 @@
 ---
-path: '/osa-5/4-tietokantatransaktiot'
+path: '/osa-5/1-tietokantatransaktiot'
 title: 'Tietokannan eheys ja tietokantatransaktiot'
 hidden: true
 ---

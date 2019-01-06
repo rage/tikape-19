@@ -1,5 +1,5 @@
 ---
-path: '/osa-5/3-tietokannan-denormalisointi'
+path: '/osa-5/4-tietokannan-denormalisointi'
 title: 'Tietokannan denormalisointi'
 hidden: true
 ---
@@ -10,7 +10,6 @@ hidden: true
 - Tiedät mitä indeksit ovat ja tiedät milloin tietokantatauluihin tulee määritellä indeksejä.
 
 </text-box>
-
 
 
 <% partial 'partials/material_sub_heading' do %>

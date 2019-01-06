@@ -1,5 +1,5 @@
 ---
-path: '/osa-3/1-tietokannan-normalisointi'
+path: '/osa-4/1-tietokannan-normalisointi'
 title: 'Tietokannan normalisointi'
 hidden: true
 ---
