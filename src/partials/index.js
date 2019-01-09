@@ -34,6 +34,8 @@ import FloatImageRight from './FloatImageRight'
 import CodeStatesVisualizer from './CodeStatesVisualizer'
 import PdfSlideshow from './PdfSlideshow'
 import ExercisesInThisSection from './ExercisesInThisSection'
+import AbStudy from './AbStudy'
+import OnlyForAbGroup from './AbStudy/OnlyForAbGroup'
 
 import {
   Table,
@@ -44,8 +46,8 @@ import {
   TableTh,
 } from './Table'
 import Deadline from './Deadline'
-import MoodleExercise from './MoodleExercise';
-import SqlTrainerExercise from './SqlTrainerExercise';
+import MoodleExercise from './MoodleExercise'
+import SqlTrainerExercise from './SqlTrainerExercise'
 
 const mapping = {
   test: Test,
@@ -60,6 +62,8 @@ const mapping = {
   'exercises-in-this-section': ExercisesInThisSection,
   'moodle-exercise': MoodleExercise,
   'sqltrainer-exercise': SqlTrainerExercise,
+  'ab-study': AbStudy,
+  'only-for-ab-group': OnlyForAbGroup,
   youtube: Youtube,
   quiznator: Quiznator,
   table: Table,
