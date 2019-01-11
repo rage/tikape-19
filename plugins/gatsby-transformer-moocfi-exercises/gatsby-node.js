@@ -85,6 +85,7 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
               id: res.match,
               location: res.location,
               type: 'moodle-exercise',
+              parentPagePath: node.frontmatter.path,
             }
           })
 
@@ -94,6 +95,7 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
                 id: res.match,
                 location: res.location,
                 type: 'sqltrainer-exercise',
+                parentPagePath: node.frontmatter.path,
               }
             }
           )
