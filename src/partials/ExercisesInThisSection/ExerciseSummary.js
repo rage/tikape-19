@@ -1,6 +1,6 @@
-import React from 'react'
-import withSimpleErrorBoundary from '../../util/withSimpleErrorBoundary'
-import styled from 'styled-components'
+import React from "react"
+import withSimpleErrorBoundary from "../../util/withSimpleErrorBoundary"
+import styled from "styled-components"
 import { normalizeExerciseId } from "../../util/strings"
 import { Link } from "gatsby"
 
@@ -11,8 +11,8 @@ const ExerciseSummaryWrapper = styled(Link)`
 `
 
 const ExerciseSummary = ({ exercise, index, quizIdToTitle }) => {
-  let description = 'Tuntematon tehtävätyyppi'
-  if (exercise.type === 'quiznator') {
+  let description = "Tuntematon tehtävätyyppi"
+  if (exercise.type === "quiznator") {
     const name = quizIdToTitle[exercise.id]
     if (name) {
       description = `Kysely: ${name}`
@@ -20,13 +20,13 @@ const ExerciseSummary = ({ exercise, index, quizIdToTitle }) => {
       description = "Kysely"
     }
   }
-  if (exercise.type === 'programming-exercise') {
+  if (exercise.type === "programming-exercise") {
     description = `Ohjelmointitehtävä: ${exercise.id}`
   }
-  if (exercise.type === 'moodle-exercise') {
+  if (exercise.type === "moodle-exercise") {
     description = `Moodle-tehtävä: ${exercise.id}`
   }
-  if (exercise.type === 'sqltrainer-exercise') {
+  if (exercise.type === "sqltrainer-exercise") {
     description = `SQL Trainer -tehtävä: ${exercise.id}`
   }
   let anchorLinkDigest = normalizeExerciseId(`${exercise.type}-${exercise.id}`)

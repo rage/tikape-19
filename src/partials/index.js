@@ -20,22 +20,22 @@
 
 // export default getNamedPartials
 
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-import Test from './Test'
-import PagesInThisSection from './PagesInThisSection'
-import ProgrammingExercise from './ProgrammingExercise'
-import TextBox from './TextBox'
-import SampleOutput from './SampleOutput'
-import Youtube from './Youtube'
-import Quiznator from './Quiznator'
-import PleaseLogin from './PleaseLogin'
-import FloatImageRight from './FloatImageRight'
-import CodeStatesVisualizer from './CodeStatesVisualizer'
-import PdfSlideshow from './PdfSlideshow'
-import ExercisesInThisSection from './ExercisesInThisSection'
-import AbStudy from './AbStudy'
-import OnlyForAbGroup from './AbStudy/OnlyForAbGroup'
+import Test from "./Test"
+import PagesInThisSection from "./PagesInThisSection"
+import ProgrammingExercise from "./ProgrammingExercise"
+import TextBox from "./TextBox"
+import SampleOutput from "./SampleOutput"
+import Youtube from "./Youtube"
+import Quiznator from "./Quiznator"
+import PleaseLogin from "./PleaseLogin"
+import FloatImageRight from "./FloatImageRight"
+import CodeStatesVisualizer from "./CodeStatesVisualizer"
+import PdfSlideshow from "./PdfSlideshow"
+import ExercisesInThisSection from "./ExercisesInThisSection"
+import AbStudy from "./AbStudy"
+import OnlyForAbGroup from "./AbStudy/OnlyForAbGroup"
 
 import {
   Table,
@@ -44,26 +44,26 @@ import {
   TableHead,
   TableRow,
   TableTh,
-} from './Table'
-import Deadline from './Deadline'
-import MoodleExercise from './MoodleExercise'
-import SqlTrainerExercise from './SqlTrainerExercise'
+} from "./Table"
+import Deadline from "./Deadline"
+import MoodleExercise from "./MoodleExercise"
+import SqlTrainerExercise from "./SqlTrainerExercise"
 
 const mapping = {
   test: Test,
-  'pages-in-this-section': PagesInThisSection,
-  'programming-exercise': ProgrammingExercise,
-  'text-box': TextBox,
-  'sample-output': SampleOutput,
-  'please-login': PleaseLogin,
-  'float-image-right': FloatImageRight,
-  'code-states-visualizer': CodeStatesVisualizer,
-  'pdf-slideshow': PdfSlideshow,
-  'exercises-in-this-section': ExercisesInThisSection,
-  'moodle-exercise': MoodleExercise,
-  'sqltrainer-exercise': SqlTrainerExercise,
-  'ab-study': AbStudy,
-  'only-for-ab-group': OnlyForAbGroup,
+  "pages-in-this-section": PagesInThisSection,
+  "programming-exercise": ProgrammingExercise,
+  "text-box": TextBox,
+  "sample-output": SampleOutput,
+  "please-login": PleaseLogin,
+  "float-image-right": FloatImageRight,
+  "code-states-visualizer": CodeStatesVisualizer,
+  "pdf-slideshow": PdfSlideshow,
+  "exercises-in-this-section": ExercisesInThisSection,
+  "moodle-exercise": MoodleExercise,
+  "sqltrainer-exercise": SqlTrainerExercise,
+  "ab-study": AbStudy,
+  "only-for-ab-group": OnlyForAbGroup,
   youtube: Youtube,
   quiznator: Quiznator,
   table: Table,

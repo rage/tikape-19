@@ -1,9 +1,9 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from "react"
+import Helmet from "react-helmet"
 
-import Layout from '../templates/Layout'
-import Container from '../components/Container'
-import { withLoginStateContext } from '../contexes/LoginStateContext'
+import Layout from "../templates/Layout"
+import Container from "../components/Container"
+import { withLoginStateContext } from "../contexes/LoginStateContext"
 
 import {
   Table,
@@ -11,7 +11,7 @@ import {
   TableCell,
   TableHead,
   TableRow,
-} from '@material-ui/core'
+} from "@material-ui/core"
 
 const IndexPage = () => (
   <Layout>
@@ -20,29 +20,24 @@ const IndexPage = () => (
       <section id="yleistä">
         <h1>Arvostelu</h1>
         <p>
-          Tietokantojen perusteet on viiden opintopisteen kurssi. Kurssi sisältää viikoittaiset tehtävät, kaksi projektia sekä loppukokeen. Kurssin arvosana muodostuu tehtävien ja projektien perusteella, loppukokeella tarkastetaan pääseekö kurssista läpi. 
+          Tietokantojen perusteet on viiden opintopisteen kurssi. Kurssi
+          sisältää viikoittaiset tehtävät, kaksi projektia sekä loppukokeen.
+          Kurssin arvosana muodostuu tehtävien ja projektien perusteella,
+          loppukokeella tarkastetaan pääseekö kurssista läpi.
         </p>
-        <p>
-          Kurssin tehtävien ja projektien vaikutus arvosanaan on seuraava:
-        </p>
+        <p>Kurssin tehtävien ja projektien vaikutus arvosanaan on seuraava:</p>
         <ul>
-          <li>
-            Viikoittaiset tehtävät (60% pisteistä)
-          </li>
-          <li>
-            Suunnitteluprojekti (20% pisteistä)
-          </li>
-          <li>
-            Ohjelmointiprojekti (20% pisteistä)
-          </li>
+          <li>Viikoittaiset tehtävät (60% pisteistä)</li>
+          <li>Suunnitteluprojekti (20% pisteistä)</li>
+          <li>Ohjelmointiprojekti (20% pisteistä)</li>
         </ul>
         <p>
-          Täydet pisteet tehtävistä saa tekemällä kaikki kunkin osan tehtävät. Suunnittelu- ja ohjelmointiprojektin tarkempi arvostelu julkaistaan projektien julkaisun yhteydessä.
+          Täydet pisteet tehtävistä saa tekemällä kaikki kunkin osan tehtävät.
+          Suunnittelu- ja ohjelmointiprojektin tarkempi arvostelu julkaistaan
+          projektien julkaisun yhteydessä.
         </p>
         <h2>Arvosanan muodostuminen</h2>
-        <p>
-          Kurssin arvosana muodostuu seuraavasti. 
-        </p>
+        <p>Kurssin arvosana muodostuu seuraavasti.</p>
         <Table>
           <TableHead>
             <TableRow>
@@ -82,7 +77,10 @@ const IndexPage = () => (
       <section id="kokeet">
         <h2>Kokeet</h2>
         <p>
-          Kurssista järjestetään yksi koe sekä kaksi uusintaa. Kokeen hyväksytty suorittaminen johtaa kurssin läpäisyyn, mikäli kurssin tehtävät ja projektit on suorittanut tarpeeksi hyvin. Arvosana määräytyy tehtyjen tehtävien ja projektien perusteella. 
+          Kurssista järjestetään yksi koe sekä kaksi uusintaa. Kokeen hyväksytty
+          suorittaminen johtaa kurssin läpäisyyn, mikäli kurssin tehtävät ja
+          projektit on suorittanut tarpeeksi hyvin. Arvosana määräytyy tehtyjen
+          tehtävien ja projektien perusteella.
         </p>
         <ul>
           <li>Kurssikoe: Lauantai 9.3.2019 klo 10-14</li>
@@ -90,10 +88,14 @@ const IndexPage = () => (
           <li>Uusintakoe 2: Keskiviikko 15.5.2019 klo 10-14</li>
         </ul>
         <p>
-          Uusintakokeisiin osallistutaan mikäli osallistuja ei läpäise varsinaista kurssikoetta. Kokeet tehdään kurssin Moodle-järjestelmässä.
+          Uusintakokeisiin osallistutaan mikäli osallistuja ei läpäise
+          varsinaista kurssikoetta. Kokeet tehdään kurssin
+          Moodle-järjestelmässä.
         </p>
         <p>
-          Helsingin yliopiston opiskelijat voivat suorittaa kurssin myös erillistentillä Examinariumissa. Tenttimateriaalina on kurssin materiaali (ml. tehtävät ja projektit).
+          Helsingin yliopiston opiskelijat voivat suorittaa kurssin myös
+          erillistentillä Examinariumissa. Tenttimateriaalina on kurssin
+          materiaali (ml. tehtävät ja projektit).
         </p>
       </section>
     </Container>

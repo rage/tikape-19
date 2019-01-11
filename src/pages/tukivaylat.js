@@ -1,10 +1,10 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import React from "react"
+import Helmet from "react-helmet"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-import Layout from '../templates/Layout'
-import Container from '../components/Container'
-import { withLoginStateContext } from '../contexes/LoginStateContext'
+import Layout from "../templates/Layout"
+import Container from "../components/Container"
+import { withLoginStateContext } from "../contexes/LoginStateContext"
 
 const IndexPage = () => (
   <Layout>
@@ -12,7 +12,9 @@ const IndexPage = () => (
       <Helmet title="Tukiväylät" />
       <h1>Tukiväylät</h1>
       <p>
-        Kurssilla on Telegram-keskustelukanava sekä kurssin Moodle-alueella oleva keskustelualue. Tukiväylät perustuvat vertaistukeen. Lisätietoja näistä myöhemmin.
+        Kurssilla on Telegram-keskustelukanava sekä kurssin Moodle-alueella
+        oleva keskustelualue. Tukiväylät perustuvat vertaistukeen. Lisätietoja
+        näistä myöhemmin.
       </p>
       {/*
       <h2>Keskustelukanava</h2>

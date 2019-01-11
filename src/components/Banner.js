@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
-import Background from '../images/books3.jpg'
-import withSimpleErrorBoundary from '../util/withSimpleErrorBoundary'
+import React from "react"
+import styled from "styled-components"
+import Background from "../images/books3.jpg"
+import withSimpleErrorBoundary from "../util/withSimpleErrorBoundary"
 
 const BannerWrapper = styled.header`
   height: 30rem;
@@ -22,12 +22,12 @@ const BannerWrapper = styled.header`
 `
 
 const Heading = styled.div`
-  font-family: 'Roboto Slab', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, Noto Sans, sans-serif, 'Apple Color Emoji',
-    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, Noto Sans, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 500;
   font-size: 2rem;
-  color: #6E3C1B;
+  color: #6e3c1b;
   background: white;
   padding: 0.5rem;
   margin: 1rem;
@@ -52,7 +52,10 @@ const SubHeading = styled.div`
 const Banner = () => (
   <BannerWrapper>
     <Heading>Tietokantojen perusteet</Heading>
-    <SubHeading>Digitalisaation kulmakivi tutuksi -- menetelmiä tiedon tallentamiseen ja hakemiseen </SubHeading>
+    <SubHeading>
+      Digitalisaation kulmakivi tutuksi -- menetelmiä tiedon tallentamiseen ja
+      hakemiseen{" "}
+    </SubHeading>
   </BannerWrapper>
 )
 

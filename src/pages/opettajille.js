@@ -1,8 +1,8 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Layout from '../templates/Layout'
-import Container from '../components/Container'
-import { withLoginStateContext } from '../contexes/LoginStateContext'
+import React from "react"
+import Helmet from "react-helmet"
+import Layout from "../templates/Layout"
+import Container from "../components/Container"
+import { withLoginStateContext } from "../contexes/LoginStateContext"
 
 const IndexPage = () => (
   <Layout>
@@ -16,11 +16,13 @@ const IndexPage = () => (
           Kerro opiskelijoillesi mahdollisuudesta osallistua kurssille.
         </p>
         <p>
-          Kurssista järjestetään toistaiseksi vain ajastettuja versioita Helsingin yliopiston Avoimen yliopiston kautta. Tämä tarkoittaa sitä, että kokeet järjestetään kurssin aikataulussa. 
+          Kurssista järjestetään toistaiseksi vain ajastettuja versioita
+          Helsingin yliopiston Avoimen yliopiston kautta. Tämä tarkoittaa sitä,
+          että kokeet järjestetään kurssin aikataulussa.
         </p>
         <p>
           Avoimen yliopiston kurssisuoritus luetaan automaattisesti osaksi
-          Helsingin yliopiston opintoja. 
+          Helsingin yliopiston opintoja.
         </p>
       </section>
     </Container>

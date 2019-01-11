@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUniversity as icon } from '@fortawesome/free-solid-svg-icons'
-import withSimpleErrorBoundary from '../util/withSimpleErrorBoundary'
-import { normalizeExerciseId } from '../util/strings'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faUniversity as icon } from "@fortawesome/free-solid-svg-icons"
+import withSimpleErrorBoundary from "../util/withSimpleErrorBoundary"
+import { normalizeExerciseId } from "../util/strings"
 
 const Wrapper = styled.aside`
   padding 1rem;
@@ -36,7 +36,7 @@ const MoodleExercise = props => {
   return (
     <Wrapper
       id={normalizeExerciseId(`moodle-exercise-${props.name}`)}
-      style={{ '--color': '#528afc' }}
+      style={{ "--color": "#528afc" }}
     >
       <Header>
         <StyledIcon icon={icon} size="1x" />

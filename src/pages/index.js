@@ -1,10 +1,8 @@
-import React from 'react'
+import React from "react"
 
-import Layout from '../templates/Layout'
-import Banner from '../components/Banner'
-import GatsbyLink from 'gatsby-link'
-import { Link } from 'gatsby'
-import { withLoginStateContext } from '../contexes/LoginStateContext'
+import Layout from "../templates/Layout"
+import Banner from "../components/Banner"
+import { withLoginStateContext } from "../contexes/LoginStateContext"
 
 import {
   Table,
@@ -12,8 +10,9 @@ import {
   TableCell,
   TableHead,
   TableRow,
-} from '@material-ui/core'
-import Container from '../components/Container'
+} from "@material-ui/core"
+import Container from "../components/Container"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 const IndexPage = () => (
   <Layout>
@@ -22,23 +21,34 @@ const IndexPage = () => (
       <section id="yleistä">
         <h1>Tietoa kurssista</h1>
         <p>
-          Tietokantojen perusteet on kaikille avoin ja ilmainen nimensä mukaisesti tietokantojen perusteet opettava verkkokurssi.
-          Kurssilla perehdytään Structured Query Language (SQL) -kieleen, tiedon kuvausmenetelmiin, tietokantojen suunnitteluun sekä tietokantaa käyttävien sovellusten toteutukseen.
-          Kurssille osallistuminen vaatii ennakkotiedot ohjelmoinnista Helsingin yliopiston Ohjelmoinnin MOOC -kurssin laajuudessa (vastaa kursseja Ohjelmoinnin perusteet ja Ohjelmoinnin jatkokurssi).
+          Tietokantojen perusteet on kaikille avoin ja ilmainen nimensä
+          mukaisesti tietokantojen perusteet opettava verkkokurssi. Kurssilla
+          perehdytään Structured Query Language (SQL) -kieleen, tiedon
+          kuvausmenetelmiin, tietokantojen suunnitteluun sekä tietokantaa
+          käyttävien sovellusten toteutukseen. Kurssille osallistuminen vaatii
+          ennakkotiedot ohjelmoinnista Helsingin yliopiston Ohjelmoinnin MOOC
+          -kurssin laajuudessa (vastaa kursseja Ohjelmoinnin perusteet ja
+          Ohjelmoinnin jatkokurssi).
         </p>
         <p>
-          Tietokantojen perusteet vastaa sisällöltään ja laajuudeltaan Helsingin yliopiston
-          tietojenkäsittelytieteen laitoksen kurssia Tietokantojen perusteet (TKT10004), joka on viiden opintopisteen kurssi.
+          Tietokantojen perusteet vastaa sisällöltään ja laajuudeltaan Helsingin
+          yliopiston tietojenkäsittelytieteen laitoksen kurssia Tietokantojen
+          perusteet (TKT10004), joka on viiden opintopisteen kurssi.
         </p>
       </section>
 
       <section id="sisältö-ja-aikataulu">
         <h2>Sisältö ja aikataulu</h2>
         <p>
-          Kurssi koostuu seitsemästä tehtäviä sisältävästä osasta, kahdesta projektista sekä kokeesta. Kunkin osan opiskeluun sekä siihen liittyvien tehtävien tekemiseen kannattaa varata noin 5-20 tuntia. Varaamme oikeuden aikataulun ja aiheiden muutoksiin.
+          Kurssi koostuu seitsemästä tehtäviä sisältävästä osasta, kahdesta
+          projektista sekä kokeesta. Kunkin osan opiskeluun sekä siihen
+          liittyvien tehtävien tekemiseen kannattaa varata noin 5-20 tuntia.
+          Varaamme oikeuden aikataulun ja aiheiden muutoksiin.
         </p>
         <p>
-          Kurssin sisältö tarkentuu kurssin edetessä. Alla on kuvattuna osakohtainen materiaalin julkaisuaikataulu sekä tehtävien viimeiset palautuspäivämäärät.
+          Kurssin sisältö tarkentuu kurssin edetessä. Alla on kuvattuna
+          osakohtainen materiaalin julkaisuaikataulu sekä tehtävien viimeiset
+          palautuspäivämäärät.
         </p>
         <Table>
           <TableHead>
@@ -89,7 +99,11 @@ const IndexPage = () => (
 
         <p>
           <b>
-            Viikoittaisten tehtävien määräajat ovat aina maanantaisin klo 23:55:00. Virallisena määräaikana käytetään aina tehtäviä vastaanottavan palvelimen kelloa, joka on Suomen ajassa. Huomaa, että oman koneesi kello voi olla jäljessä tai edellä, joten älä jätä tehtävien tekemistä ja palauttamista viime hetkeen.
+            Viikoittaisten tehtävien määräajat ovat aina maanantaisin klo
+            23:55:00. Virallisena määräaikana käytetään aina tehtäviä
+            vastaanottavan palvelimen kelloa, joka on Suomen ajassa. Huomaa,
+            että oman koneesi kello voi olla jäljessä tai edellä, joten älä jätä
+            tehtävien tekemistä ja palauttamista viime hetkeen.
           </b>
         </p>
       </section>
@@ -97,28 +111,46 @@ const IndexPage = () => (
       <section id="ilmoittautuminen">
         <h2>Ilmoittautuminen</h2>
         <p>
-          Kurssille ilmoittautuminen tapahtuu kolmea eri väylää riippuen taustastasi.
+          Kurssille ilmoittautuminen tapahtuu kolmea eri väylää riippuen
+          taustastasi.
         </p>
         <ul>
           <li>
-            Helsingin yliopiston opiskelijat ilmoittautuvat kurssille suoraan WebOodin kautta.
+            Helsingin yliopiston opiskelijat ilmoittautuvat kurssille suoraan
+            WebOodin kautta.
           </li>
           <li>
-            Helsingin yliopiston Avoimen yliopiston nykyiset ja tulevat opiskelijat ilmoittautuvat osoitteessa <a href="https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231" target="_blank">https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231</a>
+            Helsingin yliopiston Avoimen yliopiston nykyiset ja tulevat
+            opiskelijat ilmoittautuvat osoitteessa{" "}
+            <OutboundLink
+              href="https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231
+            </OutboundLink>
           </li>
           <li>
-            DEFA-hankkeeseen osallistuvat opiskelijat ilmoittautuvat osoitteessa <a href="https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=124756797" target="_blank">https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=124756797</a>
+            DEFA-hankkeeseen osallistuvat opiskelijat ilmoittautuvat osoitteessa{" "}
+            <OutboundLink
+              href="https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=124756797"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=124756797
+            </OutboundLink>
           </li>
         </ul>
-        <p>
-          Kurssi on kaikille maksuton.
-        </p>
+        <p>Kurssi on kaikille maksuton.</p>
       </section>
 
       <section id="kokeet">
         <h2>Kokeet</h2>
         <p>
-          Kurssista järjestetään yksi koe sekä kaksi uusintaa. Kokeen hyväksytty suorittaminen johtaa kurssin läpäisyyn, mikäli kurssin tehtävät ja projektit on suorittanut tarpeeksi hyvin. Arvosana määräytyy tehtyjen tehtävien ja projektien perusteella.
+          Kurssista järjestetään yksi koe sekä kaksi uusintaa. Kokeen hyväksytty
+          suorittaminen johtaa kurssin läpäisyyn, mikäli kurssin tehtävät ja
+          projektit on suorittanut tarpeeksi hyvin. Arvosana määräytyy tehtyjen
+          tehtävien ja projektien perusteella.
         </p>
         <ul>
           <li>Kurssikoe: Lauantai 9.3.2019 klo 10-14</li>
@@ -126,13 +158,16 @@ const IndexPage = () => (
           <li>Uusintakoe 2: Keskiviikko 15.5.2019 klo 10-14</li>
         </ul>
         <p>
-          Uusintakokeisiin osallistutaan mikäli osallistuja ei läpäise varsinaista kurssikoetta. Kokeet tehdään kurssin Moodle-järjestelmässä.
+          Uusintakokeisiin osallistutaan mikäli osallistuja ei läpäise
+          varsinaista kurssikoetta. Kokeet tehdään kurssin
+          Moodle-järjestelmässä.
         </p>
         <p>
-          Helsingin yliopiston opiskelijat voivat suorittaa kurssin myös erillistentillä Examinariumissa. Tenttimateriaalina on kurssin materiaali (ml. tehtävät ja projektit).
+          Helsingin yliopiston opiskelijat voivat suorittaa kurssin myös
+          erillistentillä Examinariumissa. Tenttimateriaalina on kurssin
+          materiaali (ml. tehtävät ja projektit).
         </p>
       </section>
-
     </Container>
   </Layout>
 )

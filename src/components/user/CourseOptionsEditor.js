@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import {
   TextField,
   Button,
@@ -6,17 +6,17 @@ import {
   Checkbox,
   Radio,
   RadioGroup,
-} from '@material-ui/core'
+} from "@material-ui/core"
 
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
-import Loading from '../Loading'
+import Loading from "../Loading"
 
-import { updateUserDetails, userDetails } from '../../services/moocfi'
+import { updateUserDetails, userDetails } from "../../services/moocfi"
 
-import styled from 'styled-components'
-import withSimpleErrorBoundary from '../../util/withSimpleErrorBoundary'
-import { stringToBoolean } from '../../util/strings';
+import styled from "styled-components"
+import withSimpleErrorBoundary from "../../util/withSimpleErrorBoundary"
+import { stringToBoolean } from "../../util/strings"
 
 const Row = styled.div`
   margin-bottom: 1.5rem;
@@ -41,16 +41,22 @@ class CourseOptionsEditor extends React.Component {
         first_name: data.user_field?.first_name,
         last_name: data.user_field?.last_name,
         student_number: data.user_field?.organizational_id,
-        digital_education_for_all: stringToBoolean(data.extra_fields?.digital_education_for_all),
-        open_university_student: stringToBoolean(data.extra_fields?.open_university_student),
-        university_of_helsinki_student: stringToBoolean(data.extra_fields?.university_of_helsinki_student),
+        digital_education_for_all: stringToBoolean(
+          data.extra_fields?.digital_education_for_all,
+        ),
+        open_university_student: stringToBoolean(
+          data.extra_fields?.open_university_student,
+        ),
+        university_of_helsinki_student: stringToBoolean(
+          data.extra_fields?.university_of_helsinki_student,
+        ),
         marketing: stringToBoolean(data.extra_fields?.marketing),
         research: data.extra_fields?.research,
         loading: false,
       },
       () => {
         this.validate()
-      }
+      },
     )
   }
 
@@ -147,7 +153,7 @@ class CourseOptionsEditor extends React.Component {
                   InputLabelProps={{
                     shrink:
                       this.state.first_name ||
-                      this.state.focused === 'first_name',
+                      this.state.focused === "first_name",
                   }}
                   fullWidth
                   value={this.state.first_name}
@@ -167,7 +173,7 @@ class CourseOptionsEditor extends React.Component {
                   InputLabelProps={{
                     shrink:
                       this.state.last_name ||
-                      this.state.focused === 'last_name',
+                      this.state.focused === "last_name",
                   }}
                   fullWidth
                   value={this.state.last_name}
@@ -186,7 +192,7 @@ class CourseOptionsEditor extends React.Component {
                   InputLabelProps={{
                     shrink:
                       this.state.student_number ||
-                      this.state.focused === 'student_number',
+                      this.state.focused === "student_number",
                   }}
                   fullWidth
                   value={this.state.student_number}
@@ -280,7 +286,7 @@ class CourseOptionsEditor extends React.Component {
 
           <p>
             Tällaisesta oppimisanalytiikaksi kutsutusta tutkimuksesta
-            kiinnostuneiden kannattaa tutustua esimerkiksi artikkeliin{' '}
+            kiinnostuneiden kannattaa tutustua esimerkiksi artikkeliin{" "}
             <OutboundLink
               href="https://dl.acm.org/citation.cfm?id=2858798"
               target="_blank"

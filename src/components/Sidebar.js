@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components'
-import { graphql, StaticQuery } from 'gatsby'
-import { Button } from '@material-ui/core'
+import React from "react"
+import styled from "styled-components"
+import { graphql, StaticQuery } from "gatsby"
+import { Button } from "@material-ui/core"
 
-import Logo from './Logo'
-import TreeView from './TreeView'
-import withSimpleErrorBoundary from '../util/withSimpleErrorBoundary'
+import Logo from "./Logo"
+import TreeView from "./TreeView"
+import withSimpleErrorBoundary from "../util/withSimpleErrorBoundary"
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 
 const StyledIcon = styled(FontAwesomeIcon)`
   vertical-align: middle;
@@ -19,7 +19,7 @@ const StyledIcon = styled(FontAwesomeIcon)`
   font-size: 1.5em;
 `
 
-export const SIDEBAR_WIDTH = '20rem'
+export const SIDEBAR_WIDTH = "20rem"
 
 const SidebarContainer = styled.div`
   display: flex;
@@ -69,7 +69,7 @@ const Brand = styled.div`
   padding: 1rem;
   padding-top: 2rem;
   font-weight: bold;
-  color: #6A3E23;
+  color: #6a3e23;
   font-size: 1.3rem;
 `
 
@@ -86,33 +86,33 @@ const MenuExpanderWrapper = styled.div`
 
 var content2 = [
   {
-    title: 'Tietoa kurssista',
-    path: '/',
+    title: "Tietoa kurssista",
+    path: "/",
   },
   {
-    title: 'Osaamistavoitteet',
-    path: '/osaamistavoitteet',
+    title: "Osaamistavoitteet",
+    path: "/osaamistavoitteet",
   },
   {
-    title: 'Arvostelu ja kokeet',
-    path: '/arvostelu',
+    title: "Arvostelu ja kokeet",
+    path: "/arvostelu",
   },
-  { title: 'Tukiväylät', path: '/tukivaylat' },
+  { title: "Tukiväylät", path: "/tukivaylat" },
   {
-    title: 'Opettajille ja opinto-ohjaajille',
-    path: '/opettajille',
+    title: "Opettajille ja opinto-ohjaajille",
+    path: "/opettajille",
   },
   { separator: true },
 ]
 
 var futurePages = [
-  { title: 'Osa 1', tba: '14.1.2019' },
-  { title: 'Osa 2', tba: '21.1.2019' },
-  { title: 'Osa 3', tba: '28.1.2019' },
-  { title: 'Osa 4', tba: '4.2.2019' },
-  { title: 'Osa 5', tba: '11.2.2019' },
-  { title: 'Osa 6', tba: '18.2.2019' },
-  { title: 'Osa 7', tba: '25.2.2019' },
+  { title: "Osa 1", tba: "14.1.2019" },
+  { title: "Osa 2", tba: "21.1.2019" },
+  { title: "Osa 3", tba: "28.1.2019" },
+  { title: "Osa 4", tba: "4.2.2019" },
+  { title: "Osa 5", tba: "11.2.2019" },
+  { title: "Osa 6", tba: "18.2.2019" },
+  { title: "Osa 7", tba: "25.2.2019" },
 ]
 
 const MobileWrapper = styled.div`

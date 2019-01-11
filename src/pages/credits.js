@@ -1,9 +1,9 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Layout from '../templates/Layout'
-import Container from '../components/Container'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
-import { withLoginStateContext } from '../contexes/LoginStateContext'
+import React from "react"
+import Helmet from "react-helmet"
+import Layout from "../templates/Layout"
+import Container from "../components/Container"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
+import { withLoginStateContext } from "../contexes/LoginStateContext"
 
 const Credits = () => (
   <Layout>
@@ -11,7 +11,7 @@ const Credits = () => (
       <Helmet title="Kiitokset ja materiaalista" />
       <h1>Kiitokset ja materiaalista</h1>
       <p>
-        Kurssin on tehnyt Helsingin yliopiston{' '}
+        Kurssin on tehnyt Helsingin yliopiston{" "}
         <OutboundLink
           href="https://www.helsinki.fi/en/researchgroups/data-driven-education"
           target="_blank"
@@ -27,14 +27,14 @@ const Credits = () => (
         Matti Luukkainen.
       </p>
       <p>
-        Kurssin materiaali on lisensoitu{' '}
+        Kurssin materiaali on lisensoitu{" "}
         <OutboundLink
           href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.fi"
           target="_blank"
           rel="noopener noreferrer"
         >
           Creative Commons BY-NC-SA 4.0
-        </OutboundLink>{' '}
+        </OutboundLink>{" "}
         -lisenssillä, joten voit käyttää ja levittää sitä vapaasti, kunhan
         alkuperäisten tekijöiden nimiä ei poisteta. Jos teet muutoksia
         materiaaliin ja haluat levittää muunneltua versiota, se täytyy
@@ -43,15 +43,15 @@ const Credits = () => (
       </p>
       <h2>Kurssilla käytössä oleva teknologia</h2>
       <p>
-        Kurssin sivun ovat tehneet{' '}
+        Kurssin sivun ovat tehneet{" "}
         <OutboundLink
           href="https://github.com/nygrenh"
           target="_blank"
           rel="noopener noreferrer"
         >
           Henrik Nygren
-        </OutboundLink>{' '}
-        ja{' '}
+        </OutboundLink>{" "}
+        ja{" "}
         <OutboundLink
           href="https://github.com/redande"
           target="_blank"
@@ -59,16 +59,16 @@ const Credits = () => (
         >
           Antti Leinonen
         </OutboundLink>
-        . Helsingin yliopiston{' '}
+        . Helsingin yliopiston{" "}
         <OutboundLink
           href="https://www.helsinki.fi/en/researchgroups/data-driven-education"
           target="_blank"
           rel="noopener noreferrer"
         >
           Agile Education Research -tutkimusryhmä
-        </OutboundLink>{' '}
+        </OutboundLink>{" "}
         on luonut ja ylläpitää kurssilla käytettyä ohjelmointitehtävien
-        palautusympäristöä{' '}
+        palautusympäristöä{" "}
         <OutboundLink
           href="https://tmc.mooc.fi"
           target="_blank"

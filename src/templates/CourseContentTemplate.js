@@ -1,27 +1,27 @@
-import React, { Fragment } from 'react'
-import { graphql } from 'gatsby'
-import styled from 'styled-components'
-import rehypeReact from 'rehype-react'
-import { navigate, Link } from 'gatsby'
-import { Helmet } from 'react-helmet'
+import React, { Fragment } from "react"
+import { graphql } from "gatsby"
+import styled from "styled-components"
+import rehypeReact from "rehype-react"
+import { navigate, Link } from "gatsby"
+import { Helmet } from "react-helmet"
 
-import Layout from './Layout'
+import Layout from "./Layout"
 
-import getNamedPartials from '../partials'
-import CoursePageFooter from '../components/CoursePageFooter'
-import { getCachedUserDetails } from '../services/moocfi'
-import './remark.css'
-import PagesContext from '../contexes/PagesContext'
+import getNamedPartials from "../partials"
+import CoursePageFooter from "../components/CoursePageFooter"
+import { getCachedUserDetails } from "../services/moocfi"
+import "./remark.css"
+import PagesContext from "../contexes/PagesContext"
 import LoginStateContext, {
   LoginStateContextProvider,
-} from '../contexes/LoginStateContext'
-import Container from '../components/Container'
+} from "../contexes/LoginStateContext"
+import Container from "../components/Container"
 
-import { loggedIn } from '../services/moocfi'
-import { capitalizeFirstLetter } from '../util/strings'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowCircleUp as icon } from '@fortawesome/free-solid-svg-icons'
-import EndOfSubSection from '../components/EndOfSubSection'
+import { loggedIn } from "../services/moocfi"
+import { capitalizeFirstLetter } from "../util/strings"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faArrowCircleUp as icon } from "@fortawesome/free-solid-svg-icons"
+import EndOfSubSection from "../components/EndOfSubSection"
 import { tryToScrollToSelector } from "../util/dom"
 
 const StyledIcon = styled(FontAwesomeIcon)`
@@ -54,7 +54,7 @@ export default class CourseContentTemplate extends React.Component {
     let userInfo = await getCachedUserDetails()
     const research = userInfo?.extra_fields?.research
     if (research === undefined) {
-      navigate('/missing-info')
+      navigate("/missing-info")
     }
     if (typeof window !== "undefined" && window.location.hash) {
       const selector = window.location.hash
@@ -84,7 +84,7 @@ export default class CourseContentTemplate extends React.Component {
     }).Compiler
 
     const parentSectionName = capitalizeFirstLetter(
-      `${frontmatter.path.split(/\//g)[1].replace(/-/g, ' ')}`
+      `${frontmatter.path.split(/\//g)[1].replace(/-/g, " ")}`,
     )
     const parentSectionPath = `/${frontmatter.path.split(/\//g)[1]}`
     return (
