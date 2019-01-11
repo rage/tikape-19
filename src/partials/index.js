@@ -44,6 +44,8 @@ import {
   TableTh,
 } from './Table'
 import Deadline from './Deadline'
+import MoodleExercise from './MoodleExercise';
+import SqlTrainerExercise from './SqlTrainerExercise';
 
 const mapping = {
   test: Test,
@@ -56,6 +58,8 @@ const mapping = {
   'code-states-visualizer': CodeStatesVisualizer,
   'pdf-slideshow': PdfSlideshow,
   'exercises-in-this-section': ExercisesInThisSection,
+  'moodle-exercise': MoodleExercise,
+  'sqltrainer-exercise': SqlTrainerExercise,
   youtube: Youtube,
   quiznator: Quiznator,
   table: Table,

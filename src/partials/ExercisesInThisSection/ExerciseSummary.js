@@ -20,6 +20,12 @@ const ExerciseSummary = ({ exercise, index, quizIdToTitle }) => {
   if (exercise.type === 'programming-exercise') {
     description = `Ohjelmointitehtävä: ${exercise.id}`
   }
+  if (exercise.type === 'moodle-exercise') {
+    description = `Moodle-tehtävä: ${exercise.id}`
+  }
+  if (exercise.type === 'sqltrainer-exercise') {
+    description = `SQL Trainer -tehtävä: ${exercise.id}`
+  }
   return (
     <ExerciseSummaryWrapper>
       {index + 1}. {description}

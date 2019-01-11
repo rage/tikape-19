@@ -4,6 +4,14 @@ title: 'Johdanto tietokantoihin'
 hidden: true
 ---
 
+<moodle-exercise name="Moodle is fun">
+  Tee blaa ja blaa
+</moodle-exercise>
+
+<sqltrainer-exercise name="DROP * FROM *;">
+  Tee blaa ja blaa
+</sqltrainer-exercise>
+
 
 <text-box variant='learningObjectives' name='Oppimistavoitteet'>
 
@@ -11,6 +19,7 @@ hidden: true
 - Tunnet termit tietokannanhallintajärjestelmä, relaatiotietokanta, tietokantataulu, pääavain ja viitevain.
 
 </text-box>
+
 
 
 Olemme tietoisesti ja tiedostamattomasti kytköksissä lukemattomiin järjestelmiin. Kotien sähkön- ja vedenkulutusta seurataan elektronisesti, lehti- ja palvelutilaukset tehdään digitaalisiin järjestelmiin, säätiedot tulevat automaattisesti mobiililaitteeseen, suurin osa kommunikaatiosta tapahtuu sähköpostitse tai pikaviestinten kautta, kaupat seuraavat varastosaldojen kehitystä automaattisesti ostosten perusteella, sairaaloilla on sähköiset potilasrekisterit, yritykset tarjoavat räätälöityjä palveluita digitaalisen käyttäytymisen perusteella, ja niin edelleen.
@@ -192,5 +201,3 @@ TODO: kuva, missä tietokannanhallintajärjestelmä sekä sovellus. Tietokannanh
 
 
 ## TODO: quiz, taulukot ja kysytään "mikä on nn:n keskiarvo?" tms.
-
-

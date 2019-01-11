@@ -28,9 +28,11 @@ class ExercisesInThisSection extends React.Component {
   state = {
     sectionPages: null,
     quizIdToTitle: null,
+    render: false,
   }
 
   async componentDidMount() {
+    this.setState({ render: true })
     const value = this.context
     const currentPath = value.current.path
     let sectionPath = currentPath
@@ -60,6 +62,9 @@ class ExercisesInThisSection extends React.Component {
     this.setState({ sectionPages, quizIdToTitle })
   }
   render() {
+    if (!this.state.render) {
+      return <div>Loading</div>
+    }
     return (
       <ExpansionPanel>
         <ExpansionPanelSummary expandIcon={<FontAwesomeIcon icon={icon} />}>

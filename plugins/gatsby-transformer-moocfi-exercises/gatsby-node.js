@@ -3,6 +3,8 @@ const GraphQLList = require('gatsby/graphql').GraphQLList
 const GraphQLObjectType = require('gatsby/graphql').GraphQLObjectType
 
 const quiznatorRegex = /<\s*quiznator\s*id\s*=\s*['"]\s*(\w+)\s*['"]\s*>/gm
+const moodleRegex = /<\s*moodle-exercise\s*name\s*=\s*['"]\s*(.*)\s*['"]\s*>/gm
+const sqlTrainerRegex = /<\s*sqltrainer-exercise\s*name\s*=\s*['"]\s*(.*)\s*['"]\s*>/gm
 const programmingExerciseTagRegex = /<\s*programming-exercise\s+(.*)\s*>/gm
 const programmingExerciseNameRegex = /\bname\s*=\s*(["].*?["]|['].*?['])/gm
 
@@ -62,9 +64,31 @@ exports.setFieldsOnGraphQLNodeType = ({ type }) => {
             return { id, location: res.location, type: 'programming-exercise' }
           })
 
-          return programmingExercises.concat(quizzes).sort(function(a, b) {
-            return a.location - b.location
+          const moodles = getMatches(source, moodleRegex, 1).map(res => {
+            return {
+              id: res.match,
+              location: res.location,
+              type: 'moodle-exercise',
+            }
           })
+
+          const sqlTrainers = getMatches(source, sqlTrainerRegex, 1).map(
+            res => {
+              return {
+                id: res.match,
+                location: res.location,
+                type: 'sqltrainer-exercise',
+              }
+            }
+          )
+
+          return programmingExercises
+            .concat(quizzes)
+            .concat(moodles)
+            .concat(sqlTrainers)
+            .sort(function(a, b) {
+              return a.location - b.location
+            })
         },
       },
     }
