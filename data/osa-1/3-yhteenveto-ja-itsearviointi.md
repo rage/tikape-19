@@ -14,6 +14,27 @@ hidden: true
 
 TODO: itsearviointi - osalle versio missä voi laskea pisteet omasta osaamisesta ja osalle likert?
 
+
+<ab-study id="self_evaluation_k19_tikape">
+
+Top study
+
+<only-for-ab-group group=1>
+  This is only for the group 1
+</only-for-ab-group>
+
+<only-for-ab-group group=2>
+  This is only for the group 2
+</only-for-ab-group>
+
+<only-for-ab-group group=3>
+  This is only for the group 2
+</only-for-ab-group>
+
+</ab-study>
+
+
+
 ```java
 Javakoodi
 ```

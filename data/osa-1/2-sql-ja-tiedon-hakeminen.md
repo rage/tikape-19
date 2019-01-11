@@ -21,9 +21,8 @@ Tällä kurssilla keskitytään Structured Query Language -kieleen. Structured Q
 Vuosien mittaan SQL-kielestä on julkaistu useita versioita, joista viimeisin on vuodelta <a href="https://en.wikipedia.org/wiki/SQL:2016" target="_blank" norel>2016</a>. Tietokannanhallintajärjestelmät ja niiden eri versiot noudattavat SQL-kieltä vaihtelevasti. Yhtä tietokannanhallintajärjestelmää varten luodut kyselyt eivät ole aina suoraan siirrettävissä toiseen tietokannanhallintajärjestelmään. On siis syytä huomioida että tietokannanhallintajärjestelmästä toiseen siirryttäessä joudutaan usein tekemään SQL-kyselyihin (pieniä) muutoksia. Tyypillisimpiä tietotyyppejä, joiden käsittelytapa vaihtelee eri tietokannanhallintajärjestelmien välillä ovat päivämäärät. Vaikka tämä on hyvä tiedostaa, erot järjestelmien välillä ovat onneksi vähentyneet ajan myötä.
 
 
-
-
 <text-box variant='hint' name='SQL-kyselyiden harjoittelu'>
+
 
 Kurssi käyttää SQL-trainer -järjestelmää.
 
@@ -34,12 +33,14 @@ Kurssi käyttää SQL-trainer -järjestelmää.
 
 SQL-kieli on "case insensitive", eli sillä, että onko kysely kirjoitettu isoilla vai pienillä kirjaimilla kei ole kyselyn suorituksen kannalta merkitystä. Voimme kirjoittaa komennon `SELECT` yhtä hyvin muodossa `select` tai `Select` -- sama pätee myös taulujen ja sarakkeiden nimille.
 
+
 Noudatamme tällä kurssilla seuraavaa käytäntöä:
 
 
 - Kaikki SQL-kielen komennot, kuten `SELECT`, `FROM` ja `WHERE`, kirjoitetaan isolla.
 - Taulujen nimet kirjoitetaan isolla alkukirjaimella. Esimerkiksi `Henkilo` ja `Opiskelija`.
 - Taulujen sarakkeet eli attribuutit kirjoitetaan pienellä. Esimerkiksi `nimi` ja `syntymavuosi`.
+- Rivitys niin, että kosher..
 
 
 </text-box>
@@ -51,6 +52,7 @@ TODO: lyhyt kertaus edellisestä
 
 ###  Tiedon hakeminen yhdestä tietokantataulusta
 
+
 Tiedon hakeminen tietokantataulusta onnistuu **SELECT**-lauseella. Avainsanaa `SELECT` seuraa haettavat sarakkeet, avainsana `FROM`, ja tietokantataulun nimi.
 
 
@@ -58,7 +60,9 @@ Tiedon hakeminen tietokantataulusta onnistuu **SELECT**-lauseella. Avainsanaa `S
 SELECT *sarake1*, *sarake2* FROM *TAULUN_NIMI*
 ```
 
+
 Oletetaan, että käytössämme on seuraava tietokantataulu `Henkilo`.
+
 
 | syntymavuosi     | nimi     |
 | --               | ---      |
@@ -70,29 +74,41 @@ Oletetaan, että käytössämme on seuraava tietokantataulu `Henkilo`.
 
 Jokaisen tietokantataulussa olevan henkilön nimen hakeminen ja listaaminen onnistuu kyselyllä `SELECT nimi FROM Henkilo`.
 
+
 ```sql
 SELECT nimi FROM Henkilo
 ```
 
+
 Jos taas haluamme listata jokaisen tietokantatauluun Henkilo tallennetun henkilön nimen lisäksi syntymävuoden, kyselyn sarakkeisiin tulee lisätä (pilkulla erotettuna) haluttavan sarakkeen nimi, eli tässä tapauksessa `syntymavuosi`.
+
 
 ```sql
 SELECT nimi, syntymavuosi FROM Henkilo
 ```
 
+
 SQL-kieli tarjoaa tuen matemattisten operaatioiden tekemiseen. Mikäli syntymävuosi on tallennettu numerona (palaamme tallennusmuotoon kun opimme luomaan tietokantatauluja!), kunkin henkilön iän saa selville erottamalla syntymävuoden nykyvuodesta.
+
 
 ```sql
 SELECT nimi, 2019-syntymavuosi FROM Henkilo
 ```
 
+Kyselyn tuottamassa vastauksessa käytetään oletuksena sarakkeen niminä kyselyssä annettuja sarakkeita. Sarakkeet voi halutessaan nimetä myös uudestaan -- tämä onnistuu sarakkeen nimen jälkeen annettavalla `AS`-operaatiolla. Esimerkiksi edellisen kyselyn tuloksessa sarakkeiden nimiksi tulee `henkilo` ja `ika` mikäli kysely on seuraava.
+
+```sql
+SELECT nimi AS henkilo, 2019-syntymavuosi AS ika FROM Henkilo
+```
+
+
 Sarakkeita ei ole aina pakko määritellä `SELECT`-kyselyssä. Mikäli kyselyssä halutaan listata kaikki sarakkeet, voidaan `SELECT`-komentoa seuraava sarakelistaus korvata tähtimerkillä `*`.
+
 
 ```sql
 SELECT * FROM Henkilo
 ```
 
-# TODO: select bla AS x - eli sarakkeen nimentä uudelleen
 
 # TODO: linkki harjoittelujärjestelmään -- tee nyt BLA BLA tehtävät
 
@@ -163,7 +179,7 @@ Kyselyn tulokset voi järjestää vastaavasti nimen perusteella. Kysely `SELECT 
 | 1997             | Pihla    |
 | 1947             | Raymond  |
 
-Tulosten järjestys voi olla joko oletuksena oleva nouseva (_ascending_ eli `ASC`) tai laskeva (_descending_ eli `DESC`). Mikäli järjestyksen haluaa määritellä, tulee se antaa sarakkeen (tai sarakkeiden) jälkeen. Esimerkiksi henkilöiden hakeminen nimien perusteella laskevaan järjestykseen järjestettynä onnistuisi kyselyllä  `SELECT syntymavuosi, nimi FROM Henkilo ORDER BY nimi`. Tulos olisi tällöin seuraava.
+Tulosten järjestys voi olla joko oletuksena oleva nouseva (_ascending_ eli `ASC`) tai laskeva (_descending_ eli `DESC`). Mikäli järjestyksen haluaa määritellä, tulee se antaa sarakkeen (tai sarakkeiden) jälkeen. Esimerkiksi henkilöiden hakeminen nimien perusteella laskevaan järjestykseen järjestettynä onnistuisi kyselyllä  `SELECT syntymavuosi, nimi FROM Henkilo ORDER BY nimi DESC`. Tulos olisi tällöin seuraava.
 
 
 | syntymavuosi     | nimi     |
@@ -178,15 +194,11 @@ Tulosten järjestys voi olla joko oletuksena oleva nouseva (_ascending_ eli `ASC
 
 
 
-- joinit
-- select * from a join b on a.id = b.a_id
-
-
-
 ##  Tiedon hakeminen kahdesta tai useammasta taulusta
 
 
 Olemme tähän mennessä käsitelleet tiedon hakemista yhdestä tietokantataulusta. Tutustutaan seuraavaksi tiedon hakemiseen useammasta taulusta sekä erityisesti tauluissa olevan tiedon yhdistämisestä.
+
 
 Oletetaan, että käytössämme ovat seuraavat kaksi taulua Opiskelija ja Opintosuoritus, jotka kuvaavat opiskelijaa ja opintosuoritusta. Taulujen sarakkeissa olevat merkinnät `(pk)` ja `(fk)` merkkaavat pääavainta `(pk)` ja viiteavainta `(fk)`. Viiteavaimen tapauksessa on merkitty erikseen myös taulu, jonka pääavaimeen viiteavaimella viitataan.
 
@@ -211,11 +223,45 @@ Oletetaan, että käytössämme ovat seuraavat kaksi taulua Opiskelija ja Opinto
 | 9999997                              | JYM        | 5         |
 | 1000002                              | JYM        | 4         |
 
+
 Taulu Opiskelija sisältää opiskelijoita, joista on tallennettu opiskelijanumero, nimi ja pääaine. Opiskelijanumero on merkitty pääavaimeksi, eli opiskelijanumero on opiskelijakohtainen ja kukin opiskelijanumero saa esiintyä taulussa korkeintaan kerran. Taulu Opintosuoritus taas sisältää opintosuorituksia, joista on tallennettu opintosuorituksen tehneen opiskelijan opiskelijanumero, kurssi, sekä arvosana.
+
 
 Tiedämme, että kaikkien opiskelijoiden tulostaminen onnistuu kyselyllä `SELECT * FROM Opiskelija` ja toisaalta kaikkien opintosuoritusten tulostaminen onnistuu kyselyllä `SELECT * FROM Opintosuoritus`. Entä tietojen yhdistäminen?
 
-Kahden taulun yhdistäminen onnistuu liitoskyselyllä (`JOIN`). Liitoskysely
+Kahden taulun yhdistäminen onnistuu liitoskyselyllä (`JOIN`). Liitoskysely muodostetaan hakemalla ensin yhden taulun tiedon `SELECT * FROM Opiskelija` ja liittämällä siihen toisen taulun tiedot `JOIN Opintosuoritus` pääavaimen ja viiteavaimen perusteella `ON Opiskelija.opiskelijanumero = Opintosuoritus.opiskelijanumero`. Kysely, joka listaa kaikki opiskelijat sekä jokaiseen opiskelijaan liittyvän opintosuorituksen näyttää kokonaisuudessaan seuraavalta.
+
+
+```sql
+SELECT * FROM Opiskelija
+  JOIN Opintosuoritus
+      ON Opiskelija.opiskelijanumero = Opintosuoritus.opiskelijanumero
+```
+
+
+Mikäli useamman taulun yhdistävässä kyselyssä haluaa vain tietyt sarakkeet, sarakkeet tulee nimetä. Esimerkiksi kysely, joka valitsee opiskelijan nimen, kurssin ja arvosanan, tehdään seuraavasti.
+
+
+```sql
+SELECT Opiskelija.nimi, Opintosuoritus.kurssi, Opintosuoritus.arvosana
+  FROM Opiskelija
+  JOIN Opintosuoritus
+      ON Opiskelija.opiskelijanumero = Opintosuoritus.opiskelijanumero
+```
+
+Kyselyn voi kirjoittaa myös ilman taulun nimeä sarakkeissa mikäli pyydettävä sarakkeen nimi ei esiinny useammassa taulussa. Toinen vaihtoehto on antaa taululle erillinen nimi, jota käytetään kyselyssä. Tämä tapahtuu käyttämällä taulun nimen jälkeen `AS`-komentoa, jota seuraa uusi nimi.
+
+
+```sql
+SELECT o.nimi, os.kurssi, os.arvosana
+  FROM Opiskelija AS o
+  JOIN Opintosuoritus AS os
+      ON Opiskelija.opiskelijanumero = Opintosuoritus.opiskelijanumero
+```
+
+
+
+Kyselyyn
 TODO: termi liitoskysely
 Mitä
 
