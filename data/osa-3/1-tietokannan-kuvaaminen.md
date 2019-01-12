@@ -12,6 +12,16 @@ hidden: true
 </text-box>
 
 
+<moodle-exercise name="Moodle is fun">
+  Tee blaa ja blaa
+</moodle-exercise>
+
+<sqltrainer-exercise name="DROP * FROM *;">
+  Tee blaa ja blaa
+</sqltrainer-exercise>
+
+
+
 ## UML-luokkakaavio
 
 

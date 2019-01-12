@@ -1,6 +1,6 @@
 ---
-path: '/osa-1/3-yhteenveto-ja-itsearviointi'
-title: 'Yhteenveto ja itsearviointi'
+path: '/osa-1/4-itsearviointi'
+title: 'Itsearviointi'
 hidden: true
 ---
 
@@ -10,9 +10,7 @@ hidden: true
 
 </text-box>
 
-## header
-
-TODO: itsearviointi - osalle versio missä voi laskea pisteet omasta osaamisesta ja osalle likert?
+Kurssin jokaisen osan jälkeen arvioit omaa tähänastista osaamistasi kurssin aihepiirin parissa.
 
 
 <ab-study id="self_evaluation_k19_tikape">
@@ -20,15 +18,18 @@ TODO: itsearviointi - osalle versio missä voi laskea pisteet omasta osaamisesta
 Top study
 
 <only-for-ab-group group=1>
+  quiznator missä bulletit
   This is only for the group 1
 </only-for-ab-group>
 
 <only-for-ab-group group=2>
+  quiznator missä essee
   This is only for the group 2
 </only-for-ab-group>
 
 <only-for-ab-group group=3>
-  This is only for the group 2
+  quiznator missä bulletit ja essee
+  This is only for the group 3
 </only-for-ab-group>
 
 </ab-study>
