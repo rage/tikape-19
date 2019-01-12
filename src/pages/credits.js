@@ -27,13 +27,17 @@ const Credits = () => (
         Matti Luukkainen.
       </p>
       <p>
-        Materiaalin sisältöön ja sen kehitykseen ovat vaikuttaneet useat henkilöt, mm. Dan Lindholm, Terho Uotila, ja Juha-Pekka Eloranta. Materiaalin aiemman version kontribuoijia löytyy osoitteesta{" "}
+        Materiaalin sisältöön ja sen kehitykseen ovat vaikuttaneet useat
+        henkilöt, mm. Dan Lindholm, Terho Uotila, ja Juha-Pekka Eloranta.
+        Materiaalin aiemman version kontribuoijia löytyy osoitteesta{" "}
         <OutboundLink
           href="https://github.com/materiaalit/tikape-s18/graphs/contributors"
           target="_blank"
           rel="noopener noreferrer"
-        >https://github.com/materiaalit/tikape-s18/graphs/contributors
-        </OutboundLink>.
+        >
+          https://github.com/materiaalit/tikape-s18/graphs/contributors
+        </OutboundLink>
+        .
       </p>
       <p>
         Kurssin materiaali on lisensoitu{" "}
