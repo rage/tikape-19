@@ -484,7 +484,7 @@ Alla oleva kysely listaa tilauksia tehneiden asiakkaiden lisäksi myös ne asiak
 
 ```sql
 SELECT * FROM Asiakas
-  INNER JOIN Tilaus ON Asiakas.id = Tilaus.asiakas_id;
+  LEFT JOIN Tilaus ON Asiakas.id = Tilaus.asiakas_id;
 ```
 
 | id  | nimi   |  asiakas_id  | aika              |
@@ -500,7 +500,7 @@ Tyhjä arvo on `NULL`-arvo, jota voi käyttää myös osana kyselyn ehtoa. Ehto 
 
 ```sql
 SELECT * FROM Asiakas
-  INNER JOIN Tilaus ON Asiakas.id = Tilaus.asiakas_id;
+  LEFT JOIN Tilaus ON Asiakas.id = Tilaus.asiakas_id;
   WHERE Tilaus.asiakas_id IS NULL
 ```
 
