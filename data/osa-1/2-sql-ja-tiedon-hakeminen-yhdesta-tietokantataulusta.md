@@ -218,7 +218,7 @@ Henkilöt, joiden nimi on Joni, saa haettua seuraavalla kyselyllä.
 SELECT * FROM Henkilo WHERE nimi = 'Joni';
 ```
 
-Mikäli halutaan etsiä vaikkapa vain henkilöitä, joiden nimessä esiintyy kirjain 'a', kirjoitetaan kysely `LIKE` operaation avulla. Prosenttimerkillä ilmaistaan, että merkkijono voi sisältää mitä tahasnsa merkkejä. Henkilöt, joiden nimessä esiintyy 'a' saadaan selville seuraavalla kyselyllä.
+Mikäli halutaan etsiä vaikkapa vain henkilöitä, joiden nimessä esiintyy kirjain 'a', kirjoitetaan kysely `LIKE` operaation avulla. Prosenttimerkillä ilmaistaan, että merkkijono voi sisältää mitä tahansa merkkejä. Henkilöt, joiden nimessä esiintyy 'a' saadaan selville seuraavalla kyselyllä.
 
 ```sql
 SELECT * FROM Henkilo WHERE nimi LIKE '%a%';
