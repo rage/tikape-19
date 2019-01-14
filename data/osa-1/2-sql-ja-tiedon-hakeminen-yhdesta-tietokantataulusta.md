@@ -227,7 +227,7 @@ SELECT * FROM Henkilo WHERE nimi LIKE '%a%';
 Prosenttimerkkiä ei tarvitse käyttää haettavan merkin tai merkkijonon kummallakin puolella. Esimerkiksi kaikki henkilöt, joiden nimi päättyy kirjaimeen 'a' saa selville seuraavalla kyselyllä.
 
 ```sql
-SELECT * FROM Henkilo WHERE nimi LIKE 'a%';
+SELECT * FROM Henkilo WHERE nimi LIKE '%a';
 ```
 
 Vastaavasti seuraava kysely hakee kaikki henkilöt, joiden nimi alkaa merkkijonolla 'abc'.
