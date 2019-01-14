@@ -113,16 +113,16 @@ SQL-kieli tarjoaa tuen laskujen tekemiseen. Mikäli syntymävuosi on tallennettu
 Esimerkiksi henkilön syntymävuoden, nimen, ja iän -- vuonna 2019 -- saa selville seuraavalla kyselyllä.
 
 ```sql
-SELECT syntymavuosi, nimi, 2019-syntymavuosi FROM Henkilo;
+SELECT syntymavuosi, nimi, 2019 - syntymavuosi FROM Henkilo;
 ```
 
 
-| syntymavuosi     | nimi     | 2019-syntymavuosi     |
-| --               | ---      | --                    |
-| 1997             | Pihla    | 22                    |
-| 1993             | Joni     | 26                    |
-| 1947             | Raymond  | 72                    |
-| 1923             | Edgar    | 96                    |
+| syntymavuosi     | nimi     | 2019 - syntymavuosi     |
+| --               | ---      | --                      |
+| 1997             | Pihla    | 22                      |
+| 1993             | Joni     | 26                      |
+| 1947             | Raymond  | 72                      |
+| 1923             | Edgar    | 96                      |
 
 
 Kun tarkastelemme yllä olevaa tulosta, huomaamme että sarake `2019-syntymavuosi` on vähän hölmösti nimetty.
@@ -132,7 +132,7 @@ Kyselyn tuottamassa vastauksessa käytetään oletuksena sarakkeen niminä kysel
 
 
 ```sql
-SELECT nimi AS henkilo, 2019-syntymavuosi AS ika FROM Henkilo;
+SELECT nimi AS henkilo, 2019 - syntymavuosi AS ika FROM Henkilo;
 ```
 
 
