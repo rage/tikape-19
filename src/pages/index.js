@@ -47,8 +47,8 @@ const IndexPage = () => (
         </p>
         <p>
           Kurssin sisältö tarkentuu kurssin edetessä. Alla on kuvattuna
-          osakohtainen materiaalin julkaisuaikataulu sekä tehtävien viimeiset
-          palautuspäivämäärät.
+          osakohtainen materiaalin julkaisuaikataulu sekä materiaalissa olevien
+          tehtävien viimeiset palautuspäivämäärät.
         </p>
         <Table>
           <TableHead>
@@ -96,14 +96,42 @@ const IndexPage = () => (
             </TableRow>
           </TableBody>
         </Table>
-
+        <p>
+          Kurssilla on viikoittaisten kurssitehtävien lisäksi kaksi laajempaa
+          projektia. Projektien tehtävänannot julkaistaan Moodle-järjestelmässä,
+          johon ne myös palautetaan. Projektit vertaisarvioidaan.
+        </p>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableCell>Projekti</TableCell>
+              <TableCell>Julkaisu</TableCell>
+              <TableCell>Deadline</TableCell>
+              <TableCell>Vertaisarvioinnin deadline</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            <TableRow>
+              <TableCell>Suunnitteluprojekti</TableCell>
+              <TableCell>28.1.2019</TableCell>
+              <TableCell>11.2.2019</TableCell>
+              <TableCell>18.2.2019</TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>Ohjelmointiprojekti</TableCell>
+              <TableCell>11.2.2019</TableCell>
+              <TableCell>25.2.2019</TableCell>
+              <TableCell>4.3.2019</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
         <p>
           <b>
-            Viikoittaisten tehtävien määräajat ovat aina maanantaisin klo
-            23:55:00. Virallisena määräaikana käytetään aina tehtäviä
-            vastaanottavan palvelimen kelloa, joka on Suomen ajassa. Huomaa,
-            että oman koneesi kello voi olla jäljessä tai edellä, joten älä jätä
-            tehtävien tekemistä ja palauttamista viime hetkeen.
+            Palautusten määräajat ovat aina maanantaisin klo 23:55:00.
+            Virallisena määräaikana käytetään aina tehtäviä vastaanottavan
+            palvelimen kelloa, joka on Suomen ajassa. Huomaa, että oman koneesi
+            kello voi olla jäljessä tai edellä, joten älä jätä tehtävien
+            tekemistä ja palauttamista viime hetkeen.
           </b>
         </p>
       </section>

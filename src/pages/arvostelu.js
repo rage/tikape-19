@@ -36,6 +36,12 @@ const IndexPage = () => (
           Suunnittelu- ja ohjelmointiprojektin tarkempi arvostelu julkaistaan
           projektien julkaisun yhteydessä.
         </p>
+        <p>
+          Yllä oleva arvostelu on kurssin etänä tehtäville versioille.
+          Ryhmämuotoiseen viikoittaiset harjoitusryhmät sisältävään
+          kurssimuotoon ilmoittautuneilla tehtävien painoarvo on 50% pisteistä
+          ja viikoittaisen osallistumisen painoarvo 10% pisteistä.
+        </p>
         <h2>Arvosanan muodostuminen</h2>
         <p>Kurssin arvosana muodostuu seuraavasti.</p>
         <Table>

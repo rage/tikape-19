@@ -1,7 +1,7 @@
 ---
 path: '/osa-1/2-tiedon-hakeminen-tietokannasta'
 title: 'SQL-kieli ja tiedon hakeminen yhdestä tietokantataulusta'
-hidden: true
+hidden: false
 ---
 
 
@@ -23,7 +23,9 @@ Vuosien mittaan SQL-kielestä on julkaistu useita versioita, joista viimeisin on
 
 <text-box variant='hint' name='SQL-kyselyiden harjoittelu'>
 
-Kurssi käyttää SQL-trainer -järjestelmää.
+Kurssi käyttää SQL-trainer -järjestelmää SQL-tehtävien harjoitteluun. Järjestelmä käyttää samoja käyttäjätunnuksia kuin tämä kurssimateriaali.
+
+Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
 
 </text-box>
 
@@ -166,7 +168,9 @@ Yhteisen käytännön ja kyselyiden selkeyden takia noudatamme tällä kurssilla
 
 
 <sqltrainer-exercise name="Tiedon hakeminen yhdestä tietokantataulusta">
-  TODO: linkki harjoittelujärjestelmään -- tee nyt BLA BLA tehtävät
+
+Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+
 </sqltrainer-exercise>
 
 
@@ -290,6 +294,8 @@ Tulosten järjestys voi olla joko nouseva (_ascending_ eli `ASC` -- oletus) tai 
 
 
 <sqltrainer-exercise name="Tulosten rajaaminen ja järjestäminen">
-  TODO: linkki harjoittelujärjestelmään -- tee nyt BLA BLA tehtävät
+
+Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+
 </sqltrainer-exercise>
 

@@ -1,7 +1,7 @@
 ---
 path: '/osa-1/1-johdanto'
 title: 'Johdanto tietokantoihin'
-hidden: true
+hidden: false
 ---
 
 <text-box variant='learningObjectives' name='Oppimistavoitteet'>
@@ -11,6 +11,7 @@ hidden: true
 
 </text-box>
 
+<quiznator id="5c3c44b5ddb6b814af31df5d"></quiznator>
 
 
 Olemme tietoisesti ja tiedostamattomasti kytköksissä lukemattomiin järjestelmiin. Kotien sähkön- ja vedenkulutusta seurataan elektronisesti, lehti- ja palvelutilaukset tehdään digitaalisiin järjestelmiin, säätiedot tulevat automaattisesti mobiililaitteeseen, suurin osa kommunikaatiosta tapahtuu sähköpostitse tai pikaviestinten kautta, kaupat seuraavat varastosaldojen kehitystä automaattisesti ostosten perusteella, sairaaloilla on sähköiset potilasrekisterit, yritykset tarjoavat räätälöityjä palveluita digitaalisen käyttäytymisen perusteella, ja niin edelleen.

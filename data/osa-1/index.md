@@ -8,7 +8,7 @@ hidden: true
 <deadline>21.1.2019</deadline>
 
 
-Tunnet käsitteet tieto, tietokannanhallintajärjestelmä, relaatiotietokanta, tietokanta, tietokantataulu, pääavain ja viiteavain. Tunnet tietokantakyselyiden muodostamiseen käytettävän SQL-kielen toimintaperiaatteet. Osaat hakea SQL-kielen avulla tietoa yhdestä tai useammasta tietokantataulusta ja osaat rajata ja järjestää kyselyiden tuloksia.
+Tässä osassa tutustut tietokantoihin ilmiönä ja niiden rooliin digitalisaatiossa. Osan jälkeen tunnet käsitteet tieto, tietokannanhallintajärjestelmä, relaatiotietokanta, tietokanta, tietokantataulu, pääavain ja viiteavain. Opit tietokantakyselyiden muodostamiseen käytettävän SQL-kielen toimintaperiaatteet, ja opit hakemaan SQL-kielen avulla tietoa yhdestä tai useammasta tietokantataulusta.
 
 
 <please-login></please-login>

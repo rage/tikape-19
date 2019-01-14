@@ -1,41 +1,34 @@
 ---
 path: '/osa-1/4-itsearviointi'
-title: 'Itsearviointi'
-hidden: true
+title: 'Itsearviointi ja kysymyksen keksiminen'
+hidden: false
 ---
 
-<text-box variant='learningObjectives' name='Oppimistavoitteet'>
-
-- oppimistavoitteet
-
-</text-box>
-
-Kurssin jokaisen osan jälkeen arvioit omaa tähänastista osaamistasi kurssin aihepiirin parissa.
-
+Kurssin jokaisen osan jälkeen arvioidaan omaa osaamista sekä keksitään yksi osan materiaaliin liittyvä monivalintakysymys. Osa kurssin osallistujien keksimistä kysymyksistä valitaan osaksi kurssin koetta.
 
 <ab-study id="self_evaluation_k19_tikape">
 
-Top study
-
 <only-for-ab-group group=1>
-  quiznator missä bulletit
-  This is only for the group 1
+
+<quiznator id="5c3c46dbfd9fd71425c5ebc0"></quiznator>
+
 </only-for-ab-group>
 
 <only-for-ab-group group=2>
-  quiznator missä essee
-  This is only for the group 2
+
+<quiznator id="5c3c47db017ffc13eddc6097"></quiznator>
+
 </only-for-ab-group>
 
 <only-for-ab-group group=3>
-  quiznator missä bulletit ja essee
-  This is only for the group 3
+
+<quiznator id="5c3c46dbfd9fd71425c5ebc0"></quiznator>
+
+<quiznator id="5c3c47db017ffc13eddc6097"></quiznator>
+
 </only-for-ab-group>
 
 </ab-study>
 
 
-
-```java
-Javakoodi
-```
+<quiznator id="5c3c48d1c41ed4148d9673dc"></quiznator>

@@ -1,7 +1,7 @@
 ---
 path: '/osa-1/3-tiedon-hakeminen-useammasta-tietokantataulusta'
 title: 'Tiedon hakeminen useammasta tietokantataulusta'
-hidden: true
+hidden: false
 ---
 
 
@@ -137,6 +137,13 @@ SELECT RaakaAine.nimi FROM Annos
   WHERE Annos.nimi = 'The Fortress Stilt Fisherman Indulgence';
   ORDER BY RaakaAine.nimi
 ```
+
+
+<sqltrainer-exercise name="Muutaman taulun yhdistäminen">
+
+Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+
+</sqltrainer-exercise>
 
 ### Asiakkaan syömät raaka-aineet
 
@@ -410,9 +417,10 @@ SELECT DISTINCT Asiakas.nimi AS asiakas
 
 
 <sqltrainer-exercise name="Useamman taulun yhdistäminen">
-  TODO: linkki harjoittelujärjestelmään -- tee nyt BLA BLA tehtävät
-</sqltrainer-exercise>
 
+Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+
+</sqltrainer-exercise>
 
 
 ## Muita liitoskyselyitä
@@ -527,7 +535,9 @@ Kyselyn JOIN-tyypin voi muotoilla usealla eri tavalla:
 
 
 <sqltrainer-exercise name="Muita liitostyyppejä">
-  TODO: linkki harjoittelujärjestelmään -- tee nyt BLA BLA tehtävät
+
+Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+
 </sqltrainer-exercise>
 
 
