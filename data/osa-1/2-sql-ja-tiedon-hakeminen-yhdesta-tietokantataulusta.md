@@ -25,7 +25,7 @@ Vuosien mittaan SQL-kielestä on julkaistu useita versioita, joista viimeisin on
 
 Kurssi käyttää SQL-trainer -järjestelmää SQL-tehtävien harjoitteluun. Järjestelmä käyttää samoja käyttäjätunnuksia kuin tämä kurssimateriaali.
 
-Pääset järjestelmään osoitteessa <a href"https://sql-t.herokuapp.com" target="_blank">http://sql-t.herokuapp.com</a>
+Pääset järjestelmään osoitteessa <a href="https://sql-t.herokuapp.com" target="_blank">https://sql-t.herokuapp.com</a>
 
 Järjestelmää kehitetään kurssin edetessä. Mikäli jokin ei toimi, kysythän ongelmasta kurssin tukiväylien kautta.
 
@@ -138,12 +138,12 @@ SELECT nimi AS henkilo, 2019 - syntymavuosi AS ika FROM Henkilo;
 ```
 
 
-| syntymavuosi     | nimi     | ika                   |
-| --               | ---      | --                    |
-| 1997             | Pihla    | 22                    |
-| 1993             | Joni     | 26                    |
-| 1947             | Raymond  | 72                    |
-| 1923             | Edgar    | 96                    |
+| henkilo     | ika                   |
+| ---         | --                    |
+| Pihla       | 22                    |
+| Joni        | 26                    |
+| Raymond     | 72                    |
+| Edgar       | 96                    |
 
 
 Sarakkeita ei ole aina pakko määritellä `SELECT`-kyselyssä. Mikäli kyselyssä halutaan listata kaikki sarakkeet, voidaan `SELECT`-komentoa seuraava sarakelistaus korvata tähtimerkillä `*`.
