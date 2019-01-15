@@ -19,8 +19,8 @@ const IndexPage = () => (
       </p>
       <p>
         Pääset kanavalle tästä linkistä:{" "}
-        <OutboundLink href="https://t.me/tkt-tikape">
-          https://t.me/tkt-tikape
+        <OutboundLink href="https://t.me/tkt_tikape">
+          https://t.me/tkt_tikape
         </OutboundLink>
         . Pääset Telegrammin selaimessa toimivaan versioon täältä:{" "}
         <OutboundLink href="https://web.telegram.org/">
@@ -53,7 +53,6 @@ const IndexPage = () => (
         "<code>Send</code>". Tämän jälkeen saat linkin koodiisi, jonka voit
         jakaa keskustelukanavalla apupyynnön yhteydessä.
       </p>
-      */}
     </Container>
   </Layout>
 )
