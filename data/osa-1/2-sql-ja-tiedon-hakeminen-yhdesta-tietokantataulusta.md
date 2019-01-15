@@ -25,7 +25,9 @@ Vuosien mittaan SQL-kielestä on julkaistu useita versioita, joista viimeisin on
 
 Kurssi käyttää SQL-trainer -järjestelmää SQL-tehtävien harjoitteluun. Järjestelmä käyttää samoja käyttäjätunnuksia kuin tämä kurssimateriaali.
 
-Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+Pääset järjestelmään osoitteessa <a href"https://sql-t.herokuapp.com" target="_blank">http://sql-t.herokuapp.com</a>
+
+Järjestelmää kehitetään kurssin edetessä. Mikäli jokin ei toimi, kysythän ongelmasta kurssin tukiväylien kautta.
 
 </text-box>
 
@@ -169,7 +171,7 @@ Yhteisen käytännön ja kyselyiden selkeyden takia noudatamme tällä kurssilla
 
 <sqltrainer-exercise name="Tiedon hakeminen yhdestä tietokantataulusta">
 
-Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+Tee SQL-harjoittelujärjestelmän aiheesta "Simple select statements" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
 
 </sqltrainer-exercise>
 
@@ -295,7 +297,7 @@ Tulosten järjestys voi olla joko nouseva (_ascending_ eli `ASC` -- oletus) tai 
 
 <sqltrainer-exercise name="Tulosten rajaaminen ja järjestäminen">
 
-Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+Tee SQL-harjoittelujärjestelmän aiheesta "Filtering and ordering" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
 
 </sqltrainer-exercise>
 

@@ -141,9 +141,10 @@ SELECT RaakaAine.nimi FROM Annos
 
 <sqltrainer-exercise name="Muutaman taulun yhdistäminen">
 
-Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+Tee SQL-harjoittelujärjestelmän aiheesta "Selecting data from a few tables" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
 
 </sqltrainer-exercise>
+
 
 ### Asiakkaan syömät raaka-aineet
 
@@ -418,7 +419,7 @@ SELECT DISTINCT Asiakas.nimi AS asiakas
 
 <sqltrainer-exercise name="Useamman taulun yhdistäminen">
 
-Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+Tee SQL-harjoittelujärjestelmän aiheesta "Selecting data from more tables" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
 
 </sqltrainer-exercise>
 
@@ -536,7 +537,7 @@ Kyselyn JOIN-tyypin voi muotoilla usealla eri tavalla:
 
 <sqltrainer-exercise name="Muita liitostyyppejä">
 
-Järjestelmä ja tehtävät julkaistaan 15.1. klo 12.
+Nämä tehtävät julkaistaan 16.1.
 
 </sqltrainer-exercise>
 
