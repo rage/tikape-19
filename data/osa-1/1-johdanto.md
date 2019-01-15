@@ -72,7 +72,7 @@ Tiedon tallentamisessa sekä tiedon hakemisessa on muutamia ydinkysymyksiä ja o
 
 * **Suorituskyky**. Miten tiedon hakeminen, tallentaminen ja päivittäminen toteutetaan tehokkaasti? Entä jos tietokannalla on samanaikaisesti satoja tai tuhansia käyttäjiä?
 
-* **Eheys**. Miten säilyttää tiedon eheys, eli miten varmistaa, että tallennettu tietoa noudattaa (joitakin) annettuja sääntöjä? Miten varmistetaan, että tietyllä arvoalueella olevat arvot (esim. syntymävuosi) tallennetaan ja luetaan numerona? Miten kytköksissä olevaa tietoa tulee käsitellä -- jos henkilön äiti poistetaan tietokannasta, tuleeko myös henkilö poistaa? Miten varmistaa, että käyttäjä ei saa koskaan "vaillinaista" tietoa (esim. tiedon hakeminen kesken tiedon poistamisen)?
+* **Eheys**. Miten säilyttää tiedon eheys, eli miten varmistaa, että tallennettu tieto noudattaa (joitakin) annettuja sääntöjä? Miten varmistetaan, että tietyllä arvoalueella olevat arvot (esim. syntymävuosi) tallennetaan ja luetaan numerona? Miten kytköksissä olevaa tietoa tulee käsitellä -- jos henkilön äiti poistetaan tietokannasta, tuleeko myös henkilö poistaa? Miten varmistaa, että käyttäjä ei saa koskaan "vaillinaista" tietoa (esim. tiedon hakeminen kesken tiedon poistamisen)?
 
 * **Pysyvyys**. Miten tiedon tallentaminen toteutetaan siten, että järjestelmän toimintavirheet (esim. sähkökatkos) eivät johda tiedon katoamiseen?
 
@@ -98,7 +98,7 @@ Yksittäinen sovellus voi myös käyttää useampaa tietokantaa, jotka sijaitsev
 <figure>
   <img src="../img/kayttaja-ja-tietokannanhallintajarjestelma.png" alt="Ihminen &lt;-&gt; Tietokannanhallintajärjestelmä" />
   &nbsp;
-  <figcaption>Käyttäjät ja sovellukset käyttävät tietokannanhallintajärjestelmää (THKJ), jonka vastuulla on tiedon hakemiseen ja ylläpitoon liittyvien operaatioiden toteutus sekä mm. käyttäjien hallinta.</figcaption>
+  <figcaption>Käyttäjät ja sovellukset käyttävät tietokannanhallintajärjestelmää (TKHJ), jonka vastuulla on tiedon hakemiseen ja ylläpitoon liittyvien operaatioiden toteutus sekä mm. käyttäjien hallinta.</figcaption>
 </figure>
 
 
@@ -202,7 +202,7 @@ Esimerkiksi henkilörelaatio voi sisältää tietojoukkoina etunimet ja sukunime
 Relaatiomalliin liittyy vahvasti tiedon normalisointi -- johon tutustumme tämän kurssin neljännessä osassa -- sekä mahdollisuus liittää tauluja yhteen joukko-operaatioiden avulla. Tätä harjoittelemme jo ensimmäisessä osassa.
 
 
-Ennen relaatiomallia tietokantoja ja tietoa kuvattiin muunmuassa <a href="https://en.wikipedia.org/wiki/Hierarchical_database_model" target="_blank">hierarkisen mallin</a> ja <a href="https://en.wikipedia.org/wiki/Network_model" target="_blank">verkkomallin</a> avulla. Molempia käytetään yhä, mutta relaatiomalliin perustuvat tietokannat ovat edellä mainittuja malleja suositumpia. Vaikka relaatiomalliin perustuvat mallit ovat hyvin suosittuja, nykyään myös mm. dokumenttitietokantojen käyttö osana ohjelmistoja on kasvanut. Tutustumme kurssin seitsemännessä osassa muihin tietokannanhallintajärjestelmiin.
+Ennen relaatiomallia tietokantoja ja tietoa kuvattiin muun muassa <a href="https://en.wikipedia.org/wiki/Hierarchical_database_model" target="_blank">hierarkisen mallin</a> ja <a href="https://en.wikipedia.org/wiki/Network_model" target="_blank">verkkomallin</a> avulla. Molempia käytetään yhä, mutta relaatiomalliin perustuvat tietokannat ovat edellä mainittuja malleja suositumpia. Vaikka relaatiomalliin perustuvat mallit ovat hyvin suosittuja, nykyään myös mm. dokumenttitietokantojen käyttö osana ohjelmistoja on kasvanut. Tutustumme kurssin seitsemännessä osassa muihin tietokannanhallintajärjestelmiin.
 
 
 </text-box>
