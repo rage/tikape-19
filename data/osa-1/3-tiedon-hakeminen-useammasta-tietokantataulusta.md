@@ -427,7 +427,7 @@ SELECT Ravintola.nimi AS ravintola
   JOIN Annos ON Annos.ravintola_id = Ravintola.id
   JOIN AnnosRaakaAine ON AnnosRaakaAine.annos_id = Annos.id
   JOIN RaakaAine ON RaakaAine.id = AnnosRaakaAine.raaka_aine_id
-  JOIN TilausAnnos ON TilausAnnos.tilaus_id = Annos.id
+  JOIN TilausAnnos ON TilausAnnos.annos_id = Annos.id
   WHERE Ravintola.nimi = 'Unicafe'
     AND RaakaAine.nimi = 'Valkosipuli';
 ```
