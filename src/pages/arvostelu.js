@@ -33,8 +33,11 @@ const IndexPage = () => (
         </ul>
         <p>
           Täydet pisteet tehtävistä saa tekemällä kaikki kunkin osan tehtävät.
-          Suunnittelu- ja ohjelmointiprojektin tarkempi arvostelu julkaistaan
-          projektien julkaisun yhteydessä.
+          Tehtäviksi lasketaan materiaalissa olevat kyselyt,
+          SQL-harjoittelutehtävät, itsearvioinnit, Moodleen laitettavat tehtävät
+          sekä muut erikseen materiaalissa mainittavat tehtävät. Suunnittelu- ja
+          ohjelmointiprojektin tarkempi arvostelu julkaistaan projektien
+          julkaisun yhteydessä.
         </p>
         <p>
           Yllä oleva arvostelu on kurssin etänä tehtäville versioille.
