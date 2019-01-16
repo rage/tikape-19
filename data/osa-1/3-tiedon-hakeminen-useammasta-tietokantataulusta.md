@@ -63,7 +63,7 @@ Aloitetaan kysely tietokantataulusta Ravintola. Listataan ensin kaikkien ravinto
 
 ```sql
 SELECT Ravintola.nimi AS ravintola
-  FROM Ravintola
+  FROM Ravintola;
 ```
 
 Liitetään tähän seuraavaksi tietokantataulu Annos. Liitos tapahtuu Annos-taulun sisältämän Ravintola-tauluun viittaavan viiteavaimen ravintola\_id ja Ravintola-taulun pääavaimen välillä.
@@ -72,7 +72,7 @@ Liitetään tähän seuraavaksi tietokantataulu Annos. Liitos tapahtuu Annos-tau
 ```sql
 SELECT Ravintola.nimi AS ravintola, Annos.nimi AS annos
   FROM Ravintola
-  JOIN Annos ON Annos.ravintola_id = Ravintola.id
+  JOIN Annos ON Annos.ravintola_id = Ravintola.id;
 ```
 
 Lauseke `JOIN Annos ON Annos.ravintola_id = Ravintola.id` pyytää käytännössä tietokannanhallintajärjestelmää liittämään kyselyn edellisen osan tuloksen osaksi Annos-taulusta haettavaa tietoa. Liitos tapahtuu annetun liitosehdon (`ON Annos.ravintola_id = Ravintola.id`) avulla, eli rivit yhdistetään taulun Annos sarakkeen ravintola\_id ja taulun Ravintola sarakkeen id perusteella.
@@ -84,8 +84,100 @@ Järjestetään lopuksi tulokset ravintolan ja annoksen perusteella.
 SELECT Ravintola.nimi AS ravintola, Annos.nimi AS annos
   FROM Ravintola
   JOIN Annos ON Annos.ravintola_id = Ravintola.id
-  ORDER BY Ravintola.nimi, Annos.nimi
+  ORDER BY Ravintola.nimi, Annos.nimi;
 ```
+
+
+Tarkastellaan yllä kuvattua SQL-kyselä konkreettisesti taulujen esimerkkisisältöjen avulla. Oletetaan, että tietokantataulun Ravintola sisältö on seuraava (sisällöstä puuttuu tarkoituksella sarakkeita).
+
+| id  | nimi                |
+| --  | --                  |
+| 1   | Grillenium Falcon   |
+| 2   | Open Sesame         |
+| 3   | Bean Me Up          |
+
+Oletetaan, että taulun Annos sisältö on seuraava.
+
+| id  | ravintola\_id | nimi                |
+| --  | --            | --                  |
+| 1   | 1             | Chewbacca           |
+| 2   | 1             | Jack to the Future  |
+| 3   | 2             | Open Sesame Salad   |
+| 4   | 2             | Baba Ghannouj       |
+
+Kun suoritamme alla kuvatun kyselyn, joka liittää edellä kuvatut taulut yhteen, saamme tuloksena yhden taulun.
+
+```sql
+SELECT *
+  FROM Ravintola
+  JOIN Annos ON Annos.ravintola_id = Ravintola.id;
+```
+
+Yllä kuvatun kyselyn tuloksena muodostunut taulu sisältää liitettyjen taulujen kaikki sarakkeet sekä ne rivit, jotka on pystytty yhdistämään. Yhdistäminen tapahtuu yllä olevassa kyselyssä taulun Ravintola pääavaimen `id` ja taulun Annos tauluun Ravintola viittaavan viiteavaimen `ravintola\_id` avulla.
+
+Tulos on seuraava.
+
+
+| id  | nimi                | id  | ravintola\_id  | nimi                |
+| --  | --                  | --  | --             | --                  |
+| 1   | Grillenium Falcon   | 1   | 1              | Chewbacca           |
+| 1   | Grillenium Falcon   | 2   | 1              | Jack to the Future  |
+| 2   | Open Sesame         | 3   | 2              | Open Sesame Salad   |
+| 2   | Open Sesame         | 4   | 2              | Baba Ghannouj       |
+
+Sarakkeiden määrittely kyselyyn on helppoa. Alla kyselyn tuloksena muodostuvaan tauluun otetaan vain ravintolan ja annoksen nimi, jonka lisäksi sarakkeet nimetään kuvaavammin.
+
+```sql
+SELECT Ravintola.nimi AS ravintola, Annos.nimi AS annos
+  FROM Ravintola
+  JOIN Annos ON Annos.ravintola_id = Ravintola.id;
+```
+
+Kyselyn tulos on seuraava.
+
+| ravintola           | annos               |
+| --                  | --                  |
+| Grillenium Falcon   | Chewbacca           |
+| Grillenium Falcon   | Jack to the Future  |
+| Open Sesame         | Open Sesame Salad   |
+| Open Sesame         | Baba Ghannouj       |
+
+Voimme halutessamme rajata kyselyn tuloksia. Rajaus tapahtuu edellisestä osasta tutulla `WHERE`-komennolla, jota seuraa rajausehdot. Alla tulokset rajataan vain ravintolaan, jonka nimi on Open Sesame.
+
+```sql
+SELECT Ravintola.nimi AS ravintola, Annos.nimi AS annos
+  FROM Ravintola
+  JOIN Annos ON Annos.ravintola_id = Ravintola.id
+  WHERE Ravintola.nimi = 'Open Sesame';
+```
+
+Kyselyn tulos on seuraava.
+
+| ravintola           | annos               |
+| --                  | --                  |
+| Open Sesame         | Open Sesame Salad   |
+| Open Sesame         | Baba Ghannouj       |
+
+Myös järjestäminen tapahtuu tutulla tavalla. Järjestetään tulokset lopulta annoksen nimen perusteella. Järjestyskomento `ORDER BY` tulee kyselyn loppuun.
+
+```sql
+SELECT Ravintola.nimi AS ravintola, Annos.nimi AS annos
+  FROM Ravintola
+  JOIN Annos ON Annos.ravintola_id = Ravintola.id
+  WHERE Ravintola.nimi = 'Open Sesame'
+  ORDER BY Annos.nimi;
+```
+
+Kyselyn tulos on seuraava.
+
+| ravintola           | annos               |
+| --                  | --                  |
+| Open Sesame         | Baba Ghannouj       |
+| Open Sesame         | Open Sesame Salad   |
+
+
+Seuraavaksi tutustutaan useampia tauluja yhdistäviin kyselyihin. Kyselyiden perusperiaate on sama kuin yllä.
+
 
 ### Annoksen raaka-aineiden selvittäminen
 
@@ -509,8 +601,8 @@ Tyhjä arvo on `NULL`-arvo, jota voi käyttää myös osana kyselyn ehtoa. Ehto 
 
 ```sql
 SELECT * FROM Asiakas
-  LEFT JOIN Tilaus ON Asiakas.id = Tilaus.asiakas_id;
-  WHERE Tilaus.asiakas_id IS NULL
+  LEFT JOIN Tilaus ON Asiakas.id = Tilaus.asiakas_id
+  WHERE Tilaus.asiakas_id IS NULL;
 ```
 
 Kyselyn tulos on seuraava.
