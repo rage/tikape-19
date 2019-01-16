@@ -535,9 +535,17 @@ Kyselyn JOIN-tyypin voi muotoilla usealla eri tavalla:
 - `FULL JOIN` -- palauta kaikki FROM-komentoa seuraavan taulun rivit sekä kaikki FULL JOIN-komentoa seuraavan taulun rivit, ja liitä ne toisiinsa niiltä kohdin, kuin se on ON-liitosehdossa määritellyn ehdon mukaan mahdollista
 
 
+<text-box variant='hint' name='Visuaalinen johdanto JOIN-kyselyihin'>
+
+Verkko on täynnä hyviä aiheeseen liittyviä oppaita. Tutustu osoitteessa <a href="http://sqlhints.com/2014/02/01/joins-in-sql-server/" target="_blank" rel="noopener">http://sqlhints.com/2014/02/01/joins-in-sql-server/</a>
+ olevaan oppaaseen!
+
+</text-box>
+
+
 <sqltrainer-exercise name="Muita liitostyyppejä">
 
-Nämä tehtävät julkaistaan 16.1.
+Tee SQL-harjoittelujärjestelmän aiheesta "Any joins left?" kaksi harjoitustehtävää (nappi "START PRACTICE!").
 
 </sqltrainer-exercise>
 

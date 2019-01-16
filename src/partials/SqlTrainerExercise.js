@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faDatabase as icon } from "@fortawesome/free-solid-svg-icons"
@@ -42,7 +43,17 @@ const SqltrainerExercise = props => {
         <StyledIcon icon={icon} size="1x" />
         SQL Trainer -tehtävä: {props.name}
       </Header>
-      <Body>{props.children}</Body>
+      <Body>
+        {props.children}
+        Löydät harjoittelujärjestelmän osoitteesta{" "}
+        <OutboundLink
+          href="https://sql-t.herokuapp.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://sql-t.herokuapp.com/
+        </OutboundLink>
+      </Body>
     </Wrapper>
   )
 }
