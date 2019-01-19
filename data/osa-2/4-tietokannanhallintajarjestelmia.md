@@ -13,9 +13,9 @@ hidden: true
 
 
 
-<em>
+*
   Valitettavasti SQLite ei tue RIGHT JOIN ja FULL JOIN -tyyppisiä kyselyitä.
-</em>
+*
 
 
 

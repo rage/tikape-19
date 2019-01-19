@@ -12,17 +12,17 @@ hidden: true
 </text-box>
 
 
-<% partial 'partials/material_heading' do %>
+#
   Sekvenssikaaviot
 <% end %>
 
-<p>
-  Sekvenssikaaviot ovat järjestelmien (ja olioiden) vuorovaikutuksen visualisointiin käytettävä menetelmä. Sekvenssikaaviossa järjestelmät kuvataan pystysuorina viivoina ja järjestelmien väliset kutsut vaakasuorina viivoina. Aika kulkee ylhäältä alas. Järjestelmät kuvataan laatikoina sekvenssikaavion ylälaidassa, joista pystysuorat viivat lähtevät. Järjestelmien kutsuihin merkitään oleellinen kuvaustieto, esimerkiksi olioiden yhteydessä metodin nimi tai korkeammalla tasolla järjestelmän toimintaa kuvattavaessa haluttu toiminto. Kutsun palauttama tieto piirretään palaavana katkoviivana.
-</p>
 
-<p>
+  Sekvenssikaaviot ovat järjestelmien (ja olioiden) vuorovaikutuksen visualisointiin käytettävä menetelmä. Sekvenssikaaviossa järjestelmät kuvataan pystysuorina viivoina ja järjestelmien väliset kutsut vaakasuorina viivoina. Aika kulkee ylhäältä alas. Järjestelmät kuvataan laatikoina sekvenssikaavion ylälaidassa, joista pystysuorat viivat lähtevät. Järjestelmien kutsuihin merkitään oleellinen kuvaustieto, esimerkiksi olioiden yhteydessä metodin nimi tai korkeammalla tasolla järjestelmän toimintaa kuvattavaessa haluttu toiminto. Kutsun palauttama tieto piirretään palaavana katkoviivana.
+
+
+
   Alla on kuvattuna tilanne, missä käyttäjä haluaa hakea palvelimelta kaikki opiskelijat (vastaa edellisen luvun lopussa olevan sovellusken tarjoamaa toiminnallisuutta.
-</p>
+
 
 <figure>
   <img src="/img/sekvenssikaavio.png" alt="Selaimen, palvelimen sekä tietokannan välistä kommunikaatiota kuvaava sekvenssikaavio."/>

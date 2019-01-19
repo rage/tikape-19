@@ -14,13 +14,13 @@ hidden: true
 ## TODO: määrittele mitä ovat henkilötiedot (lain mukaan)
 
 
-<% partial 'partials/material_heading' do %>
+#
   GDPR-lainsäädäntö
 <% end %>
 
-<p>
+
   Viimeistään toukokuussa 2018 kaikki Euroopan Unionissa toimivat organisaatiot joutuvat noudattamaan uutta GDPR-lakia, joka ohjeistaa henkilökohtaisten tietojen käsittelyyn liittyvää toimintaa. Alla säädöksen ydinkohdat:
-</p>
+
 
 <ul>
 
@@ -46,6 +46,6 @@ hidden: true
 
 </ul>
 
-<p>
+
   Tietojen käsittelyyn liittyviin oikeuksiin vaikuttaa myös käsittelijän tehtävä. Esimerkiksi Suomen koulutusjärjestelmällä on laillinen vastuu koulutuksen järjestämisestä -- omien koulutustietojen poistaminen ei todennäköisesti onnistu yliopiston rekisteristä, eikä yliopiston erikseen tule pyytää lupaa koulutustietojen tallentamiseen. Vastaavia poikkeuksia löytyy myös esimerkiksi tutkimukseen liittyen -- katso Anna Hännisen (OTM) video tietosuoja-asetuksesta sekä tieteellisestä tutkimuksesta.
-</p>
+

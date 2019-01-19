@@ -14,33 +14,33 @@ hidden: true
 
 
 
-<% partial 'partials/material_heading' do %>
+#
   Johdatus tiedon käsittelyyn Java-ohjelmoijalle
 <% end %>
 
-<p>
+
   Java-ohjelmoijalle tietokantaan tallennetuilla käsitteillä ja niiden yhteyksillä on suorat vertauskuvat. Käsitteet ovat luokkia -- käsitteisiin liittyy ominaisuuksia eli attribuutteja (tai oliomuuttujia) -- ja käsitteiden yhteydet ovat viitteitä luokkien välillä.
-</p>
 
 
-<% partial 'partials/material_sub_heading' do %>
+
+##
   Luokkakaavio Java-luokkina
 <% end %>
 
-<p>
+
   Tarkastellaan seuraavaa Opiskelijaa ja Kurssisuoritusta sekä näiden välistä yhteyttä kuvaavaa luokkakaaviota.
-</p>
+
 
 <figure>
   <img src="/img/opiskelija-ja-kurssisuoritus-luokkakaavio.png" />
   <figcaption>Luokkakaavio, jossa on luokat Opiskelija ja Kurssisuoritus. Opiskelijalla on monta (nollasta äärettömään kurssisuoritusta). Jokaiseen kurssisuoritukseen liittyy yksi opiskelija.</figcaption>
 </figure>
 
-<p>
-  Määritellään ensin luokat Opiskelija ja Kurssisuoritus siten, että niillä ei ole vielä yhteyksiä merkittynä.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Määritellään ensin luokat Opiskelija ja Kurssisuoritus siten, että niillä ei ole vielä yhteyksiä merkittynä.
+
+
+```java
   public class Opiskelija {
       String opiskelijanumero;
       String nimi;
@@ -48,33 +48,33 @@ hidden: true
   }
 <% end %>
 
-<% partial 'partials/code_highlight' do %>
+```java
   public class Kurssisuoritus {
       String kurssi;
   }
 <% end %>
 
-<p>
+
   Lisätään seuraavaksi luokkien välille yhteys. Jokaiseen kurssisuoritukseen liittyy tasan yksi Opiskelija (kurssisuorituksen ja opiskelijan välisessä viivassa opiskelijan päädyssä on numero yksi). Lisätään siis luokkaan Kurssisuriotus viite Opiskelijaan.
-</p>
 
 
-<% partial 'partials/code_highlight' do %>
+
+```java
   public class Kurssisuoritus {
       Opiskelija opiskelija;
       String kurssi;
   }
 <% end %>
 
-<p>
+
   Yllä kuvattu luokka Kurssisuoritus määrittelee Kurssisuorituksen, jolla on kurssin nimi. Kurssisuoritukseen liittyy yksi opiskelija.
-</p>
 
-<p>
+
+
   Lisätään seuraavaksi yhteys opiskelijasta kurssisuoritukseen. Jokaiseen opiskelijaan voi liittyä nollasta äärettömään kurssisuoritusta (kurssisuorituksen ja opiskelijan välisessä viivassa kurssisuorituksen päädyssä on tähti). Lisätään siis luokkaan Opiskelija äärettömän määrän kurssisuorituksia mahdollistava viite eli lista.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+
+```java
 import java.util.List;
 
 public class Opiskelija {
@@ -86,21 +86,21 @@ public class Opiskelija {
 <% end %>
 
 
-<p>
+
   Oleellista luokkakaavioiden ja lähdekoodin välisessä muunnoksessa on se, että luokkien väliset yhteydet eivät näy luokkakaaviossa, mutta luokat sisältävät yhteyksiä kuvaavat oliomuuttujat. Esimerkiksi yllä olevassa lähdekoodissa Kurssisuoritus sisältää tiedon opiskelijasta, mutta luokkakaaviossa opiskelija ei ole kurssisuorituksen oliomuuttuja.
-</p>
+
 
 <% partial 'partials/exercise', locals: { name: 'Luokkakaaviosta luokiksi' } do %>
 
-  <p>
-    <strong>
-      Huom! Päivitä TMC ennen tehtävien tekemisen aloittamista. TMC:n päivitys onnistuu valitsemalla TMC:ssä Help -> Check for Updates.
-    </strong>
-  </p>
 
-  <p>
+    **
+      Huom! Päivitä TMC ennen tehtävien tekemisen aloittamista. TMC:n päivitys onnistuu valitsemalla TMC:ssä Help -> Check for Updates.
+    **
+
+
+
     Alla on kuvattuna erään kirjojen lainausjärjestelmän luokkakaavio. Luo tehtäväpohjaan luokkakaavion esittämät luokat ja lisää luokkiin tarvittavat oliomuuttujat.
-  </p>
+
 
   <figure>
     <img src="/img/kirjastojarjestelma.png" alt="[Kirja|nimi:String;kirjoittaja:String;julkaisuvuosi:Integer]
@@ -114,31 +114,31 @@ public class Opiskelija {
 						 [Nide]1-*[Laina]"/>
   </figure>
 
-  <p>
+
     Kun olet valmis, aja testit ja palauta tehtävä TMC:lle.
-  </p>
+
 
 <% end %>
 
 
 
-<% partial 'partials/material_sub_heading' do %>
+##
   Tiedon tallentaminen ja lataaminen
 <% end %>
 
-<p>
+
   Tiedon tallentaminen pysyväismuistiin tarkoittaa käytännössä tiedon tallentamista kiintolevylle tai vastaavalle medialle. Tietokoneen käyttöjärjestelmä tarjoaa kiintolevyn käsittelylle abstraktion tiedosto -- tiedosto on käytännössä yksi tai useampi rajattu alue, johon tietoa on kirjoitettu. Tiedon tallennusmuoto määräytyy tallennettavan tiedon perusteella ja vaikuttaa sekä tallennusoperaatioiden että lukuoperaatioiden toteuttamiseen. Suoraviivainen tapa tallentaa tietoa on säilöä jokaisen käsitteen (luokan) ilmentymät (oliot) käsitekohtaisiin tiedostoihin, missä rivi kuvaa aina yksittäistä käsitettä.
-</p>
 
-<p>
-  Opiskelija- ja Kurssisuoritusoliot voidaan tallentaa tiedostoihin. Käytetään tiedostoja <code>opiskelija.data</code> ja <code>kurssisuoritus.data</code> -- tässä .data on itse keksimämme pääte.
-</p>
 
-<p>
+
+  Opiskelija- ja Kurssisuoritusoliot voidaan tallentaa tiedostoihin. Käytetään tiedostoja `opiskelija.data` ja `kurssisuoritus.data` -- tässä .data on itse keksimämme pääte.
+
+
+
   Opiskelijalistan tallentaminen tiedostoon onnistuu nyt esimerkiksi seuraavasti.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+
+```java
   // oletetaan, että käytössä on lista opiskelijoita
   // List&lt;Opiskelija&gt; opiskelijat
 
@@ -148,11 +148,11 @@ public class Opiskelija {
   pw.close();
 <% end %>
 
-<p>
-  Vastaavasti opiskelijoiden lataaminen onnistuu seuraavasti.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Vastaavasti opiskelijoiden lataaminen onnistuu seuraavasti.
+
+
+```java
   // oletetaan, että käytössä on tyhjä opiskelijalista
   // List&lt;Opiskelija&gt; opiskelijat
 
@@ -168,11 +168,11 @@ public class Opiskelija {
   });
 <% end %>
 
-<p>
-  Opiskelijan kurssisuoritukset eivät tässä tallennu opiskelijaa kuvaavaan tiedostoon. Koska kurssisuoritus on erillinen -- vaikkakin opiskelijaan liittyvä -- käsite, tallennetaan kurssisuoritukset erilliseen tiedostoon. Miten sitten saamme selville jokaiseen opiskelijaan kuuluvat kurssisuoritukset? Kun tallennamme kurssisuorituksia, tallennamme jokaiseen kurssisuoritukseen tiedon opiskelijasta, johon kurssisuoritus kuuluu. Teemme samalla oletuksen, että opiskelijanumero yksilöi opiskelijan.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Opiskelijan kurssisuoritukset eivät tässä tallennu opiskelijaa kuvaavaan tiedostoon. Koska kurssisuoritus on erillinen -- vaikkakin opiskelijaan liittyvä -- käsite, tallennetaan kurssisuoritukset erilliseen tiedostoon. Miten sitten saamme selville jokaiseen opiskelijaan kuuluvat kurssisuoritukset? Kun tallennamme kurssisuorituksia, tallennamme jokaiseen kurssisuoritukseen tiedon opiskelijasta, johon kurssisuoritus kuuluu. Teemme samalla oletuksen, että opiskelijanumero yksilöi opiskelijan.
+
+
+```java
   // oletetaan, että käytössä on lista kurssisuorituksia
   // List&lt;Kurssisuoritus&gt; kurssisuoritukset
 
@@ -182,37 +182,37 @@ public class Opiskelija {
   pw.close();
 <% end %>
 
-<p>
+
   Entä sitten kurssisuoritusten lataaminen? Kurssisuoritus-olio ei sisällä opiskelijanumeroa merkkijonona, joten kurssisuoritusten lataamisen yhteydessä tulee aiemmin ladatuista opiskelijoista aina etsiä opiskelijanumeroa vastaava olio.
-</p>
+
 
 <% partial 'partials/exercise', locals: { name: 'Kurssisuoritusten lukeminen' } do %>
 
-  <p>
-    Tehtäväpohjassa on ohjelmakoodi opiskelijoiden lukemiseen ja tallentamiseen sekä kurssisuoritusten tallentamiseen. Täydennä tehtäväpohjassa olevan luokan <code>Lukija</code> metodia <code>lueKurssisuoritukset</code> siten, että se lukee kurssisuoritukset sekä kurssisuorituksiin liittyvät opiskelijat. Älä muuta metodin parametrien tyyppejä tai palautettavan arvon tyyppiä.
-  </p>
+
+    Tehtäväpohjassa on ohjelmakoodi opiskelijoiden lukemiseen ja tallentamiseen sekä kurssisuoritusten tallentamiseen. Täydennä tehtäväpohjassa olevan luokan `Lukija` metodia `lueKurssisuoritukset` siten, että se lukee kurssisuoritukset sekä kurssisuorituksiin liittyvät opiskelijat. Älä muuta metodin parametrien tyyppejä tai palautettavan arvon tyyppiä.
+
 
 
 <% end %>
 
 
-<% partial 'partials/material_sub_heading' do %>
+##
   Rajattu tiedon käsittely
 <% end %>
 
-<p>
+
   Edellinen esimerkki on tyypillinen ohjelmoinnin perusteiden ja jatkokurssin tiedon käsittelyesimerkki.
-</p>
 
-<p>
+
+
   Esimerkissä on muutamia haasteita, sillä esimerkiksi pienten tietomäärien hakeminen isoista tiedostoista ei ole kovin tehokasta. Todellisuudessa suurten tietomäärien ohjelmallisessa käsittelyssä hyödynnetään käyttöjärjestelmän tarjoamaa mahdollisuutta tiedoston osien lukemiseen. Ohjelmointikielet kuten Java tarjoavat tähän myös abstraktion -- Javalla luokka <a href="https://docs.oracle.com/javase/8/docs/api/java/io/RandomAccessFile.html" target="_blank" norel">RandomAccessFile</a> tarjoaa lukumahdollisuuden vain osaan tiedoston sisällöistä.
-</p>
 
-<p>
+
+
   Edellä mainitun työvälineen avulla tiedostojen käsittely tapahtuu tavumuodossa. Jos tiedämme, että opiskelijan opiskelijanumeron pituus on 10 merkkiä, ja opiskelijanumero on tiedoston alussa, onnistuu lukeminen seuraavasti.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+
+```java
 // Avataan tiedosto 'opiskelija.data' lukemista varten
 RandomAccessFile tiedosto = new RandomAccessFile("opiskelija.data", "r");
 
@@ -226,11 +226,11 @@ tiedosto.read(opnro);
 String opiskelijanumero = new String(opnro);
 <% end %>
 
-<p>
-  Vastaavasti, opiskelijanumeron vaihtaminen tiedoston tietyssä kohdassa onnistuu seuraavasti.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Vastaavasti, opiskelijanumeron vaihtaminen tiedoston tietyssä kohdassa onnistuu seuraavasti.
+
+
+```java
 // Avataan tiedosto 'opiskelija.data' lukemista ja kirjoittamista varten
 RandomAccessFile tiedosto = new RandomAccessFile("opiskelija.data", "rwd");
 
@@ -247,11 +247,11 @@ tiedosto.write(opiskelijanumero.getBytes());
 <% end %>
 
 
-<p>
-  Mitä hyötyä tästä on? Jos sovimme ennalta, että kunkin tiedostossa olevan kentän -- eli esimerkiksi opiskelijanumeron tai nimen -- pituus on ennalta määrätty, tiedämme ennalta opiskelijaolioiden sijainnit tiedostossa. Oletetaan, että opiskelijanumero on aina 10 merkkiä ja nimi 40 merkkiä. Tällöin uuden opiskelijan tiedot alkavat aina 50 merkin välein. Hyötynä tästä on muunmuassa se, että tällöin tietyn opiskelijan tietojen etsimisessä tiedostosta muistissa tulee olla korkeintaan vain 50 merkkiä -- alla esimerkki opiskelijan nimen etsimisestä tietyn opiskelijanumeron perusteella.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Mitä hyötyä tästä on? Jos sovimme ennalta, että kunkin tiedostossa olevan kentän -- eli esimerkiksi opiskelijanumeron tai nimen -- pituus on ennalta määrätty, tiedämme ennalta opiskelijaolioiden sijainnit tiedostossa. Oletetaan, että opiskelijanumero on aina 10 merkkiä ja nimi 40 merkkiä. Tällöin uuden opiskelijan tiedot alkavat aina 50 merkin välein. Hyötynä tästä on muunmuassa se, että tällöin tietyn opiskelijan tietojen etsimisessä tiedostosta muistissa tulee olla korkeintaan vain 50 merkkiä -- alla esimerkki opiskelijan nimen etsimisestä tietyn opiskelijanumeron perusteella.
+
+
+```java
 // Avataan tiedosto 'opiskelija.data' lukemista ja kirjoittamista varten
 RandomAccessFile tiedosto = new RandomAccessFile("opiskelija.data", "rwd");
 
@@ -286,11 +286,11 @@ for (int indeksi = 0; indeksi &lt; tiedosto.length(); indeksi += 50) {
 }
 <% end %>
 
-<p>
-  Toisaalta, jos haluaisimme pitää kirjaa opiskelijoiden sijainneista, ja hyväksyä ajatus siitä, että opiskelijanumerot ovat jatkuvasti muistissa, voi opiskelijoiden sijainnit tallentaa hajautustaulukkoon.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Toisaalta, jos haluaisimme pitää kirjaa opiskelijoiden sijainneista, ja hyväksyä ajatus siitä, että opiskelijanumerot ovat jatkuvasti muistissa, voi opiskelijoiden sijainnit tallentaa hajautustaulukkoon.
+
+
+```java
 // Avataan tiedosto 'opiskelija.data' lukemista ja kirjoittamista varten
 RandomAccessFile tiedosto = new RandomAccessFile("opiskelija.data", "rwd");
 
@@ -317,9 +317,9 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
 
 <% partial 'partials/exercise', locals: { name: 'Tiedon muokkaaminen' } do %>
 
-  <p>
+
     Alla on kuvattuna erään viestijärjestelmän luokkakaavio. Jokaisella viestillä on sekä vastaanottaja että lähettäjä, jonka lisäksi viestiin kuuluu viestin sisältö. Käyttäjästä tallennetaan järjestelmään käyttäjätunnus, salasana, nimi, osoite ja puhelinnumero.
-  </p>
+
 
 
   <figure>
@@ -328,62 +328,62 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
 					       [Henkilo]2-*[Viesti]"/>
   </figure>
 
-  <p>
+
     Tarkastellaan henkilöiden tallentamista ja lukemista RandomAccessFile-tiedoston avulla.
-  </p>
 
-  <p>
+
+
     Oletetaan, että käyttäjätunnus on korkeintaan 8 merkkiä, salasana korkeintaan 8 merkkiä, nimi korkeintaan 30 merkkiä, osoite korkeintaan 30 merkkiä ja puhelinnumero korkeintaan 15 merkkiä. Tehtäväpohjassa on valmiina henkilöiden lukemis- ja kirjoitustoiminnallisuus.
-  </p>
 
-  <p>
-    Kirjoita toiminnallisuus, joka mahdollistaa henkilöiden tietojen muokkaamisen. Toteuta luokan <code>Tallentaja</code> metodi <code>korvaaHenkilo</code> siten, että metodi korvaa parametrina annetulla käyttäjätunnuksella tunnistettavan henkilön tiedon parametrina saadulla Henkilo-oliolla. Älä muokkaa metodin parametreja tai metodin palautustyyppiä.
-  </p>
 
-  <p>
+
+    Kirjoita toiminnallisuus, joka mahdollistaa henkilöiden tietojen muokkaamisen. Toteuta luokan `Tallentaja` metodi `korvaaHenkilo` siten, että metodi korvaa parametrina annetulla käyttäjätunnuksella tunnistettavan henkilön tiedon parametrina saadulla Henkilo-oliolla. Älä muokkaa metodin parametreja tai metodin palautustyyppiä.
+
+
+
     Voit olettaa, että käyttäjä syöttää aina käyttäjätunnuksen, joka löytyy tiedostosta. Älä muokkaa muiden tiedostoon tallennettujen henkilöiden tietoja.
-  </p>
+
 
 <% end %>
 
 
 
 
-<% partial 'partials/material_heading' do %>
+#
   Tietokannan käsittely ohjelmallisesti
 <% end %>
 
-<p>
-  Lähes jokainen ohjelmointikieli tarjoaa jonkinlaisen rajapinnan tietokantakyselyiden tekemiseen. Nämä rajapinnat suoraviivaistavat kyselyiden tekemistä tietokantoihin ja tietokannanhallintajärjestelmien käyttöönoottoa, sillä rajapintaa noudattamalla yhteydenotto tietokannantallintajärjestelmään on lähes samankaltaista käytetystä tietokannanhallintajärjestelmästä riippumatta.
-</p>
 
-<p>
+  Lähes jokainen ohjelmointikieli tarjoaa jonkinlaisen rajapinnan tietokantakyselyiden tekemiseen. Nämä rajapinnat suoraviivaistavat kyselyiden tekemistä tietokantoihin ja tietokannanhallintajärjestelmien käyttöönoottoa, sillä rajapintaa noudattamalla yhteydenotto tietokannantallintajärjestelmään on lähes samankaltaista käytetystä tietokannanhallintajärjestelmästä riippumatta.
+
+
+
   Java-kielessä tähän tehtävään on <a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity" target="_blank" nodel>Java Database Connectivity</a> (JDBC) -rajapinta. JDBC tarjoaa tuen tietokantayhteyden luomiseen sekä kyselyiden suorittamiseen tietokantayhteyden yli. Jotta JDBCn avulla voidaan ottaa yhteys tietokantaan, tulee käytössä olla tietokannanhallintajärjestelmäkohtainen ajuri, jonka vastuulla on tietokantayhteyden luomiseen liittyvät yksityiskohdat sekä tietokannanhallintajärjestelmän sisäisten kyselytulosten muuntaminen JDBC-rajapinnan mukaiseen muotoon.
-</p>
+
 
 
 <% partial 'partials/hint', locals: { name: 'JDBC-ajurin noutaminen' } do %>
 
-  <p>
-    JDBC-ajurit ovat käytännössä Java-kielellä kirjoitettuja ohjelmia, joita tietokannanhallintajärjestelmän toteuttajat tarjoavat ohjelmoijien käyttöön. Kurssin toisessa osassa ajurit on lisätty valmiiksi tehtäväpohjien <code>lib</code>-kansioon, jonka lisäksi niiden käyttö on valmiiksi määritelty tehtäväpohjissa.
-  </p>
 
-  <p>
+    JDBC-ajurit ovat käytännössä Java-kielellä kirjoitettuja ohjelmia, joita tietokannanhallintajärjestelmän toteuttajat tarjoavat ohjelmoijien käyttöön. Kurssin toisessa osassa ajurit on lisätty valmiiksi tehtäväpohjien `lib`-kansioon, jonka lisäksi niiden käyttö on valmiiksi määritelty tehtäväpohjissa.
+
+
+
     Myöhemmissä osissa tutustumme kirjastojen käyttöönottoon ja hakemiseen <a href="https://maven.apache.org/" target="_blank" norel">Maven</a>-apuvälineen avulla.
-  </p>
+
 
 <% end %>
 
 
 
-<% partial 'partials/material_sub_heading' do %>
+##
   Ohjelmallinen tietokantakysely kokonaisuudessaan
 <% end %>
 
 
-<p>
+
   Oletetaan, että käytössämme on seuraava tietokantataulu Opiskelija:
-</p>
+
 
 <table class="table">
   <thead>
@@ -417,12 +417,12 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
 </table>
 
 
-<p>
+
   JDBCn avulla kyselyn tekeminen tietokantatauluun tapahtuu seuraavasti -- olettaen, että käytössämme on sekä tietokanta, että tietokannan ajuri.
-</p>
 
 
-<% partial 'partials/code_highlight' do %>
+
+```java
   import java.sql.Connection;
   import java.sql.DriverManager;
   import java.sql.ResultSet;
@@ -462,9 +462,9 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
   }
 <% end %>
 
-<p>
+
   Ohjelman suoritus tuottaa (esimerkiksi) seuraavanlaisen tulostuksen:
-</p>
+
 
 <% partial 'partials/sample_output' do %>
   999999	Pihla	1997	Tietojenkäsittelytiede
@@ -475,23 +475,23 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
 <% end %>
 
 
-<% partial 'partials/material_sub_heading' do %>
+##
   Ohjelman rakentaminen osissa
 <% end %>
 
-<p>
-  <em>Tässä oletetaan, että projektiin on lisätty tarvittava JDBC-ajuri.</em>
-</p>
 
-<p>
-  Avaa projektiin liittyvä <em>Source Packages</em> ja valitse (tai tarvittaessa luo) sopiva pakkaus. Oletetaan tässä, että käytössä on pakkaus <code>tikape</code>. Valitse tämän jälkeen <em>New</em> -> <em>Java Class</em>, jonka jälkeen avautuu valikko, missä voit antaa luokalle nimen. Anna luokan nimeksi <code>Main</code>.
-</p>
+  *Tässä oletetaan, että projektiin on lisätty tarvittava JDBC-ajuri.*
 
-<p>
+
+
+  Avaa projektiin liittyvä *Source Packages* ja valitse (tai tarvittaessa luo) sopiva pakkaus. Oletetaan tässä, että käytössä on pakkaus `tikape`. Valitse tämän jälkeen *New* -> *Java Class*, jonka jälkeen avautuu valikko, missä voit antaa luokalle nimen. Anna luokan nimeksi `Main`.
+
+
+
   Avaa tiedosto tuplaklikkaamalla sitä. Muokkaa tiedostoa vielä siten, että se on seuraavan näköinen:
-</p>
 
-<% partial 'partials/code_highlight' do %>
+
+```java
   package tikape;
 
   public class Main {
@@ -504,15 +504,15 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
 
 
 
-<% partial 'partials/material_sub_sub_heading' do %>
+###
   Tietokantayhteyden luominen
 <% end %>
 
-<p>
-  Lisää projektiin komento <code>import java.sql.*;</code>, joka hakee kaikki SQL-kyselyihin liittyvät Javan kirjastot.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Lisää projektiin komento `import java.sql.*;`, joka hakee kaikki SQL-kyselyihin liittyvät Javan kirjastot.
+
+
+```java
   package tikape;
 
   import java.sql.*;
@@ -525,11 +525,11 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
   }
 <% end %>
 
-<p>
-  Avataan seuraavaksi tietokantayhteys tietokantatiedostoon nimeltä <em>testi.db</em> ja tehdään kysely "SELECT 1", jolla pyydetään tietokantaa palauttamaan luku 1 -- käytämme tätä yhteyden testaamiseksi. Jos yhteyden luominen onnistuu, tulostetaan "Hei tietokantamaailma!", muulloin "Yhteyden muodostaminen epäonnistui".
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Avataan seuraavaksi tietokantayhteys tietokantatiedostoon nimeltä *testi.db* ja tehdään kysely "SELECT 1", jolla pyydetään tietokantaa palauttamaan luku 1 -- käytämme tätä yhteyden testaamiseksi. Jos yhteyden luominen onnistuu, tulostetaan "Hei tietokantamaailma!", muulloin "Yhteyden muodostaminen epäonnistui".
+
+
+```java
   package tikape;
 
   import java.sql.*;
@@ -556,31 +556,31 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
   Hei tietokantamaailma!
 <% end %>
 
-<p>
-  Kun suoritamme ohjelman ensimmäistä kertaa valitsemalla <em>Run</em> -> <em>Run Project</em>, puuttuvan tietokannan paikalle luodaan tietokanta (ainakin SQLiteä käyttäessä). Projektin kansiossa on nyt tiedosto <code>testi.db</code>, joka on tietokantamme.
-</p>
+
+  Kun suoritamme ohjelman ensimmäistä kertaa valitsemalla *Run* -> *Run Project*, puuttuvan tietokannan paikalle luodaan tietokanta (ainakin SQLiteä käyttäessä). Projektin kansiossa on nyt tiedosto `testi.db`, joka on tietokantamme.
+
 
 
 <figure>
   <img src="/img/viikko3/nb-testidb.png" alt="Kun ohjelma on suoritettu ensimmäistä kertaa, tiedosto testi.db luodaan projektiin."/>
-  <figcaption>Tietokantatiedosto <em>testi.db</em> löytyy projektin kansiosta. Tiedostot löytyvät <em>Files</em>-välilehdeltä.</figcaption>
+  <figcaption>Tietokantatiedosto *testi.db* löytyy projektin kansiosta. Tiedostot löytyvät *Files*-välilehdeltä.</figcaption>
 </figure>
 
 
 
-<% partial 'partials/material_sub_sub_heading' do %>
+###
   Tietokantakyselyiden tekeminen
 <% end %>
 
-<p>
+
   Osoitteessa <a href="https://materiaalit.github.io/tikape-k18/dbs/vuokraamo.db">vuokraamo.db</a> löytyy kuvitteellisen moottoripyörävuokraamon tietokanta. Lataa se edellä tehdyn projektin juureen ja kokeile kyselyn tekemistä kyseiseen tietokantaan.
-</p>
 
-<p>
-  Tietokannassa on tietokantataulu <code>Pyora</code>, jolla on sarakkeet <code>rekisterinumero</code> ja <code>merkki</code>. Jokaisen pyörän rekisterinumeron ja merkin tulostaminen tapahtuu seuraavasti -- huomaa myös, että olemme vaihtaneet käytössä olevaa tietokantaa.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+
+  Tietokannassa on tietokantataulu `Pyora`, jolla on sarakkeet `rekisterinumero` ja `merkki`. Jokaisen pyörän rekisterinumeron ja merkin tulostaminen tapahtuu seuraavasti -- huomaa myös, että olemme vaihtaneet käytössä olevaa tietokantaa.
+
+
+```java
   Connection connection = DriverManager.getConnection("jdbc:sqlite:vuokraamo.db");
 
   PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Pyora");
@@ -599,33 +599,33 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
   connection.close();
 <% end %>
 
-<p>
+
   Käydään ylläoleva ohjelmakoodi läpi askeleittain.
-</p>
+
 
 <ol>
   <li>
-    <p>Luomme ensin JDBC-yhteyden tietokantaan <em>vuokraamo.db</em>.
-      <% partial 'partials/code_highlight' do %>
+    Luomme ensin JDBC-yhteyden tietokantaan *vuokraamo.db*.
+      ```java
 Connection connection = DriverManager.getConnection("jdbc:sqlite:vuokraamo.db");
       <% end %>
-    </p>
+
   </li>
 
   <li>
-    <p>Kysely luodaan antamalla yhteydelle merkkijono, jossa on kysely. Yhteys palauttaa <em>PreparedStatement</em>-olion, jota käytetään kyselyn suorittamiseen ja tulosten pyytämiseen. Metodi <em>executeQuery</em> suorittaa SQL-kyselyn ja palauttaa tulokset sisältävän <em>ResultSet</em>-olion.
+    Kysely luodaan antamalla yhteydelle merkkijono, jossa on kysely. Yhteys palauttaa *PreparedStatement*-olion, jota käytetään kyselyn suorittamiseen ja tulosten pyytämiseen. Metodi *executeQuery* suorittaa SQL-kyselyn ja palauttaa tulokset sisältävän *ResultSet*-olion.
 
-      <% partial 'partials/code_highlight' do %>
+      ```java
 PreparedStatement statement = connection.prepareStatement("SELECT * FROM Pyora");
 ResultSet resultSet = statement.executeQuery();
       <% end %>
-    </p>
+
   </li>
 
   <li>
-    <p>Tämän jälkeen ResultSet-oliossa olevat tulokset käydään läpi. Metodia next() kutsumalla siirrytään kyselyn palauttamissa tulosriveissä eteenpäin. Kultakin riviltä voi kysyä sarakeotsikon perusteella solun arvoa. Esimerkiksi kutsu getString("rekisterinumero") palauttaa kyseisellä rivillä olevan sarakkeen "rekisterinumero" arvon String-tyyppisenä.
+    Tämän jälkeen ResultSet-oliossa olevat tulokset käydään läpi. Metodia next() kutsumalla siirrytään kyselyn palauttamissa tulosriveissä eteenpäin. Kultakin riviltä voi kysyä sarakeotsikon perusteella solun arvoa. Esimerkiksi kutsu getString("rekisterinumero") palauttaa kyseisellä rivillä olevan sarakkeen "rekisterinumero" arvon String-tyyppisenä.
 
-      <% partial 'partials/code_highlight' do %>
+      ```java
 while(resultSet.next()) {
     String rekisterinumero = rs.getString("rekisterinumero");
     String merkki = rs.getString("merkki");
@@ -633,41 +633,41 @@ while(resultSet.next()) {
     System.out.println(rekisterinumero + " " + merkki);
 }
       <% end %>
-    </p>
+
   </li>
 
   <li>
-    <p>Kun kyselyn vastauksena saadut rivit on käyty läpi, eikä niitä enää tarvita, vapautetaan niihin liittyvät resurssit.
+    Kun kyselyn vastauksena saadut rivit on käyty läpi, eikä niitä enää tarvita, vapautetaan niihin liittyvät resurssit.
 
-      <% partial 'partials/code_highlight' do %>
+      ```java
 stmt.close();
 rs.close();
       <% end %>
-    </p>
+
   </li>
 
 
   <li>
-    <p>Lopulta tietokantayhteys suljetaan.
+    Lopulta tietokantayhteys suljetaan.
 
-      <% partial 'partials/code_highlight' do %>
+      ```java
 connection.close();
       <% end %>
-    </p>
+
   </li>
 </ol>
 
 
 
-<% partial 'partials/material_sub_sub_heading' do %>
+###
   Parametrien lisääminen kyselyyn
 <% end %>
 
-<p>
-  Kyselyihin halutaan usein antaa rajausehtoja. Ohjelmallisesti tämä tapahtuu lisäämällä kyselyä muodostaessa rajausehtoihin kohtia, joihin asetetaan arvot. Alla olevassa esimerkissä kyselyyn lisätään merkkijono.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Kyselyihin halutaan usein antaa rajausehtoja. Ohjelmallisesti tämä tapahtuu lisäämällä kyselyä muodostaessa rajausehtoihin kohtia, joihin asetetaan arvot. Alla olevassa esimerkissä kyselyyn lisätään merkkijono.
+
+
+```java
   PreparedStatement statement =
       connection.prepareStatement("SELECT * FROM Pyora WHERE merkki = ?");
   statement.setString(1, "Royal Enfield");
@@ -675,11 +675,11 @@ connection.close();
   ResultSet resultSet = statement.executeQuery();
 <% end %>
 
-<p>
-  Kyselyiden paikat indeksoidaan kohdasta 1 alkaen. Alla olevassa esimerkissä haetaan Henkilo-taulusta henkilöitä, joiden syntymävuosi on 1952.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Kyselyiden paikat indeksoidaan kohdasta 1 alkaen. Alla olevassa esimerkissä haetaan Henkilo-taulusta henkilöitä, joiden syntymävuosi on 1952.
+
+
+```java
   PreparedStatement statement =
       connection.prepareStatement("SELECT * FROM Henkilo WHERE syntymavuosi  = ?");
   statement.setInt(1, 1952);
@@ -687,12 +687,12 @@ connection.close();
   ResultSet resultSet = statement.executeQuery();
 <% end %>
 
-<p>
+
   Ohjelma voi toimia myös siten, että rajausehdot kysytään ohjelman käyttäjältä.
-</p>
 
 
-<% partial 'partials/code_highlight' do %>
+
+```java
   Scanner lukija = new Scanner(System.in);
   System.out.println("Minkä vuoden opiskelijat tulostetaan?");
   int vuosi = Integer.parseInt(lukija.nextLine());
@@ -711,22 +711,22 @@ connection.close();
 
 <% partial 'partials/hint', locals: { name: 'PreparedStatement ja setterit' } do %>
 
-  <p>
+
     Kun kyselyt luodaan tietokantayhteyteen liittyvän olion prepareStatement oliolla, kyselyihin merkitään kysymysmerkeillä ne kohdat, joihin käyttäjän syöttämiä arvoja voidaan lisätä. Kun ns. setterimetodilla -- esim setInt -- asetetaan parametrin arvo kyselyyn, Java tarkastaa (1) että arvo on varmasti halutun kaltainen ja (2) että arvossa ei ole esimerkiksi hipsuja, jolloin parametrina annetulla arvolla voisi vaikuttaa kyselyyn.
-  </p>
+
 
 <% end %>
 
 
-<% partial 'partials/material_sub_sub_heading' do %>
+###
   Päivityskyselyiden tekeminen
 <% end %>
 
-<p>
-  Myös päivityskyselyiden kuten rivien lisäämisten ja rivien poistamisten tekeminen onnistuu ohjelmallisesti. Tällöin tuloksessa ei ole erillistä ResultSet-oliota, vaan luku, joka kertoo muuttuneiden rivien määrän. Allaoleva ohjelmakoodi lisää pyöriä sisältävään tietokantaan uuden pyörän.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Myös päivityskyselyiden kuten rivien lisäämisten ja rivien poistamisten tekeminen onnistuu ohjelmallisesti. Tällöin tuloksessa ei ole erillistä ResultSet-oliota, vaan luku, joka kertoo muuttuneiden rivien määrän. Allaoleva ohjelmakoodi lisää pyöriä sisältävään tietokantaan uuden pyörän.
+
+
+```java
   Connection connection = DriverManager.getConnection("jdbc:sqlite:vuokraamo.db");
 
   PreparedStatement stmt =
@@ -744,16 +744,16 @@ connection.close();
 
 
 
-<% partial 'partials/material_sub_heading' do %>
+##
   Oliot ja tietokantataulut
 <% end %>
 
-<p>
+
   Käsittelimme äskettäin tietokantakyselyiden tekemistä ohjelmallisesti. Tietokantakyselyiden tekeminen koostuu oleellisesti muutamasta osasta: (1) yhteyden muodostaminen tietokantaan, (2) kyselyn muodostaminen, (3) kyselyn suorittaminen, (4) vastausten läpikäynti, ja (5) resurssien vapauttaminen sekä yhteyden sulkeminen. Edellisessä osassa käsiteltiin Pyora-taulun sisältävää tietokantaa seuraavasti.
-</p>
 
 
-<% partial 'partials/code_highlight' do %>
+
+```java
   Connection connection = DriverManager.getConnection("jdbc:sqlite:vuokraamo.db");
 
   PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Pyora");
@@ -773,11 +773,11 @@ connection.close();
 <% end %>
 
 
-<p>
-  Ohjelmoijan näkökulmasta on paljon mielekkäämpää jos tietoa pystyy käsittelemään olioiden avulla. Oletetaan, että käytössämme on luokka Asiakas sekä tietokantataulu Asiakas. Tietokantataulu on luotu seuraavalla CREATE TABLE -lauseella.
-</p>
 
-<% partial 'partials/sql_highlight' do %>
+  Ohjelmoijan näkökulmasta on paljon mielekkäämpää jos tietoa pystyy käsittelemään olioiden avulla. Oletetaan, että käytössämme on luokka Asiakas sekä tietokantataulu Asiakas. Tietokantataulu on luotu seuraavalla CREATE TABLE -lauseella.
+
+
+```sql
   CREATE TABLE Asiakas (
       id integer PRIMARY KEY,
       nimi varchar(200),
@@ -788,11 +788,11 @@ connection.close();
   );
 <% end %>
 
-<p>
-  Alla on taulua vastaava luokka.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Alla on taulua vastaava luokka.
+
+
+```java
   public class Asiakas {
       Integer id;
       String nimi;
@@ -816,12 +816,12 @@ connection.close();
   }
 <% end %>
 
-<p>
-  Hakiessamme tietoa tietokantataulusta Asiakas voimme muuntaa kyselyn tulokset Asiakas-olioiksi.
-</p>
 
-<% partial 'partials/code_highlight' do %>
-  Connection connection = DriverManager.getConnection("jdbc:sqlite:<em>tietokanta.db</em>");
+  Hakiessamme tietoa tietokantataulusta Asiakas voimme muuntaa kyselyn tulokset Asiakas-olioiksi.
+
+
+```java
+  Connection connection = DriverManager.getConnection("jdbc:sqlite:*tietokanta.db*");
 
   PreparedStatement stmt = connection.prepareStatement("SELECT * FROM Asiakas");
   ResultSet rs = stmt.executeQuery();
@@ -844,12 +844,12 @@ connection.close();
   // nyt asiakkaat listassa
 <% end %>
 
-<p>
-  Myös uuden Asiakas-olion tallentaminen tietokantatauluun onnistuu.
-</p>
 
-<% partial 'partials/code_highlight' do %>
-  Connection connection = DriverManager.getConnection("jdbc:sqlite:<em>tietokanta.db</em>");
+  Myös uuden Asiakas-olion tallentaminen tietokantatauluun onnistuu.
+
+
+```java
+  Connection connection = DriverManager.getConnection("jdbc:sqlite:*tietokanta.db*");
 
   PreparedStatement stmt = connection.prepareStatement("INSERT INTO Asiakas"
       + " (nimi, puhelinnumero, katuosoite, postinumero, postitoimipaikka)"

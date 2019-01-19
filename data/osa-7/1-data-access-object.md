@@ -11,39 +11,39 @@ hidden: true
 - n + 1 -ongelma?
 </text-box>
 
-<% partial 'partials/material_sub_heading' do %>
+##
   DAO-suunnittelumalli
 <% end %>
 
-<p>
-  Tähän astisissa simerkeissä tietokantakyselytoiminnallisuus ja muu toiminnallisuudesta on ollut samassa luokassa, mikä johtaa helposti sekavaan koodiin.
-</p>
 
-<p>
+  Tähän astisissa simerkeissä tietokantakyselytoiminnallisuus ja muu toiminnallisuudesta on ollut samassa luokassa, mikä johtaa helposti sekavaan koodiin.
+
+
+
   Tietokantasovelluksia toteuttaessa on hyvin tyypillistä abstrahoida konkreettinen tiedon hakemis- ja tallennustoiminnallisuus siten, että ohjelmoijan ei tarvitse nähdä sitä jatkuvasti.
-</p>
+
 
 <% partial 'partials/hint', locals: { name: 'Data Access Object (DAO)' } do %>
 
-  <p>
-    Wikipedia:
-    <em>
-      In computer software, a data access object (DAO) is an object that provides an abstract interface to some type of database or other persistence mechanism. By mapping application calls to the persistence layer, DAO provide some specific data operations without exposing details of the database. This isolation supports the Single responsibility principle. It separates what data accesses the application needs, in terms of domain-specific objects and data types (the public interface of the DAO), from how these needs can be satisfied with a specific DBMS, database schema, etc. (the implementation of the DAO).
-    </em>
-  </p>
 
-  <p>
-    <em>
+    Wikipedia:
+    *
+      In computer software, a data access object (DAO) is an object that provides an abstract interface to some type of database or other persistence mechanism. By mapping application calls to the persistence layer, DAO provide some specific data operations without exposing details of the database. This isolation supports the Single responsibility principle. It separates what data accesses the application needs, in terms of domain-specific objects and data types (the public interface of the DAO), from how these needs can be satisfied with a specific DBMS, database schema, etc. (the implementation of the DAO).
+    *
+
+
+
+    *
       Although this design pattern is equally applicable to the following: (1- most programming languages; 2- most types of software with persistence needs; and 3- most types of databases) it is traditionally associated with Java EE applications and with relational databases (accessed via the JDBC API because of its origin in Sun Microsystems' best practice guidelines "Core J2EE Patterns" for that platform).
-    </em>
-  </p>
+    *
+
 <% end %>
 
-<p>
-  Hahmotellaan hakemiseen ja poistamiseen liittyvää rajapintaa, joka tarjoaa metodit <code>findOne</code>, <code>findAll</code>, <code>saveOrUpdate</code> ja <code>delete</code>, eli toiminnallisuudet hakemiseen, tallentamiseen ja poistamiseen. Tehdään rajapinnasta <em>geneerinen</em>, eli toteuttava luokka määrittelee palautettavien olioiden tyypin sekä avaimen.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Hahmotellaan hakemiseen ja poistamiseen liittyvää rajapintaa, joka tarjoaa metodit `findOne`, `findAll`, `saveOrUpdate` ja `delete`, eli toiminnallisuudet hakemiseen, tallentamiseen ja poistamiseen. Tehdään rajapinnasta *geneerinen*, eli toteuttava luokka määrittelee palautettavien olioiden tyypin sekä avaimen.
+
+
+```java
 import java.sql.*;
 import java.util.*;
 
@@ -55,11 +55,11 @@ public interface Dao&lt;T, K&gt; {
 }
 <% end %>
 
-<p>
-  Metodi findOne hakee tietyllä avaimella haettavan olion, jonka tyyppi voi olla mikä tahansa, ja metodi saveOrUpdate joko tallentaa olion tai päivittää tietokannassa olevaa oliota riippuen siitä, onko olion id-kentässä arvoa. Alustava hahmotelma konkreettisesta asiakkaiden käsittelyyn tarkoitetusta <code>AsiakasDao</code>-luokasta on seuraavanlainen.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Metodi findOne hakee tietyllä avaimella haettavan olion, jonka tyyppi voi olla mikä tahansa, ja metodi saveOrUpdate joko tallentaa olion tai päivittää tietokannassa olevaa oliota riippuen siitä, onko olion id-kentässä arvoa. Alustava hahmotelma konkreettisesta asiakkaiden käsittelyyn tarkoitetusta `AsiakasDao`-luokasta on seuraavanlainen.
+
+
+```java
 import java.util.*;
 import java.sql.*;
 
@@ -90,15 +90,15 @@ public class AsiakasDao implements Dao&lt;Asiakas, Integer&gt; {
 }
 <% end %>
 
-<p>
-  Käytännössä tyyppiparametrit annetaan rajapinnan toteuttamisesta kertovan avainsanan <code>implements</code>-yhteyteen. Ylläolevassa esimerkissä haettavan olion tyyppi on <code>Asiakas</code>, ja sen pääavain on tyyppiä <code>Integer</code>.
-</p>
 
-<p>
+  Käytännössä tyyppiparametrit annetaan rajapinnan toteuttamisesta kertovan avainsanan `implements`-yhteyteen. Ylläolevassa esimerkissä haettavan olion tyyppi on `Asiakas`, ja sen pääavain on tyyppiä `Integer`.
+
+
+
   Luodaan tietokanta-abstraktio, jolta voidaan pyytää tietokantayhteyttä tarvittaessa.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+
+```java
   import java.sql.*;
 
   public class Database {
@@ -115,11 +115,11 @@ public class AsiakasDao implements Dao&lt;Asiakas, Integer&gt; {
   }
 <% end %>
 
-<p>
-  Jatketaan luokan <code>AsiakasDao</code> toteuttamista. Lisätään luokkaan tietokannan käyttö tietokanta-abstraktion avulla sekä asiakkaan poistaminen avaimen perusteella
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Jatketaan luokan `AsiakasDao` toteuttamista. Lisätään luokkaan tietokannan käyttö tietokanta-abstraktion avulla sekä asiakkaan poistaminen avaimen perusteella
+
+
+```java
 import java.util.*;
 import java.sql.*;
 
@@ -163,11 +163,11 @@ public class AsiakasDao implements Dao&lt;Asiakas, Integer&gt; {
 }
 <% end %>
 
-<p>
-  Vastaavasti yksittäisen asiakkaan noutaminen onnistuisi findOne-metodilla.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Vastaavasti yksittäisen asiakkaan noutaminen onnistuisi findOne-metodilla.
+
+
+```java
 import java.util.*;
 import java.sql.*;
 
@@ -229,11 +229,11 @@ public class AsiakasDao implements Dao&lt;Asiakas, Integer&gt; {
 }
 <% end %>
 
-<p>
-  Ja niin edelleen. Nyt asiakkaiden muokkaaminen on DAO-rajapintaa käyttävän ohjelman näkökulmasta hieman helpompaa.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Ja niin edelleen. Nyt asiakkaiden muokkaaminen on DAO-rajapintaa käyttävän ohjelman näkökulmasta hieman helpompaa.
+
+
+```java
   Database database = new Database("jdbc:sqlite:kanta.db");
   AsiakasDao asiakkaat = new AsiakasDao(database);
 
@@ -249,16 +249,16 @@ public class AsiakasDao implements Dao&lt;Asiakas, Integer&gt; {
 
 
 
-<% partial 'partials/material_sub_heading' do %>
+##
   Viitteet olioiden välillä
 <% end %>
 
-<p>
+
   Edellisessä esimerkissä käsittelimme yksittäistä oliota, josta ei ole viitteitä muihin käsitteisiin. Hahmotellaan seuraavaksi Tilaus-käsitteen käsittelyä ohjelmallisesti. Luodaan ensin Tilausta kuvaava luokka ja toteutetaan tämän jälkeen tilausten tallennuksesta ja käsittelystä vastaava DAO-luokka.
-</p>
 
 
-<% partial 'partials/code_highlight' do %>
+
+```java
   public class Tilaus {
       Integer id;
       Asiakas asiakas;
@@ -272,11 +272,11 @@ public class AsiakasDao implements Dao&lt;Asiakas, Integer&gt; {
   }
 <% end %>
 
-<p>
-  Toteutetaan tilausten käsittelyyn tarkoitettu DAO-luokka siten, että se saa konstruktorissaan sekä viitteen tietokanta-olioon että viitteen asiakkaiden hakemiseen tarkoitettuun Dao-rajapintaan.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Toteutetaan tilausten käsittelyyn tarkoitettu DAO-luokka siten, että se saa konstruktorissaan sekä viitteen tietokanta-olioon että viitteen asiakkaiden hakemiseen tarkoitettuun Dao-rajapintaan.
+
+
+```java
 import java.util.*;
 import java.sql.*;
 
@@ -337,12 +337,12 @@ public class TilausDao implements Dao&lt;Tilaus, Integer&gt; {
 }
 <% end %>
 
-<p>
+
   Nyt yksittäisen tilauksen hakemisen yhteydessä palautetaan sekä tilaus, että siihen liittyvä asiakas. Rajapintaa käyttävän toteutuksen näkökulmasta tietokannan käyttäminen toimii seuraavasti:
-</p>
 
 
-<% partial 'partials/code_highlight' do %>
+
+```java
 Database database = new Database("jdbc:sqlite:kanta.db");
 AsiakasDao asiakkaat = new AsiakasDao(database);
 TilausDao tilaukset = new TilausDao(database, asiakkaat);
@@ -355,35 +355,35 @@ System.out.println("Tilauksen teki: " + t.getAsiakas().getNimi());
 
 <% partial 'partials/hint', locals: { name: 'Mitä tietokannasta pitäisi noutaa?' } do %>
 
-  <p>
+
     Kun jatkamme edellistä esimerkkiä, pitäisikö annosta haettaessa hakea aina siihen liittyvä ravintola? Entä pitääkö tilausta haettaessa oikeasti hakea myös tilaukseen liittyvä asiakas?
-  </p>
 
-  <p>
+
+
     Hyvä kysymys. Kun tietokantataulujen välisten yhteyksien perusteella tehdään uusia kyselyitä tietokantaan, olemassa on oleellisesti kaksi vaihtoehtoa sekä niiden seuraukset: (1) haetaan liikaa tietoa, jolloin hakemisoperaatioon menee turhaan aikaa, tai (2) haetaan liian vähän tietoa, jolloin tieto tulee hakea myöhemmin.
-  </p>
 
-  <p>
-    Yksi tapa ratkaista ongelma on toimia siten, että tietoa haetaan vain silloin kun sitä tarvitaan. Tällöin esimerkiksi vasta Tilaus-olioon mahdollisesti liittyvää <code>getAsiakas</code>-metodia kutsuttaessa asiakkaaseen liittyvät tiedot haettaisiin tietokannasta -- getAsiakas-metodi tekisi siis tietokantahaun. Tämäkään ei kuitenkaan ratkaise tilannetta, sillä jos tavoitteenamme olisi vaikkapa tulostaa kaikki tilaukset ja niihin liittyvät asiakkaat -- edellisellä lähestymistavalla kaksi tietokantakyselyä -- saattaisi toteutus lopulta tehdä jokaisen tilauksen ja asiakkaan kohdalla oman erillisen tietokantahaun.
-  </p>
 
-  <p>
+
+    Yksi tapa ratkaista ongelma on toimia siten, että tietoa haetaan vain silloin kun sitä tarvitaan. Tällöin esimerkiksi vasta Tilaus-olioon mahdollisesti liittyvää `getAsiakas`-metodia kutsuttaessa asiakkaaseen liittyvät tiedot haettaisiin tietokannasta -- getAsiakas-metodi tekisi siis tietokantahaun. Tämäkään ei kuitenkaan ratkaise tilannetta, sillä jos tavoitteenamme olisi vaikkapa tulostaa kaikki tilaukset ja niihin liittyvät asiakkaat -- edellisellä lähestymistavalla kaksi tietokantakyselyä -- saattaisi toteutus lopulta tehdä jokaisen tilauksen ja asiakkaan kohdalla oman erillisen tietokantahaun.
+
+
+
     Tähän ei ole suoraviivaista ratkaisua. Tyypillisesti Dao-rajapinnan määrittelemille metodeille kerrotaan, tuleeko haettaviin olioihin liittyvät viitteet hakea erikseen.
-  </p>
+
 
 <% end %>
 
 
 
-<% partial 'partials/material_sub_sub_heading' do %>
+###
   Toisteisuuden vähentäminen samankaltaisista domain-luokista
 <% end %>
 
-<p>
-  Tarkastellaan ensin kategoriaa kuvaavan luokan luomista. Sekä kategorialla, tehtävällä että käyttäjällä on tunnus ja nimi. Luodaan abstrakti yliluokka <code>AbstractNamedObject</code>, joka sisältää nimen ja tunnuksen sekä niihin liittyvät getterit.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Tarkastellaan ensin kategoriaa kuvaavan luokan luomista. Sekä kategorialla, tehtävällä että käyttäjällä on tunnus ja nimi. Luodaan abstrakti yliluokka `AbstractNamedObject`, joka sisältää nimen ja tunnuksen sekä niihin liittyvät getterit.
+
+
+```java
   package tikape.tasks.domain;
 
   public abstract class AbstractNamedObject {
@@ -406,11 +406,11 @@ System.out.println("Tilauksen teki: " + t.getAsiakas().getNimi());
   }
 <% end %>
 
-<p>
-  Nyt luokat kategoria, tehtävä ja käyttäjä voi toteuttaa perimällä luokan AbstractNamedObject. Alla kategoriaa kuvaava luokka.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Nyt luokat kategoria, tehtävä ja käyttäjä voi toteuttaa perimällä luokan AbstractNamedObject. Alla kategoriaa kuvaava luokka.
+
+
+```java
   package tikape.tasks.domain;
 
   public class Category extends AbstractNamedObject {
@@ -421,24 +421,24 @@ System.out.println("Tilauksen teki: " + t.getAsiakas().getNimi());
   }
 <% end %>
 
-<p>
+
   Käyttäjien ja tehtävien kuvaamiseen käytettävät luokat muutetaan vastaavaan muotoon.
-</p>
 
 
-<% partial 'partials/material_sub_sub_heading' do %>
+
+###
   Toisteisuuden vähentäminen samankaltaisista DAO-luokista
 <% end %>
 
-<p>
-  Toteutetaan seuraavaksi kategorioiden käsittelyyn tarvittava tietokanta-abstraktio <code>CategoryDao</code>. Tämäkin luokka olisi vahvasti copy-pastea edellisistä luokista.
-</p>
 
-<p>
-  Toteutetaan ensin luokka <code>AbstractNamedObjectDao</code>, joka toteuttaa rajapinnan Dao. Luokka kapseloi niiden tietokantataulujen käsittelyyn liittyvää toiminnallisuutta, joissa on id ja nimi. Toteutus tehdään niin, että abstrakti luokka saa konstruktorin parametrina tietokannan lisäksi käsiteltävän tietokantataulun nimen, jota voi käyttää kyselyiden muodostamisessa.
-</p>
+  Toteutetaan seuraavaksi kategorioiden käsittelyyn tarvittava tietokanta-abstraktio `CategoryDao`. Tämäkin luokka olisi vahvasti copy-pastea edellisistä luokista.
 
-<% partial 'partials/code_highlight' do %>
+
+
+  Toteutetaan ensin luokka `AbstractNamedObjectDao`, joka toteuttaa rajapinnan Dao. Luokka kapseloi niiden tietokantataulujen käsittelyyn liittyvää toiminnallisuutta, joissa on id ja nimi. Toteutus tehdään niin, että abstrakti luokka saa konstruktorin parametrina tietokannan lisäksi käsiteltävän tietokantataulun nimen, jota voi käyttää kyselyiden muodostamisessa.
+
+
+```java
   protected Database database;
   protected String tableName;
 
@@ -448,28 +448,28 @@ System.out.println("Tilauksen teki: " + t.getAsiakas().getNimi());
   }
 <% end %>
 
-<p>
-  Tehdään luokasta sellainen, että sen voi toteuttaa vain niille luokille, jotka perivät luokan <code>AbstractNamedObject</code>. Luokan "otsake" on tällöin seuraavaa muotoa:
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Tehdään luokasta sellainen, että sen voi toteuttaa vain niille luokille, jotka perivät luokan `AbstractNamedObject`. Luokan "otsake" on tällöin seuraavaa muotoa:
+
+
+```java
   public abstract class AbstractNamedObjectDao&lt;T extends AbstractNamedObject&gt;
           implements Dao&lt;T, Integer&gt; {
 <% end %>
 
-<p>
-  Luokka käsittelee geneeristä tyyppiä olevia olioita, joilla on id ja nimi. Tarvitsemme tavan olioiden luomiseen tietokannalta saaduista riveistä. Luodaan abstraktille luokalle abstrakti metodi <code>createFromRow</code>, joka palauttaa geneeristä tyyppiä olevan olion, ja joka saa parametrinaan resultSet-olion. Jokaisen luokan, joka perii luokan <code>AbstractNamedObject</code> tulee periä ja toteuttaa tämä metodi.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Luokka käsittelee geneeristä tyyppiä olevia olioita, joilla on id ja nimi. Tarvitsemme tavan olioiden luomiseen tietokannalta saaduista riveistä. Luodaan abstraktille luokalle abstrakti metodi `createFromRow`, joka palauttaa geneeristä tyyppiä olevan olion, ja joka saa parametrinaan resultSet-olion. Jokaisen luokan, joka perii luokan `AbstractNamedObject` tulee periä ja toteuttaa tämä metodi.
+
+
+```java
   public abstract T createFromRow(ResultSet resultSet) throws SQLException;
 <% end %>
 
-<p>
-  Voimme nyt tehdä muista luokan metodeista yleiskäyttöisiä. Metodi findAll kysyy tietoa tietokantataulusta, jonka perivä luokka määrittelee. Kun tietokantakyselyn tuloksia käydään läpi, konkreettisten tulosten luomiseen käytetään luokkakohtaista metodia <code>createFromRow</code>. Metodin <code>findAll</code> rakenne on seuraavanlainen.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Voimme nyt tehdä muista luokan metodeista yleiskäyttöisiä. Metodi findAll kysyy tietoa tietokantataulusta, jonka perivä luokka määrittelee. Kun tietokantakyselyn tuloksia käydään läpi, konkreettisten tulosten luomiseen käytetään luokkakohtaista metodia `createFromRow`. Metodin `findAll` rakenne on seuraavanlainen.
+
+
+```java
   @Override
   public List&lt;T&gt; findAll() throws SQLException {
       List&lt;T&gt; tasks = new ArrayList&lt;&gt;();
@@ -486,11 +486,11 @@ System.out.println("Tilauksen teki: " + t.getAsiakas().getNimi());
   }
 <% end %>
 
-<p>
-  Koko luokan AbstractNamedObjectDao toteutus on seuraava.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Koko luokan AbstractNamedObjectDao toteutus on seuraava.
+
+
+```java
   package tikape.tasks.dao;
 
   import java.sql.Connection;
@@ -589,11 +589,11 @@ System.out.println("Tilauksen teki: " + t.getAsiakas().getNimi());
   }
 <% end %>
 
-<p>
-  Nyt omien Dao-luokkiemme toteutukset ovat hieman suoraviivaisempia. Alla on kuvattuna luokka liittyvä tietokanta-abstraktio <code>CategoryDao</code>.
-</p>
 
-<% partial 'partials/code_highlight' do %>
+  Nyt omien Dao-luokkiemme toteutukset ovat hieman suoraviivaisempia. Alla on kuvattuna luokka liittyvä tietokanta-abstraktio `CategoryDao`.
+
+
+```java
   package tikape.tasks.dao;
 
   import java.sql.ResultSet;
@@ -614,33 +614,33 @@ System.out.println("Tilauksen teki: " + t.getAsiakas().getNimi());
   }
 <% end %>
 
-<p>
+
   Esimerkin jatkaminen jätetään omalle vastuulle. Seuraavana olisi näkymän kopiointi sekä TaskApplication-luokan muokkaaminen siten, että sovelluksessa pääsee käsiksi kategorioihin.
-</p>
+
 
 
 
 ## esim: välimuisti daon avulla?
 
-<% partial 'partials/material_sub_heading' do %>
+##
   Välimuistit sovelluksissa
 <% end %>
 
-<p>
+
   Kun tietokantaa käytetään osana annettua sovellusta (esimerkiksi web-sovellusta), sovelluksen vastuulla on tietokantakyselyiden tekeminen tietokannanhallintajärjestelmään. Jos sovellus on ainoa tietokannan käyttäjä (tietokantaa ei muokata muista järjestelmistä), ja jos merkittävä osa kyselyistä on toistuvia hakukyselyjä, voi sovellukseen rakentaa tietokannan toimintaa abstrahoiva välimuisti.
-</p>
 
-<p>
+
+
   Välimuistissa on käytännössä kyse käsiteltävän tiedon tuomisesta lähemmäksi käyttäjää. Tietokantaa käyttävien sovellusten tapauksessa usein haettava tieto tuodaan sovelluksen muistiin, jolloin sovelluksen ei tarvitse hakea tietoa erikseen tietokannasta. Välimuisti tyhjennetään aina tietokannan päivityksen yhteydessä, jolloin käyttäjälle päätyvä tieto on aina ajan tasalla.
-</p>
 
-<p>
+
+
   Yksinkertaisimmillaan välimuistitoteutus voi olla olemassaolevan Dao-toteutuksen kapselointi erilliseen Dao-toteutukseen. Oletetaan, että käytössämme on kolmannelta viikolta tuttu vaillinainen AsiakasDao-toteutus. Välimuistillisen toteutuksen luominen on melko suoraviivaista -- alla toteutuksessa muistetaan vain yksittäiset asiakkaat.
-</p>
 
 
 
-<% partial 'partials/code_highlight' do %>
+
+```java
   import java.util.*;
   import java.sql.*;
 
@@ -678,9 +678,9 @@ System.out.println("Tilauksen teki: " + t.getAsiakas().getNimi());
   }
 <% end %>
 
-<p>
+
   Jos asiakkaiden tietohin liittyvistä tietokantakyselyistä 99% on hakuoperaatioita, on merkittävässä osassa tapauksia tieto valmiiksi sovelluksen käytössä, jolloin tietokantaan ei tarvitse ottaa yhteyttä. Toisaalta, jos sovellus on sellainen, että merkittävä osa käsittelystä sisältää myös tietokannassa olevan tiedon muokkausoperaatioita, ei edellä kuvatusta välimuistista ole juurikaan hyötyä.
-</p>
+
 
 
 
