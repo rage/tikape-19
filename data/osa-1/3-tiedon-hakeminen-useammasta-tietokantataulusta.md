@@ -113,7 +113,7 @@ SELECT *
   JOIN Annos ON Annos.ravintola_id = Ravintola.id;
 ```
 
-Yllä kuvatun kyselyn tuloksena muodostunut taulu sisältää liitettyjen taulujen kaikki sarakkeet sekä ne rivit, jotka on pystytty yhdistämään. Yhdistäminen tapahtuu yllä olevassa kyselyssä taulun Ravintola pääavaimen `id` ja taulun Annos tauluun Ravintola viittaavan viiteavaimen `ravintola\_id` avulla.
+Yllä kuvatun kyselyn tuloksena muodostunut taulu sisältää liitettyjen taulujen kaikki sarakkeet sekä ne rivit, jotka on pystytty yhdistämään. Yhdistäminen tapahtuu yllä olevassa kyselyssä taulun Ravintola pääavaimen `id` ja taulun Annos tauluun Ravintola viittaavan viiteavaimen `ravintola_id` avulla.
 
 Tulos on seuraava.
 
