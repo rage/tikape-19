@@ -180,7 +180,7 @@ Tee SQL-harjoittelujärjestelmän aiheesta "Simple select statements" vähintä�
 ###  Kyselyn tulosten rajaaminen
 
 
-Tarkastellaan seuraavaksi kyselyn tulosten rajaamista. Kyselyn tulosten rajausta määrittevät ehdot lisätään kyselyssä määritellyn taulun (tai määriteltyjen taulujen) jälkeen asetettavan avainsanan `WHERE` jälkeen. Yhdestä taulusta tietoa hakeva kysely, joka sisältää rajausehdon, näyttää seuraavalta.
+Tarkastellaan seuraavaksi kyselyn tulosten rajaamista. Kyselyn tulosten rajausta määrittävät ehdot lisätään kyselyssä määritellyn taulun (tai määriteltyjen taulujen) jälkeen asetettavan avainsanan `WHERE` jälkeen. Yhdestä taulusta tietoa hakeva kysely, joka sisältää rajausehdon, näyttää seuraavalta.
 
 ```sql
 SELECT sarake FROM Taulu WHERE rajausehto;
