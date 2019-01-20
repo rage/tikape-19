@@ -11,6 +11,7 @@ hidden: true
 
 </text-box>
 
+http://www.web-integration.info/en/blog/history-and-trends-in-the-development-of-databases/
 
 #
   Jotain muuta kuin relaatiomallia noudattavat tietokannat

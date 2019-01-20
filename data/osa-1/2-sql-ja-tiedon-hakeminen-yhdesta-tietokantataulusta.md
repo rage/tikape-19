@@ -259,7 +259,7 @@ Sulut toimivat samalla tavalla kuin ohjelmointikursseilla. Sulut ovat täälläk
 ###  Tulosten järjestäminen
 
 
-Tietokantakyselyn tulosten järjestäminen tapahtuu kyselyn loppuun lisättävällä `ORDER BY`-komennolla, jota seuraa sarakkeet, joiden mukaan tulokset järjestetään. Tulokset järjestetään oletuksena nousevaan järjestykseen luonnollista järjestystä noudattaen, eli "pienimmät arvot tulevat ensin".
+Tietokantakyselyn tulosten järjestäminen tapahtuu kyselyn loppuun lisättävällä `ORDER BY`-komennolla, jota seuraa sarakkeet, joiden mukaan tulokset järjestetään. Mikäli sarakkeita on useampi, erotellaan ne toisistaan pilkulla. Tulokset järjestetään oletuksena nousevaan järjestykseen luonnollista järjestystä noudattaen, eli "pienimmät arvot tulevat ensin".
 
 
 Esimerkkitaulumme `Henkilo` tulostuu kyselyn `SELECT syntymavuosi, nimi FROM Henkilo ORDER BY syntymavuosi` seurauksena siten, että tulokset on järjestetty syntymävuoden perusteella pienin ensin.
