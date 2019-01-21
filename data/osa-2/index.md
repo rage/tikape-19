@@ -14,3 +14,25 @@ Tässä osassa opit luomaan tietokantatauluja ja poistamaan niitä. Opit lisää
 
 <pages-in-this-section></pages-in-this-section>
 
+
+<ab-study id="self_evaluation_k19_tikape">
+
+<only-for-ab-group group=1>
+
+<exercises-in-this-section ignore-quiz-tags="group-2,group-3"></exercises-in-this-section>
+
+</only-for-ab-group>
+
+<only-for-ab-group group=2>
+
+<exercises-in-this-section ignore-quiz-tags="group-1,group-3"></exercises-in-this-section>
+
+</only-for-ab-group>
+
+<only-for-ab-group group=3>
+
+<exercises-in-this-section ignore-quiz-tags="group-1,group-2"></exercises-in-this-section>
+
+</only-for-ab-group>
+
+</ab-study>

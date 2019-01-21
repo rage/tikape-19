@@ -15,3 +15,25 @@ Tässä osassa tutustut tietokantoihin ilmiönä ja niiden rooliin digitalisaati
 
 <pages-in-this-section></pages-in-this-section>
 
+
+<ab-study id="self_evaluation_k19_tikape">
+
+<only-for-ab-group group=1>
+
+<exercises-in-this-section ignore-quiz-tags="group-2,group-3"></exercises-in-this-section>
+
+</only-for-ab-group>
+
+<only-for-ab-group group=2>
+
+<exercises-in-this-section ignore-quiz-tags="group-1,group-3"></exercises-in-this-section>
+
+</only-for-ab-group>
+
+<only-for-ab-group group=3>
+
+<exercises-in-this-section ignore-quiz-tags="group-1,group-2"></exercises-in-this-section>
+
+</only-for-ab-group>
+
+</ab-study>
