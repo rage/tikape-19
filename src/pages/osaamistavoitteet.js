@@ -49,7 +49,12 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>2</TableCell>
               <TableCell>
-                Osaat luoda ja poistaa tietokantatauluja. Osaat lisätä tietokantaan tietoa ja osaat muokata tietokannassa olevaa tietoa. Osaat tehdä yhteenvetokyselyitä ja rajata yhteenvetokyselyiden tuloksia. Tiedät joitakin olemassaolevia tietokannanhallintajärjestelmiä ja olet kokeillut niiden käyttämistä.
+                Osaat luoda ja poistaa tietokantatauluja. Osaat lisätä
+                tietokantaan tietoa ja osaat muokata tietokannassa olevaa
+                tietoa. Osaat tehdä yhteenvetokyselyitä ja rajata
+                yhteenvetokyselyiden tuloksia. Tiedät joitakin olemassaolevia
+                tietokannanhallintajärjestelmiä ja olet kokeillut niiden
+                käyttämistä.
               </TableCell>
             </TableRow>
             <TableRow>
