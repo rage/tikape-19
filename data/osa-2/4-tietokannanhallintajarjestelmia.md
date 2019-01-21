@@ -153,7 +153,7 @@ Mikäli aukeavaan konsoliin syöttää osoitteeksi (jdbc URL) aiemmin konsoliesi
 ## Muita järjestelmiä
 
 
-Muita erittäin yleisessä käytössä olevia tietokannanhallintajärjestelmiä ovat muunmuassa <a href="https://www.mysql.com/" target="_blank">MySQL</a>, <a href="https://mariadb.org/" target="_blank">MariaDB</a> ja <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>. Kuten edellä, missä SQLiten automaattinen pääavaimen arvon kasvattaminen tapahtuu avainsanalla `AUTOINCREMENT` ja H2-tietokannassa samaan tarvitaan avainsana `AUTO_INCEMENT`, myös MySQL, MariaDB ja PostgreSQL poikkeaa toisistaan hieman.
+Muita erittäin yleisessä käytössä olevia tietokannanhallintajärjestelmiä ovat muunmuassa <a href="https://www.mysql.com/" target="_blank">MySQL</a>, <a href="https://mariadb.org/" target="_blank">MariaDB</a> ja <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>. Kuten edellä, missä SQLiten automaattinen pääavaimen arvon kasvattaminen tapahtuu avainsanalla `AUTOINCREMENT` ja H2-tietokannassa samaan tarvitaan avainsana `AUTO_INCREMENT`, myös MySQL, MariaDB ja PostgreSQL poikkeavat toisistaan hieman.
 
 Emme syvenny tähän näihin järjestelmiin tällä kurssilla.
 
