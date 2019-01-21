@@ -140,7 +140,7 @@ CREATE TABLE Opiskelija (
 );
 ```
 
-Yllä kuvatussa tietokantataulussa ei voi olla kahta opiskelijaa, jolla on sama opiskelijanumero ja sama nimi. Esimerkkissämme kahden sarakkeen pääavain ei ole kuitenkaan kovin järkevä, sillä siinä useammalla opiskelijalla voi olla sama opiskelijanumero, ja toisaalta useammalla opiskelijalla voi olla sama nimi.
+Yllä kuvatussa tietokantataulussa ei voi olla kahta opiskelijaa, jolla on sama opiskelijanumero ja sama nimi. Esimerkissämme kahden sarakkeen pääavain ei ole kuitenkaan kovin järkevä, sillä siinä useammalla opiskelijalla voi olla sama opiskelijanumero, ja toisaalta useammalla opiskelijalla voi olla sama nimi.
 
 
 
