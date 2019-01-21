@@ -1,7 +1,7 @@
 ---
 path: '/osa-2/5-itsearviointi'
 title: 'Itsearviointi ja kysymyksen keksiminen'
-hidden: true
+hidden: false
 ---
 
 Kurssin jokaisen osan jälkeen arvioidaan omaa osaamista sekä keksitään yksi osan materiaaliin liittyvä monivalintakysymys. Osa kurssin osallistujien keksimistä kysymyksistä valitaan osaksi kurssin koetta.

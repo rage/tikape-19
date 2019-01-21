@@ -1,5 +1,5 @@
 ---
-path: '/osa-2/x-jemma'
+path: '/osa-4/x-jemma'
 title: 'Turhaa? sisältöä'
 hidden: true
 ---

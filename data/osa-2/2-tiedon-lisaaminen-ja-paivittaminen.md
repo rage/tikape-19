@@ -1,7 +1,7 @@
 ---
 path: '/osa-2/2-tiedon-lisaaminen-muokkaaminen-ja-poistaminen'
 title: 'Tiedon lisääminen, muokkaaminen ja poistaminen'
-hidden: true
+hidden: false
 ---
 
 

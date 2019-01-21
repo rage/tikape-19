@@ -1,14 +1,15 @@
 ---
 path: '/osa-2/3-yhteenvetokyselyt-ja-ryhmittely'
 title: 'Yhteenvetokyselyiden tekeminen ja tulosten ryhmittely'
-hidden: true
+hidden: false
 ---
 
 
 <text-box variant='learningObjectives' name='Oppimistavoitteet'>
 
 - Osaat tehdä SQL-kielellä yhteenvetokyselyitä ja rajata yhteenvetokyselyiden tuloksia.
-- Osaat ryhmitellä tietokantakyselyiden tuolksia sekä laskea yhteenvetoja ryhmistä.
+- Osaat ryhmitellä tietokantakyselyiden tuloksia sekä laskea yhteenvetoja ryhmistä.
+- Osaat järjestää ja rajata yhteenvetokyselyiden tuloksia.
 
 </text-box>
 
@@ -86,6 +87,25 @@ SELECT MIN(pituus), MAX(pituus), AVG(pituus), STDDEV(pituus)
 Tee SQL-harjoittelujärjestelmän aiheesta "Fun with functions!" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
 
 </sqltrainer-exercise>
+
+
+
+<text-box variant='hint' name='Desimaalit ja tietokannanhallintajärjestelmät'>
+
+Kaikki tietokannanhallintajärjestelmät eivät automaattisesti tuota liukulukutyyppisiä tuloksia keskiarvoa laskettaessa. Joissain tapauksissa funktio `AVG` palauttaa tietokannanhallintajärjestelmän määrittelemän määrän desimaaleja -- tämä voi olla myös 0. Joissain tapauksissa se voi laskea keskiarvon funktion parametrina saaman muuttujien tyypin perusteella. Esimerkiksi SQL-Trainerissa käytetty H2-tietokannanhallintajärjestelmä palauttaa kokonaislukujen keskiarvona kokonaisluvun.
+
+Eräs tapa ratkaista ongelma H2-tietokannanhallintajärjestelmässä on muuntaa luvut desimaaliluvuiksi. Tämä onnistuu seuraavalla tavalla.
+
+```sql
+SELECT AVG(CAST(pituus AS double)) FROM Lentomatka
+    WHERE yhtio = 'Finnair';
+```
+
+
+- Osaat tehdä SQL-kielellä yhteenvetokyselyitä ja rajata yhteenvetokyselyiden tuloksia.
+- Osaat ryhmitellä tietokantakyselyiden tuolksia sekä laskea yhteenvetoja ryhmistä.
+
+</text-box>
 
 
 
@@ -271,7 +291,7 @@ Mikäli yhteenvetokyselyn tuloksen perusteella halutaan rajata tuloksia, tulee k
 
 
 ```sql
-SELECT Kurssi.nimi AS kurssi, AVG(Kurssisuoritus.arvosana) keskiarvo
+SELECT Kurssi.nimi AS kurssi, AVG(Kurssisuoritus.arvosana) AS keskiarvo
     FROM Kurssi
     JOIN Kurssisuoritus ON Kurssi.id = Kurssisuoritus.kurssi_id
     GROUP BY Kurssi.nimi
@@ -287,7 +307,7 @@ Yllä olevalla kyselyllä saadaan selville ne kurssit, joihin liittyvien kurssis
 Yhteenvetokyselyn tulosten järjestäminen tapahtuu samalla tavalla kuin aiemmin. Järjestyskäsky tulee kyselyn loppuun -- alla kurssit järjestetään niiden keskiarvon perusteella.
 
 ```sql
-SELECT Kurssi.nimi AS kurssi, AVG(Kurssisuoritus.arvosana) keskiarvo
+SELECT Kurssi.nimi AS kurssi, AVG(Kurssisuoritus.arvosana) AS keskiarvo
     FROM Kurssi
     JOIN Kurssisuoritus ON Kurssi.id = Kurssisuoritus.kurssi_id
     GROUP BY Kurssi.nimi

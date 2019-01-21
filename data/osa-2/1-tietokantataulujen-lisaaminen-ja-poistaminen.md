@@ -1,7 +1,7 @@
 ---
 path: '/osa-2/1-tietokantataulujen-lisaaminen-ja-poistaminen'
 title: 'Tietokantataulujen lisääminen ja poistaminen'
-hidden: true
+hidden: false
 ---
 
 
