@@ -15,6 +15,3 @@ Tässä osassa tutustut tietokantoihin ilmiönä ja niiden rooliin digitalisaati
 
 <pages-in-this-section></pages-in-this-section>
 
-
-
-<exercises-in-this-section></exercises-in-this-section>

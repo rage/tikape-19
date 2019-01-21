@@ -14,6 +14,3 @@ Tässä osassa opit luomaan tietokantatauluja ja poistamaan niitä. Opit lisää
 
 <pages-in-this-section></pages-in-this-section>
 
-
-
-<exercises-in-this-section></exercises-in-this-section>
