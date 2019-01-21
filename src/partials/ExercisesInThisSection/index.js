@@ -29,6 +29,7 @@ class ExercisesInThisSection extends React.Component {
     sectionPages: null,
     quizIdToTitle: null,
     render: false,
+    ignoreIds: [],
   }
 
   async componentDidMount() {
@@ -59,7 +60,16 @@ class ExercisesInThisSection extends React.Component {
     quizDetails.forEach(o => {
       quizIdToTitle[o._id] = o.title
     })
-    this.setState({ sectionPages, quizIdToTitle })
+
+    let ignoreQuizzes = []
+    if (this.props["ignore-quiz-tags"]) {
+      ignoreQuizzes = this.props["ignore-quiz-tags"].split(/\s*,\s*/g)
+    }
+
+    const ignoreIds = quizDetails
+      .filter(quiz => (quiz.tags || []).some(o => ignoreQuizzes.includes(o)))
+      .map(o => o._id)
+    this.setState({ sectionPages, quizIdToTitle, ignoreIds })
   }
   render() {
     if (!this.state.render) {
@@ -79,16 +89,20 @@ class ExercisesInThisSection extends React.Component {
                     {i + 1}. {page.title}
                   </Title>
                   <div>
-                    {page.exercises.map((exercise, i2) => {
-                      return (
-                        <ExerciseSummary
-                          index={i2}
-                          exercise={exercise}
-                          key={exercise.id}
-                          quizIdToTitle={this.state.quizIdToTitle}
-                        />
+                    {page.exercises
+                      .filter(
+                        exercise => !this.state.ignoreIds.includes(exercise.id),
                       )
-                    })}
+                      .map((exercise, i2) => {
+                        return (
+                          <ExerciseSummary
+                            index={i2}
+                            exercise={exercise}
+                            key={exercise.id}
+                            quizIdToTitle={this.state.quizIdToTitle}
+                          />
+                        )
+                      })}
                   </div>
                 </div>
               ))}
