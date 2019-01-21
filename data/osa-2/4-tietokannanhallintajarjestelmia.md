@@ -179,8 +179,12 @@ Olemme luoneet Chinook-tietokannan käyttöönottoa varten seuraavat kolme tiedo
 - Tietokannan luomiseen sekä tiedon lisäämiseen tietokantaan tarvittavat SQL-kieliset komennot, jotka voi ajaa johonkin muuhun tietokannanhallintajärjestelmään. SQL-kieliset komennot löytyvät löytyvät <a href="../db/chinook.sql" target="_blank">tämän linkin takaa</a>.
 
 
-Seuraavat kyselyt olettavat, että tuot Chinook-tietokannan omalle koneellesi ja käynnistät jollain edellä kuvatusta tietokannanhallintajärjestelmästä. Mikäli koneellasi ei ole oikeuksia ohjelmien asentamiseen, valitse tietokannaksi H2 -- olettaen, että olet käynyt Ohjelmoinnin MOOCin sekä asentanut siinä tarvittavan Javan.
+Seuraavat kyselyt olettavat, että tuot Chinook-tietokannan omalle koneellesi ja käynnistät sen jollain edellä kuvatusta tietokannanhallintajärjestelmästä. Mikäli koneellasi ei ole oikeuksia ohjelmien asentamiseen, valitse tietokannaksi H2 -- olettaen, että olet käynyt Ohjelmoinnin MOOCin sekä asentanut siinä tarvittavan Javan.
 
+Kurssin <a href="https://tkt-lapio.github.io/" target="_blank">Tietokone Työvälineenä</a> materiaalista saattaa olla tässä myös hyötyä.
+
+
+<quiznator id="5c4575b6ddb6b814af31f7af"></quiznator>
 
 
 <quiznator id="5c44949cfd9fd71425c60201"></quiznator>
