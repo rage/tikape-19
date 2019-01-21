@@ -7,9 +7,9 @@ hidden: false
 
 <text-box variant='learningObjectives' name='Oppimistavoitteet'>
 
-- Tunnet usein käytettävyjä tietotyyppejä.
+- Tunnet usein käytettyjä tietotyyppejä.
 - Osaat luoda tietokantatauluja.
-- Osaat määritellä tietokantataujen pää- ja viiteavaimet.
+- Osaat määritellä tietokantataulujen pää- ja viiteavaimet.
 - Osaat poistaa tietokantatauluja.
 
 </text-box>
