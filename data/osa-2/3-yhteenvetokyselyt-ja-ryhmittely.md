@@ -142,7 +142,7 @@ SELECT yhtio, AVG(pituus) FROM Lentomatka GROUP BY yhtio;
 
 - Mikä on kunkin yhtiön tarjoamien matkojen pituuksien keskiarvo ja keskihajonta?
 ```sql
-SELECT yhtio, AVG(pituus), AVG(keskihajonta)
+SELECT yhtio, AVG(pituus), STDDEV(keskihajonta)
     FROM Lentomatka GROUP BY yhtio;
 ```
 
