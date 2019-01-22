@@ -53,9 +53,9 @@ Tutustutaan seuraavaksi tiedon määrittelyyn SQL-kielen standardissa kuvattujen
 
 - Merkkijonojen tallentamiseen tarkoitetut tietotyypit
 
-  - Tietyn mittainen merkkijono `CHAR(pituus)` - käytetään mikäli merkkijonoa varten varataan aina saman mittainen alue. Mikäli tallennettavan tiedon pituus on lyhyempi, loppu alueesta täytetään tyhjällä tai joillain erikoismerkeillä.
+  - Tietyn mittainen merkkijono `CHAR(pituus)` - käytetään mikäli merkkijonoa varten varataan aina saman mittainen alue. Mikäli tallennettavan tiedon pituus on lyhyempi kuin `pituus`, loppu alueesta täytetään tyhjällä tai erikoismerkeillä.
 
-  - Vaihtelevan pituinen merkkijono `VARCHAR(maksimipituus)` - käytetään mikäli merkkijonoa varten varattava alue vaihtelee tallennettavasta merkkijonosta riippuen.
+  - Vaihtelevan pituinen merkkijono `VARCHAR(maksimipituus)` - käytetään mikäli merkkijonoa varten varattava alue vaihtelee tallennettavasta merkkijonosta riippuen. Tilaa käytetään aina korkeintaan `maksimipituus`-parametrin verran.
 
   - Hyvin iso merkkijono `CLOB` - käytetään tarvittaessa hyvin isojen merkkijonojen tallentamiseen -- tietokannanhallintajärjestelmillä on tyypillisesti hyvin isojen merkkijonojen käsittelyä varten myös järjestelmäkohtaisia tietotyyppejä.
 
