@@ -18,7 +18,7 @@ hidden: false
 
 Tietokannassa oleva tieto tallennetaan pysyväismuistiin kovalevylle, jossa se säilyy vaikka tietokantaa ylläpitävä tietokannanhallintajärjestelmä tai tietokannanhallintajärjestelmäohjelmistoa suorittava tietokone käynnistetään uudestaan. Tiedon tallennusmuoto vaikuttaa tietokannan tehokkuuteen -- täysin satunnaisessa muodossa ja sitä kautta täysin satunnaisessa paikassa olevan tiedon hakeminen on hitaampaa kuin määrätyssä muodossa ja sitä kautta määrätyssä paikassa olevan tiedon hakeminen.
 
-Tiedon hakemiseen ja tallentamiseen liittyvän tehokkuuden lisäksi tietokantaan tallennettavan tiedon tyyppi halutaan määrittää, jotta tietokannanhallintajärjestelmä pystyy varmistamaan, että tallennettava tieto on oikean muotoista. Tämä ennaltaehkäisee tiedon väärästä muodosta johtuvia ongelmatilanteita, kuten vaikkapa tilanteita, missä tietokantaan on tallennettu kokonaisluvun sijaan merkkijono, ja käyttäjä yrittää lukea ja muuntaa merkkijonon luvuksi.
+Tallennettavan tiedon muoto ja tyyppi halutaan määrittää sekä tiedon hakemiseen ja tallentamiseen liittyvän tehokkuuden vuoksi, että tietokannanhallinnanjärjestelmän toiminnan vuoksi. Kun tietokannanhallinnanjärjestelmälle kerrotaan tallennettavan tiedon muotoa ja tyyppi, tietokannanhallintajärjestelmä pystyy varmistamaan, että tallennettava tieto on oikean muotoista. Tämä ennaltaehkäisee tiedon väärästä muodosta johtuvia ongelmatilanteita, kuten vaikkapa tilanteita, missä tietokantaan on tallennettu kokonaisluvun sijaan merkkijono, ja käyttäjä yrittää lukea ja muuntaa merkkijonon luvuksi.
 
 Tarkastellaan seuraavaksi tietokantataulujen luomista SQL-kielellä. Tietokantataulu luodaan `CREATE TABLE`-lauseella, jossa määritellään tietokantataulun sarakkeet ja niiden tietotyypit sekä tietokantatauluun kuuluvat rajoitteet kuten pääavaimet ja viiteavaimet. Syntaksi tietokantataulun luomiselle on seuraava.
 
@@ -41,14 +41,21 @@ Tutustutaan seuraavaksi tietokantatauluissa käytettyihin tietotyyppeihin sekä 
 
 ## Tallennettavan tiedon tyyppi
 
+Tallennettavaa tietoa määriteltäessä kuvataan sekä tiedon tyyppi että tietoa varten varattavan tilan koko. Tieto tilan koosta auttaa tiedon hakemisessa.
 
-Tiedon tyypin määrittelyssä käytetään SQL-standardissa määriteltyjä tietotyyppejä. Tutustutaan tässä seuraavaksi muutamaan usein käytettyyn kategoriaan.
+Tarkastellaan tiedon koon merkitystä esimerkin kautta. Oletetaan, että haluamme tallentaa henkilöiden tietoja. Jokaisesta henkilöstä tallennetaan nimi ja osoite. Nimen tallentamiseen varataan 32 merkkiä ja osoitteen tallentamiseen 64 merkkiä. Nyt henkilöiden läpikäynti onnistuu käymällä muistia läpi 96 merkin kokonaisuuksissa. Mikäli haluaisimme esimerkiksi löytää kolmantena tallennetun henkilön tiedot, löytyisivät ne 192 merkin päästä henkilöiden tallentamiseen käytetyn alueen alusta.
+
+Mikäli nimi ja merkkijono tallennettaisiin vaihtuvanmittaisina merkkijonoina, tulisi tietokannanhallintajärjestelmän pitää tarkempaa kirjaa kunkin henkilön tietojen alkukohdasta. Toinen mahdollisuus olisi henkilön tietojen loppumisen ja seuraavan henkilön tietojen alkamisen ilmaiseminen jollain muulla tavalla, kuten esimerkiksi jollain erikoismerkillä. Tällöin henkilöiden läpikäynti olisi kuitenkin hitaampaa, sillä seuraavan henkilön löytäminen vaatisi aina edellisen henkilön tietojen läpikäyntiä.
+
+Esimerkkimme on kuitenkin hieman naiivi, sillä tietokannanhallintajärjestelmissä käytetään normaalin läpikäynnin lisäksi erilaisia tietorakenteita tiedon hakemiseen. Tarkastelemme näitä lyhyesti kurssin viidennessä osassa.
+
+Tutustutaan seuraavaksi tiedon määrittelyyn SQL-kielen standardissa kuvattujen tietotyyppien avulla. Keskitymme muutamaan yleisimpään kategoriaan.
 
 - Merkkijonojen tallentamiseen tarkoitetut tietotyypit
 
-  - Tietyn mittainen merkkijono `CHAR(pituus)` - käytetään mikäli merkkijonon pituus on aina täsmälleen sama.
+  - Tietyn mittainen merkkijono `CHAR(pituus)` - käytetään mikäli merkkijonoa varten varataan aina saman mittainen alue. Mikäli tallennettavan tiedon pituus on lyhyempi, loppu alueesta täytetään tyhjällä tai joillain erikoismerkeillä.
 
-  - Vaihtelevan pituinen merkkijono `VARCHAR(maksimipituus)` - käytetään mikäli merkkijonon pituus voi vaihdella.
+  - Vaihtelevan pituinen merkkijono `VARCHAR(maksimipituus)` - käytetään mikäli merkkijonoa varten varattava alue vaihtelee tallennettavasta merkkijonosta riippuen.
 
   - Hyvin iso merkkijono `CLOB` - käytetään tarvittaessa hyvin isojen merkkijonojen tallentamiseen -- tietokannanhallintajärjestelmillä on tyypillisesti hyvin isojen merkkijonojen käsittelyä varten myös järjestelmäkohtaisia tietotyyppejä.
 
@@ -83,8 +90,8 @@ Yllä kuvattuja tietotyyppeja käyttävä tietokantataulu `Tietotyypit` luotaisi
 
 ```sql
 CREATE TABLE Tietotyypit (
-  neljan_merkin_merkkijono CHAR(4),
-  korkeintaan_neljan_merkin_merkkijono VARCHAR(4),
+  neljan_merkin_merkkijonoalue CHAR(4),
+  korkeintaan_neljan_merkin_merkkijonoalue VARCHAR(4),
   hyvin_iso_merkkijono CLOB,
   pieni_kokonaisluku SMALLINT,
   keskisuuri_kokonaisluku INTEGER,
