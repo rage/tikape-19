@@ -152,7 +152,7 @@ Yllä kuvatussa tietokantataulussa ei voi olla kahta opiskelijaa, jolla on sama 
 
 
 
-<text-box variant='hint' name='Viiteavaimen määrittely sarakkeen osana'>
+<text-box variant='hint' name='Pääavaimen määrittely sarakkeen osana'>
 
 Mikäli tietokantataulun pääavain koostuu vain yhdestä sarakkeesta, voi pääavaimen määritellä myös sarakkeen määrittelyn yhteydessä. Tällöin määre `PRIMARY KEY` lisätään sarakkeen määrittelyn jälkeen. Alla edellinen `Opiskelija`-taulu siten, että pääavain määritellään suoraan sarakkeen `opiskelijanumero` määrittelyn yhteydessä.
 
