@@ -53,7 +53,7 @@ Tutustutaan seuraavaksi tiedon määrittelyyn SQL-kielen standardissa kuvattujen
 
 - Merkkijonojen tallentamiseen tarkoitetut tietotyypit
 
-  - Tietyn mittainen merkkijono `CHAR(pituus)` - käytetään mikäli merkkijonoa varten varataan aina saman mittainen alue. Mikäli tallennettavan tiedon pituus on lyhyempi kuin `pituus`, loppu alueesta täytetään tyhjällä tai erikoismerkeillä.
+  - Tietyn mittainen merkkijono `CHAR(pituus)` - käytetään mikäli merkkijonoa varten varataan aina saman mittainen alue. Mikäli tallennettavan tiedon pituus on lyhyempi kuin `pituus`, loppu alueesta täytetään tyhjällä tai erikoismerkeillä, joita ei huomioida kyseisestä sarakkeesta tietoa haettaessa.
 
   - Vaihtelevan pituinen merkkijono `VARCHAR(maksimipituus)` - käytetään mikäli merkkijonoa varten varattava alue vaihtelee tallennettavasta merkkijonosta riippuen. Tilaa käytetään aina korkeintaan `maksimipituus`-parametrin verran.
 
