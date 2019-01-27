@@ -1,5 +1,5 @@
 ---
-path: '/osa-3/x-alikyselyt'
+path: '/osa-4/x-alikyselyt'
 title: 'Alikyselyt'
 hidden: true
 ---

@@ -8,7 +8,7 @@ hidden: true
 <deadline>4.2.2019</deadline>
 
 
-Tunnet menetelmiä tiedon ja tietokannan kuvaamiseen. Tunnet käsiteanalyysin askeleet ja osaat luoda ongelma-alueen kuvauksesta tietokannan käsiteanalyysin askeleita noudattaen.
+Tässä osassa opit menetelmiä tiedon ja tietokannan kuvaamiseen. Opit käsiteanalyysin askeleet ja harjoittelet käsitekaavion luomista ongelma-alueen kuvauksesta käsiteanalyysin askeleita noudattaen. Opit muuntamaan käsiteanalyysin tuloksena saatavan käsitekaavion tietokantakaavioksi.
 
 
 <please-login></please-login>
@@ -16,7 +16,24 @@ Tunnet menetelmiä tiedon ja tietokannan kuvaamiseen. Tunnet käsiteanalyysin as
 <pages-in-this-section></pages-in-this-section>
 
 
-Työmäärän kuvaus
+<ab-study id="self_evaluation_k19_tikape">
 
+<only-for-ab-group group=1>
 
-<exercises-in-this-section></exercises-in-this-section>
+<exercises-in-this-section ignore-quiz-tags="group-2,group-3"></exercises-in-this-section>
+
+</only-for-ab-group>
+
+<only-for-ab-group group=2>
+
+<exercises-in-this-section ignore-quiz-tags="group-1,group-3"></exercises-in-this-section>
+
+</only-for-ab-group>
+
+<only-for-ab-group group=3>
+
+<exercises-in-this-section ignore-quiz-tags="group-1,group-2"></exercises-in-this-section>
+
+</only-for-ab-group>
+
+</ab-study>

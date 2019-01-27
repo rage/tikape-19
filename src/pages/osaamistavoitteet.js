@@ -62,7 +62,8 @@ const IndexPage = () => (
               <TableCell>
                 Tunnet menetelmiä tiedon ja tietokannan kuvaamiseen. Tunnet
                 käsiteanalyysin askeleet ja osaat luoda ongelma-alueen
-                kuvauksesta tietokannan käsiteanalyysin askeleita noudattaen.
+                kuvauksesta käsitekaavion. Osaat luoda käsitekaaviosta
+                tietokantakaavion.
               </TableCell>
             </TableRow>
             <TableRow>
