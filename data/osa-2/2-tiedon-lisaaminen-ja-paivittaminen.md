@@ -63,7 +63,7 @@ INSERT INTO RaakaAine (nimi) VALUES ('Peruna');
 INSERT INTO RaakaAine (nimi) VALUES ('Porkkana');
 ```
 
-Mikäli tietokantataulussa on yksi tai useampi viiteavain, tulee tiedon lisäyksen yhtedessä olla tieto viiteavaimen arvosta. Tarkastellaan seuraavaksi taulua `Tilaus`, jossa on viite tauluun `Asiakas`. Tiedon lisääminen tauluun `Tilaus` tapahtuu `INSERT INTO`-lauseen avulla. Koska taulussa `Tilaus` on viiteavain tauluun `Asiakas`, tulee viitattavan asiakkaan tunnus olla tiedossa lisäyksen yhteydessä -- alla olevassa esimerkissä oletetaan, että tilauksen tehneen asiakkaan pääavaimen arvo on `7`.
+Mikäli tietokantataulussa on yksi tai useampi viiteavain, tulee tiedon lisäyksen yhteydessä olla tieto viiteavaimen arvosta. Tarkastellaan seuraavaksi taulua `Tilaus`, jossa on viite tauluun `Asiakas`. Tiedon lisääminen tauluun `Tilaus` tapahtuu `INSERT INTO`-lauseen avulla. Koska taulussa `Tilaus` on viiteavain tauluun `Asiakas`, tulee viitattavan asiakkaan tunnus olla tiedossa lisäyksen yhteydessä -- alla olevassa esimerkissä oletetaan, että tilauksen tehneen asiakkaan pääavaimen arvo on `7`.
 
 
 ```sql
