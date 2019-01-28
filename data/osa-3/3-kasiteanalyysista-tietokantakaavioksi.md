@@ -1,7 +1,7 @@
 ---
 path: '/osa-3/3-kasiteanalyysista-tietokantakaavioksi'
 title: 'Käsiteanalyysistä tietokantakaavioksi'
-hidden: true
+hidden: false
 ---
 
 

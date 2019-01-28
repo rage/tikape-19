@@ -1,7 +1,7 @@
 ---
 path: '/osa-3/2-kasiteanalyysi'
 title: 'Käsiteanalyysi'
-hidden: true
+hidden: false
 ---
 
 
@@ -346,7 +346,7 @@ Tarkastellaan vielä tilannetta, missä luokkakaaviosta löytyy tapaus, missä t
 
 <moodle-exercise name="Käsiteanalyysi">
 
-Tee alla olevaan kuvaukseen käsiteanalyysi kurssimateriaalin ohjeistusta seuraten ja palauta tulos PDF-muotoisena dokumenttina kurssin Moodle-järjestelmään. Kirjoita palautukseesi jokainen käsiteanalyysin vaihe erikseen, sekä käsiteanalyysin lopputuloksena syntynyt kaavio. Lopullisessa kaaviossa tulee esiintyä käsitteiden nimet, käsitteiden attribuutit sekä käsitteiden väliset yhteydet ja yhteysrajoitteet.
+Tee alla olevaan ongelma-alueen kuvaukseen käsiteanalyysi kurssimateriaalin ohjeistusta seuraten ja palauta tulos PDF-muotoisena dokumenttina kurssin Moodle-järjestelmään. Kirjoita palautukseesi jokainen käsiteanalyysin vaihe erikseen, sekä käsiteanalyysin lopputuloksena syntynyt kaavio. Lopullisessa kaaviossa tulee esiintyä käsitteiden nimet, käsitteiden attribuutit sekä käsitteiden väliset yhteydet ja yhteysrajoitteet.
 
 _Verkkohuutokauppamme tarjoaa rekisteröityneille asiakkaille mahdollisuuden laittaa tuotteitaan tarjolle huutokauppaan. Rekisteröityneistä asiakkaista tallennetaan asiakkaan yhteystiedot. Kukin tuote liittyy yhteen tai useampaan kategoriaan, joiden perusteella verkkohuutokaupasta etsitään tuotteita. Kussakin kategoriassa voi olla useita tuotteita. Tuotteen lisääminen verkkokauppaan on suoraviivaista: asiakas kirjoittaa tuotteen tiedot, merkitsee kategoriat joihin tuote kuuluu, määrittää huutokaupan alkamis- ja päättymisajan sekä asettaa minimihinnan. Kuka tahansa voi tehdä tarjouksen tuotteesta -- tarjouksen yhteydessä tarjoaja antaa yhteystietonsa. Tuotteesta kiinnostuneet voivat myös lähettää kysymyksiä myyjälle järjestelmän kautta. Kysymykset välitetään järjestelmän kautta myyjälle, samoin kuin myyjän mahdolliset kysymyksiin antamat vastaukset lähetetään järjestelmän kautta kysyjälle. Myyjä voi halutessaan merkitä kysymyksen ja vastauksen julkiseksi, jolloin ne julkaistaan tuotteen tietojen yhteydessä._
 

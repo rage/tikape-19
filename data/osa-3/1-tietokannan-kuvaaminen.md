@@ -1,7 +1,7 @@
 ---
 path: '/osa-3/1-tiedon-kuvaaminen'
 title: 'Tiedon kuvaamistekniikoita'
-hidden: true
+hidden: false
 ---
 
 
@@ -81,18 +81,18 @@ Lisätään harrastukselle seuraavaksi nimi-attribuutti. Sovitaan, että nimi on
 
 <br/>
 
-Luokkakaaviossa on nyt sekä opiskelija että harrastus. Näillä ei ole tällä hetkellä kuitenkaan minkäänlaista yhteyttä. Tutustutaan seuraavaksi yhteyksien merkintään luokkakaavioon.
+Luokkakaaviossa on nyt sekä opiskelija että harrastus. Näillä ei ole tällä hetkellä kuitenkaan minkäänlaista yhteyttä.
 
 
 ## Yhteydet luokkakaaviossa
 
-Tutustutaan seuraavaksi yhteyksien luomiseen luokkakaaviossa. Yhteys luokkien välillä merkitään viivalla, johon lisätään osallistumisrajoitteet eli yhteyden tyyppiä kuvaavat määreet. Yhteydet voidaan karkeasti ottaen jakaa kolmeen kategoriaan: monen suhde moneen, yhden suhde moneen ja yhden suhde yhteen.
+Tutustutaan seuraavaksi yhteyksien merkintään luokkakaaviossa. Yhteys luokkien välillä merkitään viivalla, johon lisätään osallistumisrajoitteet eli yhteyden tyyppiä kuvaavat määreet. Yhteydet voidaan karkeasti ottaen jakaa kolmeen kategoriaan: monen suhde moneen, yhden suhde moneen ja yhden suhde yhteen.
 
 
 ### Monen suhde moneen
 
 
-Kahden käsitteen välillä on monen suhde moneen (`N-N`) -yhteys, jos ensimmäisen käsitteen ilmentymään voi liittyä monta toisen käsitteen ilmentymää, ja toisen käsitteen ilmentymään voi liittyä monta ensimmäisen käsitteen ilmentymää.
+Kahden käsitteen välillä on monen suhde moneen (`N-N`, `*-*`) -yhteys, jos ensimmäisen käsitteen ilmentymään voi liittyä monta toisen käsitteen ilmentymää, ja toisen käsitteen ilmentymään voi liittyä monta ensimmäisen käsitteen ilmentymää.
 
 Monen suhde moneen yhteys merkitään luokkakaavioon viivalla, jonka kummassakin päässä on tähti. Alla olevassa kuvassa opiskelijan ja harrastuksen välillä on monesta moneen -yhteys. Tämä tarkoittaa käytännössä sitä, että opiskelijalla voi olla monta harrastusta ja yhtä harrastusta voi harrastaa useampi opiskelija.
 
@@ -109,7 +109,7 @@ Monen suhde moneen yhteys merkitään luokkakaavioon viivalla, jonka kummassakin
 
 ### Yhden suhde moneen
 
-Kahden käsitteen välillä on yhden suhde moneen (`1-N`) -yhteys, jos ensimmäisen käsitteen ilmentymään voi liittyä monta toisen käsitteen ilmentymää, mutta yhteen toisen käsitteen ilmentymään voi liittyä vain yksi ensimmäisen käsitteen ilmentymä.
+Kahden käsitteen välillä on yhden suhde moneen (`1-N`, `1-*`) -yhteys, jos ensimmäisen käsitteen ilmentymään voi liittyä monta toisen käsitteen ilmentymää, mutta yhteen toisen käsitteen ilmentymään voi liittyä vain yksi ensimmäisen käsitteen ilmentymä.
 
 Yhden suhde moneen yhteys merkitään luokkakaavioon viivalla, jonka sen monta kertaa esiintyvän käsitteen päässä on tähti. Alla olevassa kuvassa opiskelijan ja harrastuksen välillä on yhdestä moneen -yhteys. Tämä tarkoittaa käytännössä sitä, että opiskelijalla voi olla monta harrastusta, mutta kutakin harrastusta voi harrastaa korkeintaan yksi opiskelija.
 
@@ -203,48 +203,9 @@ Alla on kuvattuna erään tilausjärjestelmän luokkakaavio. Tilausjärjestelmä
 
 Jokaisen luokkakaaviossa olevan käsitteen kohdalle on merkitty käsitteeseen kuuluvat attribuutit sekä niiden tietotyypit. Esimerkiksi asiakkaalla on nimi, puhelinnumero, katuosoite, postinumero sekä postitoimipaikka. Edellisistä postinumero tallennetaan numerona, muut tallennetaan merkkijonona. Tilaukseen liittyy aika, kuljetustapa, tieto tilauksen vastaanottamisesta sekä tieto tilauksen toimittamisesta. Aika tallennetaan Date-tyyppisenä tietona, kuljetustapa on merkkijono (esim. "kuljetus" tai "nouto"), ja tieto tilauksen vastaanottamisesta sekä toimittamisesta on tallennettu totuusavoisena muuttujana.
 
-Tarkastellaan yllä olevassa luokkakaaviossa olevia yhteystyyppejä eli käsitteiden välisiä suhteita hieman tarkemmin.
-
-
-## Yhden suhde moneen
-
-Kahden käsitteen välillä on yhden suhde moneen (`1-N`) -yhteys, jos ensimmäisen käsitteen ilmentymään voi liittyä monta toisen käsitteen ilmentymää, mutta yhteen toisen käsitteen ilmentymään voi liittyä vain yksi ensimmäisen käsitteen ilmentymä.
-
-Yllä olevassa esimerkissä tällainen suhde on esimerkiksi asiakkaan ja tilauksen välillä. Käytännössä yksittäinen asiakas -- esimerkiksi *Anna Asiakas* -- voi tehdä monta tilausta, mutta jokainen tehty tilaus liittyy täsmälleen yhteen asiakkaaseen. Sama tilaus ei voi liittyä samaan aikaan *Anna Asiakkaaseen* sekä *Essi Esimerkkiin*.
-
-<figure>
-  <img src="../img/luokkakaavio/ravintola/asiakas-tilaus.png" alt="[Asiakas|nimi:String;puhelinnumero:String;katuosoite:String;postinumero:Integer;postitoimipaikka:String]
-						    [Tilaus|aika:Date;kuljetustapa:String;vastaanotettu:Boolean;toimitettu:Boolean]
-						    [Asiakas]1-*[Tilaus]"/>
-  <figcaption>
-    Yhden suhde moneen. Yllä yhteen asiakkaaseen voi liittyä monta tilausta, mutta yksi tilaus liittyy aina täsmälleen yhteen asiakkaaseen. Yhden suhde moneen merkitään luokkakaavioon piirrettyyn viivaan tähdellä ja numerolla 1. Tähti tulee yhteyden siihen päähän, joita voi olla monta, ja ykkönen siihen päähän, joita voi olla vain yksi.
-  </figcaption>
-</figure>
-
-<br/>
-
-Yhdestä moneen yhteystyyppi voi edellyttää sen käsitteen ilmentymän olemassaoloa, johon liittyy monta toisen käsitteen ilmentymää. Käytännössä tilauksen luominen edellyttää tilaukseen liittyvän asiakkaan olemassaoloa. Toisin sanoen, tilausta ei voi luoda ilman, että sille olisi asiakas.
-
-
-## Monen suhde moneen
-
-Kahden käsitteen välillä on monen suhde moneen (`N-N`) -yhteys, jos ensimmäisen käsitteen ilmentymään voi liittyä monta toisen käsitteen ilmentymää, ja toisen käsitteen ilmentymään voi liittyä monta ensimmäisen käsitteen ilmentymää.
-
-Yllä olevassa esimerkissä tällainen suhde on esimerkiksi annoksen ja raaka-aineen välillä. Käytännössä yksittäinen annos -- esimerkiksi *Poronkäristys* -- voi sisältää montaa eri raaka-ainetta kuten *perunaa*, *puolukkaa* ja *poroa*. Toisaalta, yksittäinen raaka-aine kuten *peruna* voi sisältyä moneen eri annokseen.
-
-<figure>
-  <img src="../img/luokkakaavio/ravintola/annos-raaka_aine.png" alt="[Annos|nimi:String;koko:String;hinta:double]
-						      [RaakaAine|nimi:String]
-						      [Annos]*-*[RaakaAine]"/>
-  <figcaption>
-    Monen suhde moneen. Yllä annokseen voi liittyä montaa eri raaka-ainetta, ja yksi raaka-aine voi esiintyä useammassa eri annoksessa. Monen suhde moneen merkitään luokkakaavioon piirrettyyn viivaan kahdella tähdellä, missä viivan kummassakin päässä on tähti.
-  </figcaption>
-</figure>
-
-<br/>
-
 
 ## Tekstimuotoinen kuvaus
+
 
 Yllä kuvattuja käsitteitä voi kuvata myös tekstimuotoisesti. Tällä kurssilla käytämme seuraavaa muotoa:
 
@@ -363,14 +324,12 @@ Alla olevassa esimerkissä on kuvattuna käsitteet `Asiakas` ja `Tilaus` (kuvatt
 Käytämme tällä kurssilla ensisijaisesti luokkakaavioita (sopivasti soveltaen), mutta pääset välillä lukemaan ja tuottamaan myös muunlaisia kaaviotyyppejä.
 
 
-<quiznator id="5c4e275099236814c5bb7d06"></quiznator>
 
-
-<moodle-exercise name="Tiedon kuvaus luokkakaaviona ja ER-kaaviona">
+<moodle-exercise name="Tiedon kuvaaminen luokkakaaviona ja ER-kaaviona">
 
 Tämä on kurssin ensimmäinen Moodle-järjestelmään palautettava tehtävä. Moodlessa on osakohtaiset tehtävien palautusalueet.
 
-Piirrä alla olevaa yksinkertaista versiot säilyttävää wikisivustoa kuvaava käsitekaavio sekä luokkakaaviona että ER-kaaviona. Palauta piirrustukseni yhtenä PDF-tiedostona Moodleen.
+Piirrä alla olevaa yksinkertaista versiot säilyttävää wikisivustoa kuvaava käsitekaavio sekä luokkakaaviona että ER-kaaviona. Palauta piirrustuksesi yhtenä PDF-tiedostona Moodleen.
 
 - [Sivu|nimi;osoite]
 - [Sisalto|teksti;versionumero]
