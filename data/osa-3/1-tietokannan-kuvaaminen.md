@@ -306,11 +306,11 @@ Oliokaavioiden avulla näytetään ohjelman suorituksen aikainen olioiden tila, 
 
 ## ER-kaavio
 
-ER-malli (<a href="https://en.wikipedia.org/wiki/Entity–relationship_model" target="_blank">Entity-relationship model</a>) on toinen menetelmä ongelma-alueen käsitteiden sekä niiden suhteiden kuvaamiseen. ER-mallissa käsitteet kuvataan suunnikkaina, attribuutit ellipseinä ja käsitteiden suhteet vinoneliöiden avulla.
+ER-malli (<a href="https://en.wikipedia.org/wiki/Entity–relationship_model" target="_blank">Entity-relationship model</a>) on toinen menetelmä ongelma-alueen käsitteiden sekä niiden suhteiden kuvaamiseen. ER-mallissa käsitteet kuvataan suorakulmioina, attribuutit ellipseinä ja käsitteiden suhteet vinoneliöiden avulla.
 
 <br/>
 
-Alla olevassa esimerkissä on kuvattuna käsitteet `Asiakas` ja `Tilaus` (kuvattu suunnikkaina). Käsitteelle `Asiakas` on määritelty attribuutit (kuvattu ellipseinä), käsitteelle `Tilaus` attribuutteja ei ole määritelty. Käsitteiden välinen yhdestä moneen -yhteys on merkitty kaavioon vinoneliön avulla -- vinoneliöön on määritelty myös osallistumisrajoitteet: kuhunkin tilaukseen liittyy aina yksi asiakas, kun taas asiakkaaseen voi liittyä monta (`n`) tilausta.
+Alla olevassa esimerkissä on kuvattuna käsitteet `Asiakas` ja `Tilaus` (kuvattu suorakulmioina). Käsitteelle `Asiakas` on määritelty attribuutit (kuvattu ellipseinä), käsitteelle `Tilaus` attribuutteja ei ole määritelty. Käsitteiden välinen yhdestä moneen -yhteys on merkitty kaavioon vinoneliön avulla -- vinoneliöön on määritelty myös osallistumisrajoitteet: kuhunkin tilaukseen liittyy aina yksi asiakas, kun taas asiakkaaseen voi liittyä monta (`n`) tilausta.
 
 <figure>
   <img src="../img/er-kaavio.png" alt=""/>
