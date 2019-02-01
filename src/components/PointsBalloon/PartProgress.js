@@ -67,12 +67,12 @@ const PartProgress = ({ name, data, appliesForStudyRight }) => {
     maxPointsSum += data.max_points
   })
   let totalProgress = Math.floor((nPointsSum / maxPointsSum) * 100) / 100
-  allChartData.push({
-    tool: "Tehtäväpisteet yhteensä",
-    progress: Math.floor(totalProgress * 100 + 0.000000001),
-    n_points: nPointsSum,
-    max_points: maxPointsSum,
-  })
+  // allChartData.push({
+  //   tool: "Tehtäväpisteet yhteensä",
+  //   progress: Math.floor(totalProgress * 100 + 0.000000001),
+  //   n_points: nPointsSum,
+  //   max_points: maxPointsSum,
+  // })
   return (
     <PartProgressContainer>
       <b>{improveGroupName(name)}</b>
