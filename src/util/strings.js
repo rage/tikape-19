@@ -12,14 +12,21 @@ export function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1)
 }
 
-export function stringToBoolean(string) {
-  if (string === "f") {
-    return false
-  }
-  if (string === undefined || string === null || string === false) {
-    return false
-  }
-  return true
+export function removeLeadingZeros(string) {
+  return string.replace(/^0+/, "")
+}
+
+export function splitGroupNameToWordAndNumber(string) {
+  return string.split(/(\d+)/)
+}
+
+export function improveGroupName(string) {
+  var stringParts = splitGroupNameToWordAndNumber(string)
+  return (
+    capitalizeFirstLetter(stringParts[0]) +
+    " " +
+    removeLeadingZeros(stringParts[1])
+  )
 }
 
 export function normalizeExerciseId(string) {
@@ -31,6 +38,17 @@ export function normalizeExerciseId(string) {
       .replace(/ä/g, "a")
       .replace(/Ä/g, "A")
       .replace(/\s+/g, "-")
-      .replace(/[^A-Za-z0-9_-]/g, ""),
+      .replace(/[^A-Za-z0-9_-]/g, "")
+      .replace(/-+/g, "-"),
   )
+}
+
+export function stringToBoolean(string) {
+  if (string === "f") {
+    return false
+  }
+  if (string === undefined || string === null || string === false) {
+    return false
+  }
+  return true
 }

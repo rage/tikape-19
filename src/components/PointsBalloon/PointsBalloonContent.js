@@ -1,10 +1,13 @@
 import React, { Fragment } from "react"
-import LoginStateContext from "../../contexes/LoginStateContext"
 import withSimpleErrorBoundary from "../../util/withSimpleErrorBoundary"
 import { Modal, Paper, Button } from "@material-ui/core"
 import styled from "styled-components"
-import { OutboundLink } from "gatsby-plugin-google-analytics"
 import Loading from "../Loading"
+import { fetchProgress } from "../../services/progress"
+import PagesContext from "../../contexes/PagesContext"
+import PartProgress from "./PartProgress"
+import { getCachedUserDetails } from "../../services/moocfi"
+import { SMALL_MEDIUM_BREAKPOINT } from "../../util/constants"
 
 const StyledModal = styled(Modal)`
   z-index: 500 !important;
@@ -16,11 +19,21 @@ const ModalContent = styled(Paper)`
   background-color: white;
   width: 100%;
   max-width: 450px;
-  height: 500px;
+  height: 700px;
+  max-height: 90vh;
+  overflow-y: scroll;
   position: fixed;
   right: 1.5rem;
   bottom: 1.5rem;
   z-index: 200 !important;
+  font-size: 1rem;
+  @media only screen and (max-width: ${SMALL_MEDIUM_BREAKPOINT}) {
+    right: 0rem;
+    bottom: 0rem;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    padding: 1rem;
+  }
 `
 
 const ModalControls = styled.div`
@@ -33,22 +46,36 @@ const Title = styled.h1`
   font-size: 1.5rem;
 `
 
-const data = [
-  { group: "Osa 1", Ohjelmointitehtävät: 80, Kyselyt: 20 },
-  { group: "Osa 2", Ohjelmointitehtävät: 30, Kyselyt: 40 },
-]
-
 class PointsBalloonContent extends React.Component {
-  static contextType = LoginStateContext
+  static contextType = PagesContext
 
   state = {
     render: false,
     data: null,
+    error: null,
+    appliesForStudyRight: null,
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     this.setState({ render: true })
-    this.setState({ data })
+    try {
+      let data = await fetchProgress(this.context)
+      let userDetails = await getCachedUserDetails()
+      const appliesForStudyRight =
+        userDetails?.extra_fields?.applies_for_study_right === "t"
+      this.setState({ data, appliesForStudyRight })
+    } catch (e) {
+      throw e
+      //this.setState({ error: e.toString() })
+    }
+  }
+
+  handleClose = () => {
+    this.setState({
+      data: null,
+      error: null,
+    })
+    this.props.handleClose()
   }
 
   render() {
@@ -60,23 +87,30 @@ class PointsBalloonContent extends React.Component {
       >
         <ModalContent>
           <ModalControls>
-            <Title>Edistyminen</Title>
-            <Button onClick={this.props.handleClose}>Sulje</Button>
+            <Title>Edistyminen (beta)</Title>
+            <Button onClick={this.handleClose}>Sulje</Button>
           </ModalControls>
-          <Loading loading={!this.state.data}>
+          <Loading loading={!this.state.data && !this.state.error}>
             <Fragment>
-              <p>
-                Tähän tulee visualisaatio edistymisestäsi heti kun olemme
-                saaneet tämän ominaisuuden toteutettua. Odotellessasi voit
-                tutkia edistymisestäsi ohjelmointitehtävissä TMC:ssä:{" "}
-                <OutboundLink href="https://tmc.mooc.fi/participants/me">
-                  https://tmc.mooc.fi/participants/me
-                </OutboundLink>
-                . Huomaathan, että pisteisiisi vaikuttaa muutkin tehtävät kuin
-                ohjelmointitehtävät, kuten vaikka materiaalin seassa olevat
-                kyselyt. Näiden tehtävien pisteet eivät näy TMC:ssä. Kiitos
-                kärsivällisyydestäsi!
-              </p>
+              {this.state.error ? (
+                <div>
+                  Edistymisen hakeminen kaatui seuraavaan virheeseen:{" "}
+                  {this.state.error}
+                </div>
+              ) : (
+                <div>
+                  {this.state.data &&
+                    Object.entries(this.state.data).map(([name, data]) => {
+                      return (
+                        <PartProgress
+                          appliesForStudyRight={this.state.appliesForStudyRight}
+                          name={name}
+                          data={data}
+                        />
+                      )
+                    })}
+                </div>
+              )}
             </Fragment>
           </Loading>
         </ModalContent>
