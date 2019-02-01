@@ -98,6 +98,8 @@ const PartProgress = ({ name, data, appliesForStudyRight }) => {
             />
           </Bar>
         </StyledBarChart>
+
+        <LargeP>Tässä ei näy Moodle-tehtävistä saatuja pisteitä.</LargeP>
         {/* <LargeP>
           Osasta saadut kurssipisteet:{" "}
           {Math.floor(Math.min(100, totalProgress * 111.112))}
