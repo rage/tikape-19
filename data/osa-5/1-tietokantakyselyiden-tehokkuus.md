@@ -1,5 +1,5 @@
 ---
-path: '/osa-5/2-tietokantakyselyiden-tehokkuus'
+path: '/osa-5/1-tietokantakyselyiden-tehokkuus'
 title: 'Tietokantakyselyiden tehokkuuden tarkastelu'
 hidden: true
 ---

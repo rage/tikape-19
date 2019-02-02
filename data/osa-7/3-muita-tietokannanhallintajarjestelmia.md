@@ -13,6 +13,17 @@ hidden: true
 
 http://www.web-integration.info/en/blog/history-and-trends-in-the-development-of-databases/
 
+
+
+TODO: essee -- tutustu osoitteessa bla olevaan artikkeliin.
+
+<text-box variant='hint' name='Oppimistavoitteet'>
+
+Tutustu myös Wikipedian artikkeliin <a href="https://en.wikipedia.org/wiki/Eventual_consistency" target="_blank">Eventual consistency</a>, mikä käsittelyy myös termiä BASE.
+
+</text-box>
+
+
 #
   Jotain muuta kuin relaatiomallia noudattavat tietokannat
 <% end %>

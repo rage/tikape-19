@@ -69,24 +69,24 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>4</TableCell>
               <TableCell>
-                Tiedät mitä tietokannan normalisointi tarkoittaa. Tunnet
-                käsitteen normaalimuoto ja osaat perustella onko annettu
-                tietokantataulu ensimmäisessä, toisessa tai kolmannessa
-                normaalimuodossa. Osaat muuntaa annetun tietokantataulun
-                kolmanteen normaalimuotoon.
+                Tiedät mitä tietokannan normalisointi tarkoittaa ja osaat
+                perustella onko annettu tietokantataulu ensimmäisessä, toisessa
+                tai kolmannessa normaalimuodossa. Osaat muuntaa annetun
+                tietokantataulun kolmanteen normaalimuotoon. Tunnet käsitteen
+                tietokannan eheys ja tietokantatransaktio, ja tiedät milloin
+                tietokantatransaktioita käytetään. Osaat tehdä alikyselyitä
+                SQL-kielellä.
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>5</TableCell>
               <TableCell>
-                Tunnet käsitteen tietokannan eheys ja tietokantatransaktio, ja
-                tiedät milloin tietokantatransaktioita käytetään. Tiedät
-                tietokannanhallintajärjestelmältä vaadittuja ominaisuuksia,
-                joita tarvitaan tietokantatransaktioiden toimintaan. Tunnet
-                menetelmiä tietokantakyselyiden tehokkuuden tarkasteluun. Tiedät
-                mitä indeksit ovat ja tiedät milloin tietokantatauluihin
-                kannattaa määritellä indeksejä. Tiedät mitä tietokannan
-                denormalisointi tarkoittaa.
+                Tiedät tietokannanhallintajärjestelmältä vaadittuja
+                ominaisuuksia, joita tarvitaan tietokantatransaktioiden
+                toimintaan. Tunnet menetelmiä tietokantakyselyiden tehokkuuden
+                tarkasteluun. Tiedät mitä indeksit ovat ja tiedät milloin
+                tietokantatauluihin kannattaa määritellä indeksejä. Tiedät mitä
+                tietokannan denormalisointi tarkoittaa.
               </TableCell>
             </TableRow>
             <TableRow>

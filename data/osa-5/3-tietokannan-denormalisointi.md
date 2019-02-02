@@ -1,5 +1,5 @@
 ---
-path: '/osa-5/4-tietokannan-denormalisointi'
+path: '/osa-5/3-tietokannan-denormalisointi'
 title: 'Tietokannan denormalisointi'
 hidden: true
 ---

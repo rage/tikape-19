@@ -1,5 +1,5 @@
 ---
-path: '/osa-4/x-alikyselyt'
+path: '/osa-4/3-alikyselyt'
 title: 'Alikyselyt'
 hidden: true
 ---
@@ -7,12 +7,20 @@ hidden: true
 
 <text-box variant='learningObjectives' name='Oppimistavoitteet'>
 
-- Alikyselyt
+- Osaat kirjoittaa alikyselyitä
+- Ymmärrät että jokaisen tietokantakyselyn tulos on tietokantataulu.
 
 </text-box>
 
+Palataan hetkeksi takaisin tietokantakyselyiden maailmaan ja tutustutaan lyhyesti alikyselyihin. Oletetaan, että käytössämme on seuraavat taulut Opiskelija ja Kurssisuoritus.
 
-Alikyselyt ovat nimensä mukaan kyselyn osana suoritettavia alikyselyitä, joiden tuloksia käytetään osana pääkyselyä. Pohditaan kysymystä *Miten haen opiskelijat, jotka eivät ole vielä osallistuneet yhdellekään kurssille?*, ja käytetään siihen ensin aiemmin tutuksi tullutta tapaa, eli `LEFT JOIN`-kyselyä. Yhdistetään opiskelijaa ja kurssisuoritusta kuvaavat taulut LEFT JOIN-kyselyllä siten, että myös opiskelijat, joilla ei ole suorituksia tulevat mukaan vastaukseen. Tämän jälkeen, jätetään vastaukseen vain ne rivit, joilla kurssisuoritukseen liittyvät tiedot ovat tyhjiä -- tämä onnistuu katsomalla mitä tahansa kurssisuoritus-taulun saraketta, ja tarkistamalla onko se tyhjä. Tämä onnistuu seuraavasti:
+- Opiskelija((pk) id, nimi, opiskelijanumero, syntymavuosi)
+- Kurssisuoritus((fk) kurssi\_id -> Kurssi, (fk) opiskelija\_id -> Opiskelija, arvosana)
+- Kurssi((pk) id, nimi)
+
+Alikyselyt ovat nimensä mukaan kyselyn osana suoritettavia alikyselyitä, joiden tuloksia käytetään osana pääkyselyä.
+
+Pohditaan kysymystä *Miten haen opiskelijat, jotka eivät ole vielä osallistuneet yhdellekään kurssille?*. Käytetään tähän ensin aiemmin tutuksi tullutta tapaa, eli `LEFT JOIN`-kyselyä. Yhdistetään opiskelijaa ja kurssisuoritusta kuvaavat taulut LEFT JOIN-kyselyllä siten, että myös opiskelijat, joilla ei ole suorituksia tulevat mukaan vastaukseen. Tämän jälkeen, jätetään vastaukseen vain ne rivit, joilla kurssisuoritukseen liittyvät tiedot ovat tyhjiä -- tämä onnistuu katsomalla mitä tahansa kurssisuoritus-taulun saraketta, ja tarkistamalla onko se tyhjä.
 
 
 ```sql
@@ -32,14 +40,14 @@ SELECT opiskelija_id FROM Kurssisuoritus;
 Toinenkin kysely on melko suoraviivainen -- avainsanalla NOT IN voidaan rajata joukkoa.
 
 ```sql
-SELECT * FROM Opiskelija
+SELECT opiskelijanumero FROM Opiskelija
     WHERE id NOT IN (*ensimmainen kysely*);
 ```
 
 Yhdessä kyselyt ovat siis muotoa:
 
 ```sql
-SELECT * FROM Opiskelija
+SELECT opiskelijanumero FROM Opiskelija
     WHERE id NOT IN (
         SELECT opiskelija_id FROM Kurssisuoritus
     );
@@ -78,9 +86,9 @@ Esimerkiksi vanhimman (tai vanhimmat, jos tämä ei ole yksikäsitteistä) opisk
 
 
 ```sql
-  SELECT * FROM Opiskelija
-      WHERE syntymavuosi
-      IN (SELECT MIN(syntymavuosi) FROM Opiskelija);
+SELECT * FROM Opiskelija
+    WHERE syntymavuosi
+    IN (SELECT MIN(syntymavuosi) FROM Opiskelija);
 ```
 
 </text-box>
@@ -89,6 +97,6 @@ Esimerkiksi vanhimman (tai vanhimmat, jos tämä ei ole yksikäsitteistä) opisk
 Alikyselyitä voi käyttää myös osana poisto-, lisäys- ja päivityskyselyissä.
 
 
-<sqltrainer-exercise name="TODO: having">
+<sqltrainer-exercise name="TODO: alikyselyt">
   Tee blaa ja blaa
 </sqltrainer-exercise>
