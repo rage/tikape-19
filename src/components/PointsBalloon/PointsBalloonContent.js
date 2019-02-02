@@ -100,15 +100,24 @@ class PointsBalloonContent extends React.Component {
               ) : (
                 <div>
                   {this.state.data &&
-                    Object.entries(this.state.data).map(([name, data]) => {
-                      return (
-                        <PartProgress
-                          appliesForStudyRight={this.state.appliesForStudyRight}
-                          name={name}
-                          data={data}
-                        />
-                      )
-                    })}
+                    Object.entries(this.state.data)
+                      .sort((a, b) => {
+                        a = a[0].toLowerCase()
+                        b = b[0].toLowerCase()
+
+                        return a > b ? 1 : b > a ? -1 : 0
+                      })
+                      .map(([name, data]) => {
+                        return (
+                          <PartProgress
+                            appliesForStudyRight={
+                              this.state.appliesForStudyRight
+                            }
+                            name={name}
+                            data={data}
+                          />
+                        )
+                      })}
                 </div>
               )}
             </Fragment>
