@@ -62,7 +62,7 @@ export async function fetchQuiznatorProgress() {
     const progress = Math.floor((nPoints / maxPoints) * 100) / 100
     res = res.concat({
       group: part,
-      max_points: maxPoints,
+      max_points: maxPoints - 1,
       n_points: nPoints,
       progress,
     })
