@@ -1,6 +1,7 @@
 import axios from "axios"
 import { accessToken } from "./moocfi"
 import { flatten, getCommonElements } from "../util/arrays"
+import { fetchAbGroup } from "./abstudio"
 
 const BASE_URL = "https://quiznator.mooc.fi"
 
@@ -49,24 +50,31 @@ export async function fetchQuiznatorProgress() {
   const allQuizIds = flatten(quizIdInformation.map(o => o.quizIds))
   const progress = await fetchProgressByQuizIds(allQuizIds)
   const allAnswered = (progress.answered || []).map(o => o._id)
-  partToTag.forEach(({ part, tag }) => {
+  const promises = partToTag.map(async ({ part, tag }) => {
     const relevant = quizIdInformation
       .filter(o => {
         return o.tags.indexOf(tag) !== -1
       })
       .map(o => o.quizIds)
     const quizIds = flatten(relevant)
+    let decreaseMaxPoints = 1
+    const { group } = await fetchAbGroup("self_evaluation_k19_tikape")
+    if (group === 3) {
+      decreaseMaxPoints = 0
+    }
     const answered = getCommonElements(quizIds, allAnswered)
-    const maxPoints = quizIds.length
+    const maxPoints = quizIds.length - decreaseMaxPoints
     const nPoints = answered.length
     const progress = Math.floor((nPoints / maxPoints) * 100) / 100
     res = res.concat({
       group: part,
-      max_points: maxPoints - 1,
+      max_points: maxPoints,
       n_points: nPoints,
       progress,
     })
   })
+
+  await Promise.all(promises)
 
   return res
 }
