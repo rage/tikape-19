@@ -37,7 +37,7 @@ Relaatio esitetään tyypillisesti taulukkona, jolla on seuraavat ominaisuudet:
 - Jokainen taulukon rivi kuvaa yhtä relaation *R* monikkoa.
 - Taulukon rivien järjestyksellä ei ole väliä.
 - Jokainen taulukon rivi on erilainen.
-- Sarakkeiden järjestyksellä kuvataan relaation arvojoukkoja; ensimmäisen sarakkeen arvot tulevat arvojoukosta <em>S<sub>1</sub></em>, toisen sarakkeen arvojoukosta <e,>S<sub>2</sub></em> jne..
+- Sarakkeiden järjestyksellä kuvataan relaation arvojoukkoja; ensimmäisen sarakkeen arvot tulevat arvojoukosta <em>S<sub>1</sub></em>, toisen sarakkeen arvojoukosta <em>S<sub>2</sub></em> jne..
 - Jokaiselle sarakkeelle annetaan nimi, joka kuvaa kunkin arvojoukon mahdollisia arvoja.
 
 
