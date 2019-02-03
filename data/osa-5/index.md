@@ -7,8 +7,8 @@ hidden: true
 
 <deadline>18.2.2019</deadline>
 
+Opit menetelmiä tietokantakyselyiden tehokkuuden tarkasteluun. Tutustut käsitteeseen indeksi ja opit milloin tietokantatauluihin kannattaa määritellä indeksejä. Tutustut tietokannan denormalisointiin ja opit luomaan tietokantaa käyttävän Java-kielisen sovelluksen.
 
-Tunnet käsitteen tietokannan eheys ja tietokantatransaktio, ja tiedät milloin tietokantatransaktioita käytetään. Tiedät tietokannanhallintajärjestelmältä vaadittuja ominaisuuksia, joita tarvitaan tietokantatransaktioiden toimintaan. Tunnet menetelmiä tietokantakyselyiden tehokkuuden tarkasteluun. Tiedät mitä indeksit ovat ja tiedät milloin tietokantatauluihin kannattaa määritellä indeksejä. Tiedät mitä tietokannan denormalisointi tarkoittaa.
 
 
 <please-login></please-login>

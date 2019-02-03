@@ -7,8 +7,7 @@ hidden: false
 
 <deadline>11.2.2019</deadline>
 
-Tiedät mitä tietokannan normalisointi tarkoittaa. Tunnet käsitteen normaalimuoto ja osaat perustella onko annettu tietokantataulu ensimmäisessä, toisessa tai kolmannessa normaalimuodossa. Osaat muuntaa annetun tietokantataulun kolmanteen normaalimuotoon.
-
+Tässä osassa opit mitä tietokannan normalisointi tarkoittaa ja opit perustelemaan onko annettu tietokantataulu ensimmäisessä, toisessa tai kolmannessa normaalimuodossa. Opit muuntamaan annetun tietokantataulun kolmanteen normaalimuotoon. Tutustut käsitteisiin tietokannan eheys ja tietokantatransaktio, ja opit milloin tietokantatransaktioita käytetään. Tutustut ominaisuuksiin, joita tietokannanhallintajärjestelmältä vaaditaan tietokantatransaktioiden toimintaan. Kertaat myös SQL-kieltä ja opit tekemään alikyselyitä SQL-kielellä.
 
 <please-login></please-login>
 

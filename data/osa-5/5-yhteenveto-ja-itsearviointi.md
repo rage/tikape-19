@@ -1,19 +1,34 @@
 ---
-path: '/osa-5/5-yhteenveto-ja-itsearviointi'
-title: 'Yhteenveto ja itsearviointi'
+path: '/osa-5/5-itsearviointi'
+title: 'Itsearviointi ja kysymyksen keksiminen'
 hidden: true
 ---
 
-<text-box variant='learningObjectives' name='Oppimistavoitteet'>
+Kurssin jokaisen osan jälkeen arvioidaan omaa osaamista sekä keksitään yksi osan materiaaliin liittyvä monivalintakysymys. Osa kurssin osallistujien keksimistä kysymyksistä valitaan osaksi kurssin koetta.
 
-- oppimistavoitteet
+<ab-study id="self_evaluation_k19_tikape">
 
-</text-box>
+<only-for-ab-group group=1>
 
-## header
+<quiznator id="5c5722fa244fe21455cb76c5"></quiznator>
 
-TODO: itsearviointi - osalle versio missä voi laskea pisteet omasta osaamisesta ja osalle likert?
+</only-for-ab-group>
 
-```java
-Javakoodi
-```
+<only-for-ab-group group=2>
+
+<quiznator id="5c57227bddb6b814af3225f5"></quiznator>
+
+</only-for-ab-group>
+
+<only-for-ab-group group=3>
+
+<quiznator id="5c5722fa244fe21455cb76c5"></quiznator>
+
+<quiznator id="5c57227bddb6b814af3225f5"></quiznator>
+
+</only-for-ab-group>
+
+</ab-study>
+
+
+<quiznator id="5c5722b7017ffc13eddca757"></quiznator>

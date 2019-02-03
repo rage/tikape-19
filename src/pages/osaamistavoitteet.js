@@ -69,30 +69,30 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>4</TableCell>
               <TableCell>
-                Tiedät mitä tietokannan normalisointi tarkoittaa ja osaat
-                perustella onko annettu tietokantataulu ensimmäisessä, toisessa
-                tai kolmannessa normaalimuodossa. Osaat muuntaa annetun
-                tietokantataulun kolmanteen normaalimuotoon. Tunnet käsitteen
-                tietokannan eheys ja tietokantatransaktio, ja tiedät milloin
-                tietokantatransaktioita käytetään. Osaat tehdä alikyselyitä
-                SQL-kielellä.
+                Tiedät mitä tietokannan normalisointi tarkoittaa osaat muuntaa
+                annetun tietokantataulun kolmanteen normaalimuotoon. Tunnet
+                käsitteen tietokannan eheys ja tietokantatransaktio, ja tiedät
+                milloin tietokantatransaktioita käytetään. Tiedät
+                tietokannanhallintajärjestelmältä vaadittuja ominaisuuksia,
+                joita tarvitaan tietokantatransaktioiden toimintaan. Osaat tehdä
+                alikyselyitä SQL-kielellä.
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>5</TableCell>
               <TableCell>
-                Tiedät tietokannanhallintajärjestelmältä vaadittuja
-                ominaisuuksia, joita tarvitaan tietokantatransaktioiden
-                toimintaan. Tunnet menetelmiä tietokantakyselyiden tehokkuuden
-                tarkasteluun. Tiedät mitä indeksit ovat ja tiedät milloin
-                tietokantatauluihin kannattaa määritellä indeksejä. Tiedät mitä
-                tietokannan denormalisointi tarkoittaa.
+                Tunnet menetelmiä tietokantakyselyiden tehokkuuden tarkasteluun.
+                Tiedät mitä indeksit ovat ja tiedät milloin tietokantatauluihin
+                kannattaa määritellä indeksejä. Tiedät mitä tietokannan
+                denormalisointi tarkoittaa. Osaat luoda tietokantaa käyttävän
+                Java-kielisen sovelluksen.
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>6</TableCell>
               <TableCell>
-                Osaat luoda tietokantaa käyttävän Java-kielisen sovelluksen.
+                Osaat käyttää valmiita ohjelmistokirjastoja tietokantakyselyiden
+                luomiseen. Tunnet Data Access Object (DAO) -suunnittelumallin.
                 Tunnet sekvenssikaaviot ja osaat kuvata sovelluksesi toimintaa
                 sekvenssikaavioiden avulla. Tunnet käsitteen SQL-injektio ja
                 tunnet menetelmiä SQL-injektioiden estämiseen.
@@ -101,8 +101,7 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>7</TableCell>
               <TableCell>
-                Tunnet Data Access Object (DAO) -suunnittelumallin. Tunnet
-                joitakin kirjastoja yksinkertaisten SQL-kyselyiden
+                Tunnet joitakin kirjastoja yksinkertaisten SQL-kyselyiden
                 automatisointiin ja tiedät näihin liittyviä ongelmia. Tunnet
                 pinnallisesti muutamia NoSQL- ja NewSQL-tietokantoja. Tunnet
                 GDPR-lainsäädännön ja tiedät miten se vaikuttaa henkilöihin
