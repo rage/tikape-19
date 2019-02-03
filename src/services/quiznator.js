@@ -29,10 +29,10 @@ export async function fetchQuiznatorProgress() {
       part: "osa03",
       tag: "tietokantojen-perusteet-k2019-3",
     },
-    // {
-    //   part: "osa04",
-    //   tag: "tietokantojen-perusteet-k2019-4",
-    // },
+    {
+      part: "osa04",
+      tag: "tietokantojen-perusteet-k2019-4",
+    },
     // {
     //   part: "osa05",
     //   tag: "tietokantojen-perusteet-k2019-5",
