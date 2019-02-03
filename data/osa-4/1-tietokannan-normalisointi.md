@@ -1,7 +1,7 @@
 ---
 path: '/osa-4/1-tietokannan-normalisointi'
 title: 'Tietokannan normalisointi'
-hidden: true
+hidden: false
 ---
 
 
@@ -274,11 +274,11 @@ Tämän kurssin puitteissa ensimmäiset kolme normaalimuotoa riittävät suunnit
 
 <moodle-exercise name="Tiedon normalisointi">
 
-Tämä tehtävä palautetaan kurssin Moodle-järjestelmään. Vastaus tulee palauttaa yhtenä PDF-muotoisena tiedostona.
+Tämä tehtävä palautetaan kurssin Moodle-järjestelmään. Vastaus tulee palauttaa yhtenä PDF-muotoisena tiedostona. Tehtävä vastaa pisteytyksessä viittä monivalintakyselyä.
 
 Oleta, että käytössäsi on seuraavanlainen tietokantataulu, joka kuvaa erään kalastuskilpailun käyttämää tietokantaa. Kyllä, heillä on tasan yksi tietokantataulu.
 
-- Saalis ((pk) id, kilpailun_tunnus, kilpailupaikka, kilpailupäivä, kalastajatunnus, kalastajan_nimi, kalalaji, kalastajan_syntymävuosi, kalastajan_saaliin_kokonaispaino, kalojen_kappalemäärä_kalastajan_saaliissa, kalastajan_sijoitus_kisassa)
+- Saalis ((pk) id, kilpailun\_tunnus, kilpailupaikka, kilpailupäivä, kalastajatunnus, kalastajan\_nimi, kalalaji, kalastajan\_syntymävuosi, kalastajan\_saaliin\_kokonaispaino, kalojen\_kappalemäärä\_kalastajan\_saaliissa, kalastajan\_sijoitus\_kisassa)
 
 Vastaa ensin seuraaviin kysymyksiin:
 

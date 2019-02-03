@@ -1,7 +1,7 @@
 ---
 path: '/osa-4/2-eheys-ja-tietokantatransaktiot'
 title: 'Tietokannan eheys ja tietokantatransaktiot'
-hidden: true
+hidden: false
 ---
 
 
@@ -73,8 +73,7 @@ COMMIT;
 Jokainen tietokantakysely -- myös "yhden rivin kyselyt" -- suoritetaan transaktion sisällä. Tietokannanhallintajärjestelmän vastuulla on vahtia, että transaktiot suoritetaan peräkkäin siten, että samaa tietoa ei voida käsitellä useammasta transaktiosta saman aikaan.
 
 
-TODO: voiko näitä treenata SQL-trainerissa?
-
+<quiznator id="5c56a8ca99236814c5bb90ee"></quiznator>
 
 ## Tietokantatransaktiot ja rajoitteet
 
@@ -99,14 +98,6 @@ CREATE TABLE Kirjanpitotapahtuma (
 Nyt yhden transaktion sisällä voi tehdä useamman kirjanpitotapahtuman, kunhan transaktion suorituksen yhteydessä kirjanpitotapahtumien debit- ja credit-sarakkeiden summa täsmää. Yllä tietokantataulun luomiskomentoon on lisätty rajoite (`CONSTRAINT`), jonka avulla tietokantatauluun voidaan lisätä sääntöjä, joiden tulee olla aina transaktion jälkeen voimassa.
 
 
-
-<text-box variant='hint' name='Oppimistavoitteet'>
-
-Netti on täynnä hyviä oppaita. Osoitteessa <a href="http://www.sqlitetutorial.net/sqlite-java/transaction/" target="_blank">http://www.sqlitetutorial.net/sqlite-java/transaction/</a> on eräs tällainen. Tutustu oppaaseen.
-
-</text-box>
-
-
 ## Tietokannanhallintajärjestelmän ominaisuuksia
 
 **ACID** (**A**tomicity, **C**onsistency, **I**solation, **D**urability) on joukko tietokannanhallintajärjestelmän ominaisuuksia:
@@ -124,3 +115,6 @@ Netti on täynnä hyviä oppaita. Osoitteessa <a href="http://www.sqlitetutorial
 Perinteiset tietokannanhallintajärjestelmät tarvitsevat atomisuuden ja pysyvyyden toteuttamiseen write-ahead-lokia (WAL). Write-ahead-loki on tietokannanhallintajärjestelmään toteutettu toiminnallisuus, missä suoritettavaksi tuleva tietokantaoperaatio tallennetaan tekstimuotoisena lokina levylle ennen tietokantaoperaation varsinaista suoritusta (sekä siihen mahdollisesti liittyvää tietokantarivien rivien varsinaista päivitystä). Tällöin operaatiot voidaan suorittaa uudelleen, jos tietokantapalvelin kaatuu ennen kuin operaatio on suoritettu loppuun ja niihin liittyvät muutokset tallennettu levylle.
 
 Tämä nopeuttaa tietokannan toimintaa merkittävästi, sillä pitkien operaatioiden kirjoittamista levylle ei tarvitse odottaa ennen kuin sovellukselle voidaan vastata operaation onnistuneen. Eristyvyyden toteuttamiseen käytetään mm. erilaisia taulu- ja rivilukitusmekanismeja. Kurssilla *Transaktioiden hallinta* tutustutaan tarkemmin transaktioiden toimintaan.
+
+
+<quiznator id="5c56a4f5c41ed4148d96b92a"></quiznator>

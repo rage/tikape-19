@@ -348,6 +348,15 @@ System.out.println("Haetun opiskelijan nimi on " + new String(nimi).trim());
 
 
 
+<text-box variant='hint' name='Oppimistavoitteet'>
+
+Netti on täynnä hyviä oppaita. Osoitteessa <a href="http://www.sqlitetutorial.net/sqlite-java/transaction/" target="_blank">http://www.sqlitetutorial.net/sqlite-java/transaction/</a> on eräs tällainen. Tutustu oppaaseen.
+
+</text-box>
+
+
+
+
 
 #
   Tietokannan käsittely ohjelmallisesti

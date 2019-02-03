@@ -106,7 +106,6 @@ var content2 = [
 ]
 
 var futurePages = [
-  { title: "Osa 4", tba: "4.2.2019" },
   { title: "Osa 5", tba: "11.2.2019" },
   { title: "Osa 6", tba: "18.2.2019" },
   { title: "Osa 7", tba: "25.2.2019" },

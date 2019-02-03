@@ -1,13 +1,14 @@
 ---
 path: '/osa-4/3-alikyselyt'
 title: 'Alikyselyt'
-hidden: true
+hidden: false
 ---
 
 
 <text-box variant='learningObjectives' name='Oppimistavoitteet'>
 
-- Osaat kirjoittaa alikyselyitä
+- Tiedät että SQL-kyselyssä voi olla useampi SQL-kysely.
+- Osaat kirjoittaa alikyselyitä.
 - Ymmärrät että jokaisen tietokantakyselyn tulos on tietokantataulu.
 
 </text-box>
@@ -97,6 +98,8 @@ SELECT * FROM Opiskelija
 Alikyselyitä voi käyttää myös osana poisto-, lisäys- ja päivityskyselyissä.
 
 
-<sqltrainer-exercise name="TODO: alikyselyt">
-  Tee blaa ja blaa
+<sqltrainer-exercise name="Alikyselyiden harjoittelu">
+
+Tee SQL-harjoittelujärjestelmän aiheesta "Nested queries" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+
 </sqltrainer-exercise>
