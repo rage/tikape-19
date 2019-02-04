@@ -38,7 +38,7 @@ Jokainen tietokantakysely suoritetaan omassa transaktiossaan, mutta, käyttäjä
 ```sql
 CREATE TABLE Tili (
     id integer PRIMARY KEY,
-    saldo NOT NULL
+    saldo integer NOT NULL
 );
 ```
 
