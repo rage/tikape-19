@@ -10,6 +10,10 @@ Java-kielessä tähän tehtävään on <a href="https://en.wikipedia.org/wiki/Ja
 
 <br/>
 
+TODO: tämä Springin JDBCTemplatella
+
+<br/>
+
 <text-box variant='learningObjectives' name='JDBC-ajurin noutaminen'>
 
 JDBC-ajurit ovat käytännössä Java-kielellä kirjoitettuja ohjelmia, joita tietokannanhallintajärjestelmän toteuttajat tarjoavat ohjelmoijien käyttöön. Kurssin toisessa osassa ajurit on lisätty valmiiksi tehtäväpohjien `lib`-kansioon, jonka lisäksi niiden käyttö on valmiiksi määritelty tehtäväpohjissa.

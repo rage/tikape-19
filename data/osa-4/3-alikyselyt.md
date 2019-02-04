@@ -76,8 +76,7 @@ SELECT opiskelijanumero FROM Opiskelija
 Edellä oleva kysely tarkistaa jokaisen Opiskelija-taulussa olevan opiskelijanumeron kohdalla ettei sitä löydy Kurssisuoritus-taulun opiskelija-sarakkeesta. Käytännössä -- jos tietokantamoottori ei optimoi kyselyä -- jokainen opiskelija-taulun rivi aiheuttaa uuden kyselyn kurssisuoritus-tauluun, mikä tekee kyselystä tehottoman.
 
 
-
-<text-box variant='hint' name='Kyselyn tulos on taulu'>
+## Kyselyn tulos on taulu
 
 Jokainen SQL-kysely tuottaa tuloksena taulun. Taulussa voi olla tasan yksi sarake ja rivi, tai vaikkapa tuhansia rivejä ja kymmeniä sarakkeita. Silloinkin, kun suoritamme yksinkertaisen haun, kuten vaikkapa "Hae kaikki kurssilla 'Tietokantojen perusteet' olevat opiskelijat", on haun tuloksena taulu.
 
@@ -92,7 +91,19 @@ SELECT * FROM Opiskelija
     IN (SELECT MIN(syntymavuosi) FROM Opiskelija);
 ```
 
-</text-box>
+Yllä, koska tuloksena on vain yksi arvo, vertailun voi toteuttaa myös yhtäsuuruusvertailuna. Tämä onnistuu seuraavasti.
+
+```sql
+SELECT * FROM Opiskelija
+    WHERE syntymavuosi = (SELECT MIN(syntymavuosi) FROM Opiskelija);
+```
+
+Myös pienempi kuin ja suurempi kuin ehdot toimivat kyselyissä. Esimerkiksi keskimääräistä opiskelijaa vanhemmat opiskelijat löytyisivät seuraavasti.
+
+```sql
+SELECT * FROM Opiskelija
+    WHERE syntymavuosi < (SELECT AVG(syntymavuosi) FROM Opiskelija);
+```
 
 
 Alikyselyitä voi käyttää myös osana poisto-, lisäys- ja päivityskyselyissä.
