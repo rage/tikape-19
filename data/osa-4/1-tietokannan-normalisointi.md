@@ -100,7 +100,7 @@ Yleisemmin ottaen mikä tahansa sarake B on funktionaalisesti riippuvainen sarak
 
 **Huom!** A voi olla myös kokoelma sarakkeita!
 
-*Esimerkiksi henkilön nimi on funktionaalisesti riippuvainen henkilötunnuksesta, sillä henkilötunnuksen perusteella voidaan yksikäsitteisesti selvittää nimi. Toisaalta, henkilötunnus ei ole funktionaalisesti riippuvainen henkilön nimestä, koska useammalla henkillä voi olla sama nimi.*
+*Esimerkiksi henkilön nimi on funktionaalisesti riippuvainen henkilötunnuksesta, sillä henkilötunnuksen perusteella voidaan yksikäsitteisesti selvittää nimi. Toisaalta, henkilötunnus ei ole funktionaalisesti riippuvainen henkilön nimestä, koska useammalla henkilöllä voi olla sama nimi.*
 
 SQL-kielessä selvittäminen voi tapahtua kyselyllä `SELECT DISTINCT b FROM Taulu WHERE a=tiedetty_arvo`, missä avainsana DISTINCT palauttaa uniikit rivit. Jos attribuutti `b` on funktionaalisesti riippuva `a`:sta, tuottaa ylläoleva kysely joko yhden tai ei yhtään tulosriviä, mutta ei koskaan enempää. Tämän ehdon on oltava voimassa aina ja jokaiselle mahdolliselle sarakkeen `a` arvolle , ei vain hetkellisesti.
 
