@@ -178,7 +178,7 @@ Tarkastellaan alla olevaa tietokantataulua, joka kuvaa työntekijät sekä heid�
 | TT-2           | Boyce            | T-1          | San Jose       |
 | TT-3           | Chamberlin       | T-2          | Almaden        |
 
-Yllä olevassa tietokantataulussa sarake tyontekija\_nimi on funktionaalisesti riippuvainen sarakkeesta tyontekija\_id. Mutta, sarake toimisto\_nimi on funktionaalisesti riippuvainen sarakkeen tyontekija\_id lisäksi sarakkeesta toimisto\_nimi. Kuten huomaamme, tietokantataulussa on tämän takia turhaa toisteisuutta.
+Yllä olevassa tietokantataulussa sarake tyontekija\_nimi on funktionaalisesti riippuvainen sarakkeesta tyontekija\_id. Mutta, sarake toimisto\_nimi on funktionaalisesti riippuvainen sarakkeen tyontekija\_id lisäksi sarakkeesta toimisto\_id. Kuten huomaamme, tietokantataulussa on tämän takia turhaa toisteisuutta.
 
 Ratkaisuna tähän on uuden toimistoa kuvaavan tietokantataulun luominen, johon toimiston tiedot siirretään. Työntekijälle jää yhä tieto toimistostaan, sillä toimisto\_id toimii jatkossa viiteavaimena.
 
@@ -279,7 +279,7 @@ Oletetaan, että taulun sisältö on seuraava.
 | ... | ...                  | ...          | ...               |
 
 
-Yllä olevassa tietokantataulussa havaitaan funktionaalinen riippuvuus `postinumero -&gt postitoimipaikka`, eli postitoimipaikan saa selvitettyä postinumeron perusteella. Samalla kaikki sarakkeet ovat selvitettävissä taulun pääavaimen kautta, joten taulusta löytyy myös transitiivinen riippuvuus. Ratkaisu tähän on -- esimerkiksi -- erillinen taulu postinumeroille.
+Yllä olevassa tietokantataulussa havaitaan funktionaalinen riippuvuus `postinumero -> postitoimipaikka`, eli postitoimipaikan saa selvitettyä postinumeron perusteella. Samalla kaikki sarakkeet ovat selvitettävissä taulun pääavaimen kautta, joten taulusta löytyy myös transitiivinen riippuvuus. Ratkaisu tähän on -- esimerkiksi -- erillinen taulu postinumeroille.
 
 - Osoite((pk) id, katuosoite, (fk) postinumero -&gt; Postinumero)
 - Postinumero((pk) postinumero, postitoimipaikka)
@@ -287,7 +287,7 @@ Yllä olevassa tietokantataulussa havaitaan funktionaalinen riippuvuus `postinum
 
 <text-box variant='hint' name='Muita normaalimuotoja'>
 
-Ensimmäisen, toisen ja kolmannen normaalimuodon lisäksi tietokannan normalisointiin käytetään <a href="https://en.wikipedia.org/wiki/Boyce%E2%80%93Codd_normal_form" target="_blank" norel>Boyce-Codd -normaalimuotoa</a>, <a href="https://en.wikipedia.org/wiki/Fourth_normal_form" target="_blank" norel>Neljättä normaalimuotoa</a> ja <a href="https://en.wikipedia.org/wiki/Fifth_normal_form" target="_blank" norel">Viidettä normaalimuotoa</a>.
+Ensimmäisen, toisen ja kolmannen normaalimuodon lisäksi tietokannan normalisointiin käytetään <a href="https://en.wikipedia.org/wiki/Boyce%E2%80%93Codd_normal_form" target="_blank" norel>Boyce-Codd -normaalimuotoa</a>, <a href="https://en.wikipedia.org/wiki/Fourth_normal_form" target="_blank" norel>Neljättä normaalimuotoa</a> ja <a href="https://en.wikipedia.org/wiki/Fifth_normal_form" target="_blank" norel>Viidettä normaalimuotoa</a>.
 
 <br/>
 
