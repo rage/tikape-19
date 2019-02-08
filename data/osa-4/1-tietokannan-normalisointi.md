@@ -271,7 +271,7 @@ Jos tietokantataulu rikkoo kolmannen normaalimuodon, eli tietokantataulusta tunn
 
 Oletetaan, että taulun sisältö on seuraava.
 
-|	id  | katuosoite           | postinumero  | postitoimipaikka  |
+| id  | katuosoite           | postinumero  | postitoimipaikka  |
 | --  | --                   | --           | --                |
 | 1   | Työpajankatu 13      | 00580        | Helsinki          |
 | 2   | Työpajankatu 2 R1 C  | 00580        | Helsinki          |
