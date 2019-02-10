@@ -13,7 +13,7 @@ hidden: true
 </text-box>
 
 
-Tietokannan normalisoinnin tavoitteena on tilanne, missä tietokantatauluissa ei ole toisteista tietoa. Normalisoinnin jälkeen tietokannassa on tyypillisesti useita tietokantatauluja, joista jokainen kuvaa jotain selkeää käsitettä. Tietokantataulujen väliset yhteydet tunnistetaan pää- ja viiteavainten avulla, ja taulujen attribuutit ovat selkeitä. Tietokannasta puuttuu toisteinen tieto, jonka myötä tallennettavan tiedon määrä on normalisoimatonta tietokantataulua pienempi.
+Tietokannan normalisoinnin tavoitteena on tilanne, missä tietokantatauluissa ei ole toisteista tietoa. Normalisoinnin jälkeen tietokantataulujen väliset yhteydet tunnistetaan pää- ja viiteavainten avulla ja taulujen attribuutit ovat selkeitä. Tietokannasta puuttuu toisteinen tieto, jonka myötä tallennettavan tiedon määrä on normalisoimatonta tietokantataulua pienempi.
 
 Yleisesti ottaen yllä kuvattu tilanne on hyvä, mutta absoluuttinen hyvyys liittyy paljolti myös käyttötarkoitukseen.
 
@@ -39,7 +39,7 @@ SELECT Osoite.katuosoite, Osoite.postinumero, Postitoimipaikka.postitoimipaikka
     JOIN Postinumero ON Postinumero.postinumero = Osoite.postinumero;
 ```
 
-Kyselyssä tulee siis liittää aina kahden tietokantataulun tiedot yhteen, jolloin tietoa myös -- riippuen tiedon konkreettisesta tallennusmuodosta -- voidaan joutua hakemaan eri paikoista.
+Kyselyssä tulee siis liittää aina kahden tietokantataulun tiedot yhteen, jolloin tietoa -- riippuen tiedon konkreettisesta tallennusmuodosta -- voidaan joutua hakemaan eri paikoista.
 
 Alkuperäisessä tietokantataulussa kysely olisi suoraviivaisempi.
 
@@ -47,15 +47,16 @@ Alkuperäisessä tietokantataulussa kysely olisi suoraviivaisempi.
 SELECT katuosoite, postinumero, postitoimipaikka FROM Osoite;
 ```
 
-Suoraviivaisuuden lisäksi kysely on myös tehokkaampi, koska siinä ei tarvitse yhdistää tietokantataulujen tietoja. Ongelmana on toki edellisessä osassa käsitellyt ongelmat -- mikäli vaikkapa postitoimipaikan nimi muuttuu, tulee tieto päivittää useammasta rivistä.
+Kysely on tehokkaampi, sillä siinä ei tarvitse yhdistää tietokantataulujen tietoja. Ongelmana on toki edellisessä osassa käsitellyt ongelmat -- mikäli vaikkapa postitoimipaikan nimi muuttuu, tulee tieto päivittää useammasta rivistä.
 
-## Raportointijärjestelmä
+
+## Esimerkki: raportointijärjestelmä
 
 Tarkastellaan esimerkkiä järjestelmästä, joka tallentaa verkkosivujen tapahtumia lokiin.
 
 Alla on annettuna kaksi tietokantaa, toinen on normalisoitu ja toinen denormalisoitu. Kumpaakin käytetään järjestelmässä kävijöiden tekemien tapahtumien kirjaamiseen.
 
-Alla olevassa versiossa käyttäjä ja sivu on eriytetty omaksi käsitteekseen, johon tapahtuma-taulu viittaa. Kun tapahtumaa luodaan, tulee tapahtuman lisäämisen yhteydessä hakea käyttäjän tunnus taulusta Kayttaja sekä osoitetta vastaavan sivun tunnus taulusta Sivu.
+Alla olevassa versiossa käyttäjä ja sivu on eriytetty omaksi käsitteekseen, johon tapahtuma-taulu viittaa. Kun tapahtumaa luodaan, tulee tapahtuman lisäämisen yhteydessä hakea käyttäjän tunnus taulusta Kayttaja sekä osoitetta vastaavan sivun tunnus taulusta Sivu. Mikäli näitä ei ole, tulee ne luoda.
 
 - Kayttaja ((pk) id, kayttajatunnus)
 - Sivu ((pk) id, osoite)
@@ -65,13 +66,26 @@ Toinen vaihtoehto on tallentaa käyttäjätunnus ja sivun osoite sellaisenaan.
 
 - Tapahtuma ((pk) id, kayttajatunnus, osoite, aika, operaatio, ip, laite)
 
-Näistä kummassakin on hyvät ja huonot puolensa. Mikäli tapahtumia tulee merkittäviä määriä, on jälkimmäinen tehokkuuden kannalta ehdottomasti nopeampi.
-
-Normalisointia ja denormalisointia ei ole kuitenkaan pakko ajatella toistensa poissulkevina vaihtoehtoina. Eräs vaihtoehto olisi kummankin lähestymistavan käyttäminen -- tällöin uudet tapahtumat lisättäisiin aina normalisoimattomaan tietokantatauluun, josta tapahtumat vietäisiin normalisoituun tietokantaan esimerkiksi kerran tunnissa.
+Näistä kummassakin on hyvät ja huonot puolensa. Mikäli tapahtumia tulee merkittäviä määriä, on jälkimmäinen tehokkuuden kannalta ehdottomasti parempi.
 
 
-## TODO: konkreettinen normalisointiesimerkki
+## Tietokannan normalisointi on askel tietokannan denormalisointiin
 
-Esimerkiksi raportointiin tarkoitettujen järjestelmien ei kannata todennäköisesti -- jos raportin luonti on hidas operaatio -- luoda samoja raportteja yhä uudelleen ja uudelleen, vaan voi olla mielekästä luoda erillinen tietokantataulu (tai muutama), jotka sisältävät raporteille oleelliset tiedot valmiiksi laskettuna.
 
-Myös tietokannan (tai tietokantataulun) käyttötarkoitus vaikuttaa normalisoinnin tarpeeseen. Esimerkiksi sivukäyntien kirjaamiseen tarkoitettu logitusjärjestelmä toimii tehokkaammin jos sivukäyntien tallentamiseen tarkoitetut osat järjestelmästä on denormalisoitu. Tarkastellaan tätä seuraavan esimerkin kautta.
+Tietokannan denormalisoinnilla _ei_ tarkoiteta tilannetta, missä tietokannan normalisointi jätetään tekemättä. Päinvastoin, tietokannan normalisointi on erittäin tärkeä osa tietokannan suunnittelu- ja toteutustyötä, sillä sen avulla vältetään turha tiedon toisteisuus. Tietokannan denormalisointi tehdään aina tietokannan käyttöä tarkastelemalla ja tietokannan tehokkutta optimoiden -- siinä missä tietokannan normalisoinnissa pyritään poistamaan toisteinen tieto, tietokannan denormalisoinnissa lisätään toisteisuutta ja sitä kautta tehostetaan tietokantakyselyiden toimintaa.
+
+Tietokannan denormalisointiin liittyy sekä hyötyjä että haittoja. Denormalisoidun tiedon hakeminen on tyypillisesti nopeampaa sillä liitoskyselyitä tarvitaan vähemmän, jonka lisäksi kyselyt ovat tyypillisesti yksinkertaisempia ja sen takia vähemmän virheitä. Denormalisoidussa tietokannassa toisaalta joudutaan tekemään lisätyötä tietoa lisättäessä ja päivitettäessä sillä tietoa joudutaan mahdollisesti lisäämään useampaan paikkaan. Tämän lisäksi tietokanta voi olla epäintuitiivinen uusille ohjelman käyttäjille ja se vaatii paremman dokumentaation, jonka lisäksi denormalisoitu tietokanta vie luonnollisesti lisää levytilaa kuin normalisoitu tietokanta.
+
+Käytännössä sovelluksissa etsitään aina kultaista keskitietä, mikä tuo sovelluksen käyttäjälle mahdollisimman hyvän -- ja nopean -- käyttökokemuksen. Tämä tarkoittaa normalisoinnin ja dernomalisoinnin lisäksi sitä, että sovelluksen eri tehtävissä voidaan käyttää erilaisia tietokannanhallintajärjestelmiä. Tutustumme muihin tietokannanhallintajärjestelmiin kurssin viimeisessä osassa.
+
+
+## Denormalisointi: miksi ja milloin?
+
+Tietokannan denormalisoinnin ensimmäinen askel on tietokannan tehokkuuden tarkastelu. Mikäli tietokanta toimii tarpeeksi tehokkaasti, ei tietokantaa kannata denormalisoida. Toisaalta, mikäli tietokanta on hidas joissakin (usein käytetyissä) kyselyissä, kannattaa tietokannan denormalisointia harkita.
+
+Denormalisoinnista on lisäksi hyötyä esimerkiksi usein tarvittavien tietojen ennakkoon tallentamisessa (tietokantatauluun voidaan laskea ajoittain vaikkapa joku usein kysytty keskiarvoluku), raporttien nopeassa hakemisessa (tietokantatauluun voidaan laskea raportit valmiiksi, jolloin niitä ei tarvitse luoda tarvittaessa), ja historiatietojen tallentamisessa (tiedot voivat muuttua ajan myötä, mutta vanhakin tieto voi oll tärkeää).
+
+<quiznator id="5c604e18c41ed4148d96d192"></quiznator>
+
+
+
