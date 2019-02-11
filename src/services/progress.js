@@ -4,8 +4,9 @@ import { fetchQuiznatorProgress } from "./quiznator"
 import { fetchSQLTrainerProgress } from "./sqltrainer"
 
 export async function fetchProgress() {
-  const serviceIdentifiers = ["Kyselyt", "SQL Trainer"]
+  const serviceIdentifiers = ["Ohjelmointitehtävät", "Kyselyt", "SQL Trainer"]
   const progressesCollection = await Promise.all([
+    fetchProgrammingProgress(),
     fetchQuiznatorProgress(),
     fetchSQLTrainerProgress(),
   ])
