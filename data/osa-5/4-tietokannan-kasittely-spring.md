@@ -297,7 +297,7 @@ Nyt tietokantaan on lisätty henkilö, jonka nimi on Matti. Voit varmistaa henki
 
 Tehtäväpohjassa on lisäksi metodi `alustaTietokantaJaLuoNimia`. Metodin kutsuminen poistaa vanhan tietokannan ja luo uuden tietokannan vanhan tilalle. Tämä auttaa mikäli poistat tai muokkaat vahingossa olemassaolevaa tietokantaa.
 
-Tehtävään liittyvät testit ovat vain tehtäväpalvelimella.
+Tehtävässä ei ole testejä. Palauta tehtävä kun se toimii oikein.
 
 </programming-exercise>
 
