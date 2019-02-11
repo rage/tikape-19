@@ -164,13 +164,11 @@ Yllä olevassa esimerkissä muutama vaihtoehdoista jää kysymysmerkeiksi. Ratka
 ### Toinen normaalimuoto
 
 
-Tietokantataulu on toisessa normaalimuodossa jos (1) se on ensimmäisessä normaalimuodossa ja (2) tietokantataulun sarakkeet (poislukien avaimet) ovat *funktionaalisesti riippuvaisia* ainoastaan tietokantataulun (yhdellä sarakkeella määritellystä) pääavaimesta.
+Tietokantataulu on toisessa normaalimuodossa jos (1) se on ensimmäisessä normaalimuodossa ja (2) tietokantataulun sarakkeet (poislukien avaimet) ovat *funktionaalisesti riippuvaisia* tietokantataulun (yhdellä sarakkeella määritellystä) pääavaimesta. Jos tietokantataulun pääavain on määritelty yhden sarakkeen avulla, ovat kaikki tietokantataulun sarakkeet käytännössä automaattisesti funktionaalisesti riippuvaisia pääavaimesta ja tietokantataulu on toisessa normaalimuodossa.
 
+Mikäli tietokantataulun pääavain määritellään useamman sarakkeen avulla, tulee tietokantataulun sarakkeiden olla riippuvaisia koko tietokantataulun pääavaimesta (ei vain osasta tietokantataulun sarakkeita). Mikäli sarakkeet ovat riippuvaisia vain pääavaimen osasta, on tietokantataulussa toisteista tietoa, ja tietokantataulu tulee normalisoida.
 
-Jos tietokantataulun pääavain on määritelty yhden sarakkeen avulla, ovat kaikki tietokantataulun sarakkeet automaattisesti funktionaalisesti riippuvaisia pääavaimesta. Tässä tilanteessa tietokantataulun sarakkeet voivat olla kuitenkin myös funktionaalisesti riippuvaisia muista tietokantataulun sarakkeista. Tällaisessa tilanteessa tietokantataulussa on toisteista tietoa.
-
-
-Tarkastellaan alla olevaa tietokantataulua, joka kuvaa työntekijät sekä heidän toimistonsa. Tietokantataulu on ensimmäisessä normaalimuodossa.
+Tarkastellaan alla olevaa tietokantataulua, joka kuvaa työntekijät sekä heidän toimistonsa. Tietokantataulu on ensimmäisessä normaalimuodossa. Tietokantataulun pääavain on muodostettu sarakkeiden tyontekija\_id ja toimisto\_id yhdistelmänä.
 
 | tyontekija_id  | tyontekija_nimi  | toimisto_id  | toimisto_nimi  |
 | --             | --               | --           | --             |
@@ -178,27 +176,34 @@ Tarkastellaan alla olevaa tietokantataulua, joka kuvaa työntekijät sekä heid�
 | TT-2           | Boyce            | T-1          | San Jose       |
 | TT-3           | Chamberlin       | T-2          | Almaden        |
 
-Yllä olevassa tietokantataulussa sarake tyontekija\_nimi on funktionaalisesti riippuvainen sarakkeesta tyontekija\_id. Mutta, sarake toimisto\_nimi on funktionaalisesti riippuvainen sarakkeen tyontekija\_id lisäksi sarakkeesta toimisto\_id. Kuten huomaamme, tietokantataulussa on tämän takia turhaa toisteisuutta.
+Yllä olevassa tietokantataulussa sarake tyontekija\_nimi on funktionaalisesti riippuvainen sarakkeesta tyontekija\_id, ja sarake toimisto\_nimi on funktionaalisesti riippuvainen sarakkeesta toimisto\_id. Sarakkeet ovat funktionaalisesti riippuvaisia vain tietokantataulun pääavaimen osasta ja kuten huomaamme, tietokantataulussa on turhaa toisteisuutta.
 
-Ratkaisuna tähän on uuden toimistoa kuvaavan tietokantataulun luominen, johon toimiston tiedot siirretään. Työntekijälle jää yhä tieto toimistostaan, sillä toimisto\_id toimii jatkossa viiteavaimena.
+Ratkaisuna tähän on tietokantataulun pilkkominen kahteen osaan. Toinen osa kuvaa työntekijää ja toinen osa kuvaa toimistoa.
 
-| tyontekija_id  | tyontekija_nimi  | toimisto_id  |
-| --             | --               | --           |
-| TT-1           | Codd             | T-1          |
-| TT-2           | Boyce            | T-1          |
-| TT-3           | Chamberlin       | T-2          |
-
+| tyontekija_id  | tyontekija_nimi  |
+| --             | --               |
+| TT-1           | Codd             |
+| TT-2           | Boyce            |
+| TT-3           | Chamberlin       |
 
 | toimisto_id  | toimisto_nimi  |
 | --           | --             |
 | T-1          | San Jose       |
 | T-2          | Almaden        |
 
+Nyt molemmat taulut ovat ensimmäisessä ja toisessa normaalimuodossa.
 
-Mikäli tietokantataulun pääavain on määritelty useamman sarakkeen avulla, tulee tietokantataulun jokaisen sarakkeen olla riippuvainen koko avaimesta, eli osittaista riippuvuutta pääavaimesta ei sallita.
+Mutta! Kadotimme tiedon työntekijöiden sijainnista! Ratkaistaan ongelma lisäämällä tietokantataulu, joka kertoo työntekijöiden toimistot.
 
+| tyontekija_id  | toimisto_id  |
+| --             | --           |
+| TT-1           | T-1          |
+| TT-2           | T-1          |
+| TT-3           | T-2          |
 
-Tarkastellaan seuraavaksi tilannetta, missä tietokantataulun pääavain on määritelty useamman sarakkeen kautta. Tarkastellaan seuraavia tietokantatauluja `Asiakas`, `Kauppa` ja `Ostos`. Ensimmäisessä kahdessa tietokantataulussa pääavain on id. Oletetaan, että kolmannessa taulussa pääavain on määrätty kahden viiteavaimen yhdistelmänä (vaikkei tämä todellisuudessa loisi kovin mielekästä tilannetta).
+Mikäli tietokantataulun pääavain on määritelty useamman sarakkeen avulla, tulee tietokantataulun jokaisen sarakkeen olla riippuvainen koko avaimesta, eli osittaista riippuvuutta pääavaimesta ei sallita. Osittaisen riippuvuuden tapauksessa tietokantataulu pilkotaan pienempiin osiin.
+
+Tarkastellaan vielä toista tilannetta, missä tietokantataulun pääavain on määritelty useamman sarakkeen kautta. Tarkastellaan seuraavia tietokantatauluja `Asiakas`, `Kauppa` ja `Ostos`. Ensimmäisessä kahdessa tietokantataulussa pääavain on id. Oletetaan, että kolmannessa taulussa pääavain on määrätty kahden viiteavaimen yhdistelmänä (vaikkei tämä todellisuudessa loisi kovin mielekästä tilannetta).
 
 - Asiakas ((pk) id, nimi)
 - Kauppa ((pk) id, nimi, osoite)
