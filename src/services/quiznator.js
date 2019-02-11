@@ -33,10 +33,10 @@ export async function fetchQuiznatorProgress() {
       part: "osa04",
       tag: "tietokantojen-perusteet-k2019-4",
     },
-    // {
-    //   part: "osa05",
-    //   tag: "tietokantojen-perusteet-k2019-5",
-    // },
+    {
+      part: "osa05",
+      tag: "tietokantojen-perusteet-k2019-5",
+    },
     // {
     //   part: "osa06",
     //   tag: "tietokantojen-perusteet-k2019-6",
