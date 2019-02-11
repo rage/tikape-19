@@ -1,7 +1,7 @@
 ---
 path: '/osa-5/1-tietokantakyselyiden-tehokkuus-ja-indeksit'
 title: 'Tietokantakyselyiden tehokkuuden tarkastelu ja indeksit'
-hidden: true
+hidden: false
 ---
 
 
@@ -178,8 +178,8 @@ Tarkastellaan aiemmin tehtyä Cobb-nimisen henkilön hakua uudelleen.
 
 <sample-output>
 
-sqlite> EXPLAIN QUERY PLAN SELECT nimi, puhelinnumero FROM Asiakas
-						WHERE nimi = 'Cobb';
+sqlite> **EXPLAIN QUERY PLAN SELECT nimi, puhelinnumero FROM Asiakas
+						WHERE nimi = 'Cobb';**
 selectid order from detail
 -------- ----- ---- ----------------------------------------------------------
 0        0     0    SEARCH TABLE Asiakas USING INDEX idx\_asiakas\_nimi (nimi=?)
@@ -219,8 +219,7 @@ Taulut ja sarakkeet, joihin indeksejä kannattaa harkita, liittyvät paljon suor
 </figure>
 
 
-Indeksin luominen tietokantataululle luo tietorakenteen, jota käytetään tiedon hakemiseen. Jokaista indeksiä tulee päivittää myös tietokantaa muokkaavien operaatioiden yhteydessä, jotta indeksin tiedot ovat ajan tasalla. Käytännössä liiallinen indeksien luominen saattaa myös hidastaa sovelluksen toimintaa.
-
+Indeksin luominen tietokantataululle luo tietorakenteen, jota käytetään tiedon hakemiseen. Jokaista indeksiä tulee päivittää myös tietokantaa muokkaavien operaatioiden yhteydessä, jotta indeksin tiedot ovat ajan tasalla. Käytännössä liiallinen indeksien luominen saattaa myös hidastaa sovelluksen toimintaa -- mikäli sovelluksessa tehdään paljon lisäyskyselyjä, myös tällöin indeksit saattavat hidastaa sovellusta.
 
 
 

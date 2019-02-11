@@ -1,7 +1,7 @@
 ---
 path: '/osa-5/3-tietokannan-kasittely-jdbc'
 title: 'Tietokannan käsittely ohjelmallisesti'
-hidden: true
+hidden: false
 ---
 
 Lähes jokainen ohjelmointikieli tarjoaa jonkinlaisen rajapinnan tietokantakyselyiden tekemiseen. Nämä rajapinnat suoraviivaistavat tietokannanhallintajärjestelmien käyttöönoottoa ja kyselyiden tekemistä tietokantoihin. Etuna ohjelmointirajapinnoissa on tyypillisesti se, että rajapintaa noudattamalla yhteydenotto tietokannantallintajärjestelmään on lähes samankaltaista käytetystä tietokannanhallintajärjestelmästä riippumatta.
@@ -20,9 +20,17 @@ Mikäli TMC:n käyttöönotossa on ongelmia, katsothan myös Ohjelmoinnin MOOCin
 
 <br/>
 
-Tietokantojen perusteet-kurssilla organisaatioksi tulee valita TMC:ssä "MOOC" ja kurssiksi "Tietokantojen perusteet, kevät 2019". TMC:n käyttäjätunnukset ovat samat kuin mitä käytät tässä materiaalissa.
+Tietokantojen perusteet-kurssilla organisaatioksi tulee valita TMC:ssä "**MOOC**" ja kurssiksi "**Tietokantojen perusteet, kevät 2019**". TMC:n käyttäjätunnukset ovat samat kuin mitä käytät tässä materiaalissa.
 
 Aloitetaan.
+
+
+<text-box variant='hint' name='Ohjelmointitehtävät ja kurssin koe'>
+
+Tästä eteenpäin kurssilla tarkastellaan tietokantojen käsittelyä ohjelmallisesti. Kurssin verkkotentissä ei kuitenkaan tarvitse osata sovelluskehysspesifejä (esim JDBC tai Spring) ohjelmointikäytänteitä tai niiden tarkempaa toimintaa.
+
+</text-box>
+
 
 ## JDBC-tietokantakysely kokonaisuudessaan
 
@@ -273,7 +281,7 @@ Ohjelma voi toimia myös siten, että rajausehdot kysytään ohjelman käyttäj�
 ```java
 Scanner lukija = new Scanner(System.in);
 System.out.println("Minä vuonna syntyneet opiskelijat tulostetaan?");
-int vuosi = Integer.parseInt(lukija.nextLine());
+int vuosi = Integer.valueOf(lukija.nextLine());
 
 // ...
 

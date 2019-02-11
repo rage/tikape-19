@@ -1,7 +1,7 @@
 ---
 path: '/osa-5/4-tietokannan-kasittely-spring'
 title: 'Tietokannan käsittely sovelluskehyksen avulla'
-hidden: true
+hidden: false
 ---
 
 Tietokantoja käsitellään tyypillisesti sovelluskehysten avulla. Tutustutaan seuraavaksi lyhyesti tietokantakyselyiden tekemiseen <a href="https://spring.io/" target="_blank">Spring-sovelluskehyksen</a> avulla. Käytämme esimerkeissä Spring-sovelluskehyksen luokkaa <a href="https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/jdbc/core/JdbcTemplate.html" target="_blank">JdbcTemplate</a>, joka abstrahoi tietokantayhteyden muodostamisen sekä tietokantayhteyteen liittyvien resurssien vapauttamisen.
@@ -9,6 +9,8 @@ Tietokantoja käsitellään tyypillisesti sovelluskehysten avulla. Tutustutaan s
 <br/>
 
 Mikäli haluat luoda oman tietokantaa käyttävän Spring-projektin tyhjästä, osoitteessa <a href="https://spring.io/guides/gs/relational-data-access/" target="_blank">https://spring.io/guides/gs/relational-data-access/</a> oleva opas on hyvä lähtökohta.
+
+<br/>
 
 
 ## Tietokantayhteyden määrittely

@@ -1,7 +1,7 @@
 ---
 path: '/osa-5/2-tietokannan-denormalisointi'
 title: 'Tietokannan denormalisointi'
-hidden: true
+hidden: false
 ---
 
 
@@ -88,4 +88,68 @@ Denormalisoinnista on lisäksi hyötyä esimerkiksi usein tarvittavien tietojen 
 <quiznator id="5c604e18c41ed4148d96d192"></quiznator>
 
 
+<moodle-exercise name="Tiedon denormalisointi">
+
+Tämä tehtävä palautetaan kurssin Moodle-järjestelmään. Vastaus tulee palauttaa yhtenä PDF-muotoisena tiedostona.
+
+Alla on kuvattuna neljä tietokantaa. Jokaisesta tietokannasta on annettuna normalisoitu ja denormalisoitu versio.
+
+Kerro jokaisen tietokannan kohdalla minkälainen muutos tietokantaan on tehty. Pohdi ja kerro kunkin tietokannan kohdalla mitä ongelmaa denormalisoitu versio pyrkii ratkaisemaan ja mitä mahdollisia ongelmia denormalisoidusta tietokannasta syntyy.
+
+
+**Tietokanta 1: Yhteyksien lukumäärä**
+
+Normalisoitu versio:
+
+- Kayttaja ( (pk) id; nimi)
+- Kaverisuhde ( (fk) kayttaja\_id -> Kayttaja; (fk) kaveri\_id -> Kaveri)
+
+Denormalisoitu versio:
+
+- Kayttaja ( (pk) id; nimi; kaverien\_lukumaara)
+- Kaverisuhde ( (fk) kayttaja\_id -> Kayttaja; (fk) kaveri\_id -> Kaveri)
+
+
+**Tietokanta 2: Tuotteiden kategoriat**
+
+Normalisoitu versio:
+
+- Tuote ( (pk) id; (fk) kategoria\_id -> Kategoria; nimi)
+- Kategoria ( (pk) id; nimi)
+
+Denormalisoitu versio:
+
+- Tuote ( (pk) id; (fk) kategoria\_id -> Kategoria; nimi; kategorian\_nimi)
+- Kategoria ( (pk) id; nimi)
+
+
+**Tietokanta 3: Keskustelupalsta**
+
+Normalisoitu versio:
+
+- Aihe ( (pk) id; nimi)
+- Viesti ( (pk) id; (fk) aihe\_id -> Aihe; lahetysaika; teksti)
+
+Denormalisoitu versio:
+
+- Aihe ( (pk) id; nimi; (fk) uusin\_viesti -> Viesti, viestien\_lukumaara)
+- Viesti ( (pk) id; (fk) aihe\_id -> Aihe; lahetysaika; teksti)
+
+
+**Tietokanta 4: Tehtävänhallintasovellus**
+
+Normalisoitu versio:
+
+ - Kayttaja ( (pk) id; nimi)
+ - Kategoria ( (pk) id; (fk) kayttaja\_id -> Kayttaja; nimi)
+ - Tehtava ( (pk) id; (fk) kategoria\_id -> Kategoria; nimi; tehty)
+
+ Denormalisoitu versio:
+
+ - Kayttaja ( (pk) id; nimi)
+ - Kategoria ( (pk) id; (fk) kayttaja\_id -> Kayttaja; nimi; tekemattomia_tehtavia)
+ - Tehtava ( (pk) id; (fk) kategoria\_id -> Kategoria; (fk) kayttaja\_id -> Kayttaja; nimi; tehty)
+
+
+</moodle-exercise>
 
