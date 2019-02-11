@@ -30,23 +30,23 @@ Tarkastellaan tätä konkreettisen esimerkin kautta. Oletetaan, että käytöss�
 
 ```sql
 CREATE TABLE Asiakas (
-    id integer PRIMARY KEY,
-    nimi varchar(200),
-    puhelinnumero varchar(20),
-    katuosoite varchar(50),
-    postinumero integer,
-    postitoimipaikka varchar(20)
+    id INTEGER PRIMARY KEY,
+    nimi VARCHAR(200),
+    puhelinnumero VARCHAR(20),
+    katuosoite VARCHAR(50),
+    postinumero INTEGER,
+    postitoimipaikka VARCHAR(20)
 );
 ```
 
 ```sql
 CREATE TABLE Tilaus (
-    id integer PRIMARY KEY,
-    asiakas_id integer,
-    aika date,
-    kuljetustapa varchar(40),
-    vastaanotettu boolean,
-    toimitettu boolean,
+    id INTEGER PRIMARY KEY,
+    asiakas_id INTEGER,
+    aika DATE,
+    kuljetustapa VARCHAR(40),
+    vastaanotettu BOOLEAN,
+    toimitettu BOOLEAN,
     FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id)
 );
 ```
@@ -109,12 +109,12 @@ Kysely onkin nyt erilainen. Kyselyssä käydään ensin läpi koko taulu Tilaus,
 
 ```sql
 CREATE TABLE Asiakas (
-    id integer,
-    nimi varchar(200),
-    puhelinnumero varchar(20),
-    katuosoite varchar(50),
-    postinumero integer,
-    postitoimipaikka varchar(20)
+    id INTEGER,
+    nimi VARCHAR(200),
+    puhelinnumero VARCHAR(20),
+    katuosoite VARCHAR(50),
+    postinumero INTEGER,
+    postitoimipaikka VARCHAR(20)
 );
 ```
 
