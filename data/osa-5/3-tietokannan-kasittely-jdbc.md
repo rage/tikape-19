@@ -255,7 +255,7 @@ statement.setString(1, "Pihla");
 ResultSet resultSet = statement.executeQuery();
 ```
 
-Kyselyiden paikat indeksoidaan kohdasta 1 alkaen. Alla olevassa esimerkissä haetaan Opiskelija-taulusta henkilöitä, joiden syntymävuosi on pienempi kuin 2000 ja joiden pääaine on tietojenkässittelytiede.
+Kyselyiden paikat indeksoidaan kohdasta 1 alkaen. Alla olevassa esimerkissä haetaan Opiskelija-taulusta henkilöitä, joiden syntymävuosi on pienempi kuin 2000 ja joiden pääaine on tietojenkäsittelytiede.
 
 
 ```java
