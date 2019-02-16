@@ -102,12 +102,12 @@ Kerro jokaisen tietokannan kohdalla minkälainen muutos tietokantaan on tehty. P
 Normalisoitu versio:
 
 - Kayttaja ( (pk) id; nimi)
-- Kaverisuhde ( (fk) kayttaja\_id -> Kayttaja; (fk) kaveri\_id -> Kaveri)
+- Kaverisuhde ( (fk) kayttaja\_id -> Kayttaja; (fk) kaveri\_id -> Kayttaja)
 
 Denormalisoitu versio:
 
 - Kayttaja ( (pk) id; nimi; kaverien\_lukumaara)
-- Kaverisuhde ( (fk) kayttaja\_id -> Kayttaja; (fk) kaveri\_id -> Kaveri)
+- Kaverisuhde ( (fk) kayttaja\_id -> Kayttaja; (fk) kaveri\_id -> Kayttaja)
 
 
 **Tietokanta 2: Tuotteiden kategoriat**
