@@ -58,13 +58,13 @@ Alla on annettuna kaksi tietokantaa, toinen on normalisoitu ja toinen denormalis
 
 Alla olevassa versiossa käyttäjä ja sivu on eriytetty omaksi käsitteekseen, johon tapahtuma-taulu viittaa. Kun tapahtumaa luodaan, tulee tapahtuman lisäämisen yhteydessä hakea käyttäjän tunnus taulusta Kayttaja sekä osoitetta vastaavan sivun tunnus taulusta Sivu. Mikäli näitä ei ole, tulee ne luoda.
 
-- Kayttaja ((pk) id, kayttajatunnus)
-- Sivu ((pk) id, osoite)
-- Tapahtuma ((pk) id, (fk) kayttaja\_id -&gt; Kayttaja, (fk) sivu\_id -&gt; Sivu, aika, operaatio, ip, laite)
+- Kayttaja ((pk) id; kayttajatunnus)
+- Sivu ((pk) id; osoite)
+- Tapahtuma ((pk) id; (fk) kayttaja\_id -&gt; Kayttaja; (fk) sivu\_id -&gt; Sivu; aika; operaatio; ip; laite)
 
 Toinen vaihtoehto on tallentaa käyttäjätunnus ja sivun osoite sellaisenaan.
 
-- Tapahtuma ((pk) id, kayttajatunnus, osoite, aika, operaatio, ip, laite)
+- Tapahtuma ((pk) id; kayttajatunnus; osoite; aika; operaatio; ip; laite)
 
 Näistä kummassakin on hyvät ja huonot puolensa. Mikäli tapahtumia tulee merkittäviä määriä, on jälkimmäinen tehokkuuden kannalta ehdottomasti parempi.
 
