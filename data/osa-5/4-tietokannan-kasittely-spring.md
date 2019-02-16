@@ -161,6 +161,7 @@ Mikäli tietokantataulussa on yllä kuvatut kaksi riviä, ohjelman tulostus on s
 
 <sample-output>
 
+Hei maailma!
 Joni
 Pihla
 

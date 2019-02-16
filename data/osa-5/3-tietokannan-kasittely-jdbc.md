@@ -233,7 +233,7 @@ ResultSet resultSet = statement.executeQuery();
 ```
 3. Tämän jälkeen `ResultSet`-oliossa olevat tulokset käydään läpi. Metodia `next()` kutsumalla siirrytään kyselyn palauttamissa tulosriveissä eteenpäin. Kultakin riviltä voi kysyä sarakeotsikon perusteella solun arvoa. Esimerkiksi kutsu `getString("nimi")` palauttaa kyseisellä rivillä olevan sarakkeen "nimi" arvon String-tyyppisenä.
 ```java
-while(resultSet.next()) {
+while(rs.next()) {
     String nimi = rs.getString("nimi");
     String aine = rs.getString("pääaine");
 
