@@ -1,5 +1,5 @@
 ---
-path: '/osa-6/5-sql-injektiot'
+path: '/osa-6/4-sql-injektiot'
 title: 'SQL-injektiot ja niiden estäminen'
 hidden: true
 ---
@@ -7,7 +7,9 @@ hidden: true
 
 <text-box variant='learningObjectives' name='Oppimistavoitteet'>
 
-- Tunnet käsitteen SQL-injektio ja tunnet menetelmiä SQL-injektioiden estämiseen.
+- Tunnet käsitteen SQL-injektio.
+- Tiedät miten sovellukseen voidaan jättää SQL-injektiomahdollisuus.
+- Tunnet menetelmiä SQL-injektioiden estämiseen.
 
 </text-box>
 
@@ -40,12 +42,12 @@ Mikäli kyselyyn syötetään suoraan sarjakuvassa annettu lapsen nimi, muodostu
 INSERT INTO Students (name) VALUES ('Robert'); DROP TABLE Students;--);
 ```
 
-Kyselyssä tehdään siis kyselyt (1) lisää tietokantatauluun `Students` rivi, missä opiskelijan nimi on `Robert`, ja (2) poista tietokantataulu `Students`. Lopussa olevat kaksi viivaa aloittavat kommentin, jolloin `Students`-taulun poistamista seuraavat komennot jätetään huomiotta. 
+Kyselyssä tehdään siis kyselyt (1) lisää tietokantatauluun `Students` rivi, missä opiskelijan nimi on `Robert`, ja (2) poista tietokantataulu `Students`. Lopussa olevat kaksi viivaa aloittavat kommentin, jolloin `Students`-taulun poistamista seuraavat komennot jätetään huomiotta.
 
 
 SQL-injektioiden tekeminen onnistuu jos ohjelmoija jättää tietokantaa käsitteleviin kyselyihin ns. käyttäjän mentävän aukon. Tämä onnistuu Javalla siten, että kyselyt luodaan niin, että kyselyihin lisättävät parametrit syötetään kyselyyn suoraan merkkijonona.
 
-Tarkastellaan tätä kahden esimerkin kautta. 
+Tarkastellaan tätä kahden esimerkin kautta.
 
 
 ```java
@@ -63,7 +65,7 @@ statement.setString(1, nimi);
 ResultSet rs = stmt.executeUpdate();
 ```
 
-Kysely on turvallinen, sillä merkki asetetaan metodin setString avulla. Metodi `setString` varmistaa, ettei kyselyssä ole ylimääräistä sisältöä, ja että kyselyssä syötettävä merkkijono asetetaan vain sarakkeen `name` arvoksi. 
+Kysely on turvallinen, sillä merkki asetetaan metodin setString avulla. Metodi `setString` varmistaa, ettei kyselyssä ole ylimääräistä sisältöä, ja että kyselyssä syötettävä merkkijono asetetaan vain sarakkeen `name` arvoksi.
 
 Kyselystä saa suhteellisen helposti turvattoman. Seuraavassa esimerkissä on mahdollisuus SQL-injektioon.
 
@@ -82,9 +84,9 @@ PreparedStatement stmt = connection.prepareStatement("INSERT INTO Students (name
 ResultSet rs = stmt.executeUpdate();
 ```
 
-Kun käyttäjän syöttämä merkkijono lisätään suoraan osaksi kyselyä, voi käyttäjä yrittää syöttää muitakin SQL-lauseita komentoonsa. Yllä oleva esimerkki toimii joissakin tietokannanhallintajärjestelmissä -- joissakin tietokannanhallintajärjestelmissä taas tulee lisätä erillisiä parametreja yhteyden muodostamiseen. 
+Kun käyttäjän syöttämä merkkijono lisätään suoraan osaksi kyselyä, voi käyttäjä yrittää syöttää muitakin SQL-lauseita komentoonsa. Yllä oleva esimerkki toimii joissakin tietokannanhallintajärjestelmissä -- joissakin tietokannanhallintajärjestelmissä taas tulee lisätä erillisiä parametreja yhteyden muodostamiseen.
 
-Esimerkiksi `MySQL`-tietokannanhallintajärjestelmä sallii oletuksena vain yhden SQL-kyselyn suorittamisen yhdessä `executeUpdate`-kutsussa. Mikäli yllä olevan esimerkin haluaa toimimaan sielläkin, tulee yhteyden muodostamiseen lisätä vielä erillinen parametri `allowMultiQueries=true`, joka antaa luvan useamman kyselyn suorittamiseen. 
+Esimerkiksi `MySQL`-tietokannanhallintajärjestelmä sallii oletuksena vain yhden SQL-kyselyn suorittamisen yhdessä `executeUpdate`-kutsussa. Mikäli yllä olevan esimerkin haluaa toimimaan sielläkin, tulee yhteyden muodostamiseen lisätä vielä erillinen parametri `allowMultiQueries=true`, joka antaa luvan useamman kyselyn suorittamiseen.
 
 ```java
 Scanner lukija = new Scanner(System.in);
@@ -100,9 +102,9 @@ PreparedStatement stmt = connection.prepareStatement("INSERT INTO Students (name
 ResultSet rs = stmt.executeUpdate();
 ```
 
-Tietokantataulujen poistamisen lisäksi SQL-injektiot mahdollistavat kaikenlaisia muita ongelmia. Mikäli tietokantaa käyttävä verkkosivu ei tarkasta tietokannasta haettavaa tietoa ennen sen näyttämistä käyttäjälle, voi tietokantaan syötetty virheellinen tieto mahdollistaa esimerkiksi tietojen kalasteluun käytettävät hyökkäykset (näytetään esimerkiksi käyttäjätunnus-salasana -kenttä, jonka tiedot lähetetäänkin jollekin toiselle palvelimelle). 
+Tietokantataulujen poistamisen lisäksi SQL-injektiot mahdollistavat kaikenlaisia muita ongelmia. Mikäli tietokantaa käyttävä verkkosivu ei tarkasta tietokannasta haettavaa tietoa ennen sen näyttämistä käyttäjälle, voi tietokantaan syötetty virheellinen tieto mahdollistaa esimerkiksi tietojen kalasteluun käytettävät hyökkäykset (näytetään esimerkiksi käyttäjätunnus-salasana -kenttä, jonka tiedot lähetetäänkin jollekin toiselle palvelimelle).
 
-Yksinkertaisempia hyökkäyksiä ovat esimerkiksi ylimääräisten tietojen hakemiset -- mikäli kyselyyn saa syötetty vaikkapa merkkijono `OR 1=1`, näytetään tietokannasta paljon enemmän tietoja kuin alunperin on tarkoitettu. Esimerkiksi kysely 
+Yksinkertaisempia hyökkäyksiä ovat esimerkiksi ylimääräisten tietojen hakemiset -- mikäli kyselyyn saa syötetty vaikkapa merkkijono `OR 1=1`, näytetään tietokannasta paljon enemmän tietoja kuin alunperin on tarkoitettu. Esimerkiksi kysely
 
 
 ```sql

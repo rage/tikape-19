@@ -1,5 +1,5 @@
 ---
-path: '/osa-6/6-itsearviointi'
+path: '/osa-6/5-itsearviointi'
 title: 'Itsearviointi ja kysymyksen keksiminen'
 hidden: false
 ---

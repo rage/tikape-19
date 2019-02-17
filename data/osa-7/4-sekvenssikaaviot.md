@@ -1,5 +1,5 @@
 ---
-path: '/osa-6/4-sekvenssikaaviot'
+path: '/osa-7/6-sekvenssikaaviot'
 title: 'Sekvenssikaaviot'
 hidden: true
 ---

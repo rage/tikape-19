@@ -91,21 +91,24 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>6</TableCell>
               <TableCell>
-                Osaat käyttää valmiita ohjelmistokirjastoja tietokantakyselyiden
-                luomiseen. Tunnet Data Access Object (DAO) -suunnittelumallin.
-                Tunnet sekvenssikaaviot ja osaat kuvata sovelluksesi toimintaa
-                sekvenssikaavioiden avulla. Tunnet käsitteen SQL-injektio ja
-                tunnet menetelmiä SQL-injektioiden estämiseen.
+                Tunnistat olio-ohjelmoinnista tuttujen luokkien ja
+                tietokantataulujen välisen yhteyden. Tunnet Data Access Object
+                (DAO) -suunnittelumallin ja ymmärrät sen toiminnan. Tiedät
+                DAO-suunnittelumallin mahdollisia haittapuolia ja osaat kuvata
+                N+1 -kyselyn ongelman. Tunnet käsitteen SQL-injektio ja tunnet
+                menetelmiä SQL-injektioiden estämiseen.
               </TableCell>
             </TableRow>
             <TableRow>
               <TableCell>7</TableCell>
               <TableCell>
-                Tunnet joitakin kirjastoja yksinkertaisten SQL-kyselyiden
-                automatisointiin ja tiedät näihin liittyviä ongelmia. Tunnet
-                pinnallisesti muutamia NoSQL- ja NewSQL-tietokantoja. Tunnet
-                GDPR-lainsäädännön ja tiedät miten se vaikuttaa henkilöihin
-                liittyvän tiedon tallentamiseen ja käsittelyyn.
+                Tunnet sekvenssikaaviot ja osaat kuvata sovelluksesi toimintaa
+                sekvenssikaavioiden avulla. Tunnet joitakin kirjastoja
+                yksinkertaisten SQL-kyselyiden automatisointiin ja tiedät näihin
+                liittyviä ongelmia. Tunnet pinnallisesti muutamia NoSQL- ja
+                NewSQL-tietokantoja. Tunnet GDPR-lainsäädännön ja tiedät miten
+                se vaikuttaa henkilöihin liittyvän tiedon tallentamiseen ja
+                käsittelyyn.
               </TableCell>
             </TableRow>
           </TableBody>

@@ -8,7 +8,7 @@ hidden: true
 <deadline>25.2.2019</deadline>
 
 
-Osaat luoda tietokantaa käyttävän Java-kielisen sovelluksen. Tunnet sekvenssikaaviot ja osaat kuvata sovelluksesi toimintaa sekvenssikaavioiden avulla. Tunnet käsitteen SQL-injektio ja tunnet menetelmiä SQL-injektioiden estämiseen.
+Tunnistat olio-ohjelmoinnista tuttujen luokkien ja ietokantataulujen välisen yhteyden. Tunnet Data Access Object (DAO) -suunnittelumallin ja ymmärrät sen toiminnan. Tiedät DAO-suunnittelumallin mahdollisia haittapuolia ja osaat kuvata N+1 -kyselyn ongelman. Tunnet käsitteen SQL-injektio ja tunnet menetelmiä SQL-injektioiden estämiseen.
 
 
 <please-login></please-login>
