@@ -97,7 +97,7 @@ Kun olet valmis, aja testit ja palauta tehtävä TMC:lle.
 
 ## Oliot ja tietokantataulut
 
-Käsittelimme edellisessä osassa tietokantakyselyiden tekemistä ohjelmallisesti. Tietokantakyselyiden tekeminen koostuu oleellisesti viidestä osasta: (1) yhteyden muodostamisesta tietokantaan, (2) kyselyn muodostamisesta, (3) kyselyn suorittamisesta, (4) vastausten läpikäynnistä, ja (5) resurssien vapauttasesta ja tietokantayhteyden sulkemisesta.
+Käsittelimme edellisessä osassa tietokantakyselyiden tekemistä ohjelmallisesti. Tietokantakyselyiden tekeminen koostuu oleellisesti viidestä osasta: (1) yhteyden muodostamisesta tietokantaan, (2) kyselyn muodostamisesta, (3) kyselyn suorittamisesta, (4) vastausten läpikäynnistä, ja (5) resurssien vapauttamisesta ja tietokantayhteyden sulkemisesta.
 
 Edellisessä osassa käsiteltiin Opiskelija-taulun sisältävää tietokantaa seuraavasti.
 
