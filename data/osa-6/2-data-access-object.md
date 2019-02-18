@@ -1,7 +1,7 @@
 ---
 path: '/osa-6/2-data-access-object'
 title: 'Data Access Object -suunnittelumalli'
-hidden: true
+hidden: false
 ---
 
 
@@ -9,7 +9,7 @@ hidden: true
 
 - Tunnet Data Access Object (DAO) -suunnittelumallin.
 - Osaat käyttää Data Access Object (DAO) -suunnittelumallia osana omia ohjelmiasi.
-- Tiedät myös muita käyttötapauksia DAO -suunnttelumallille.
+- Tiedät joitakin muita käyttötapauksia DAO -suunnttelumallille.
 
 </text-box>
 

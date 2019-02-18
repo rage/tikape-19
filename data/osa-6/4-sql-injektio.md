@@ -1,7 +1,7 @@
 ---
 path: '/osa-6/4-sql-injektiot'
 title: 'SQL-injektiot ja niiden estäminen'
-hidden: true
+hidden: false
 ---
 
 

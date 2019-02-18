@@ -1,7 +1,7 @@
 ---
 path: '/osa-6/1-tietokantataulut-ja-luokat'
 title: 'Tietokantataulut ja luokat'
-hidden: true
+hidden: false
 ---
 
 

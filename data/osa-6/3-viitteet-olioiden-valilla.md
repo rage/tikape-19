@@ -1,7 +1,7 @@
 ---
 path: '/osa-6/3-viitteet-olioiden-valilla'
 title: 'Viitteet olioiden välillä'
-hidden: true
+hidden: false
 ---
 
 
