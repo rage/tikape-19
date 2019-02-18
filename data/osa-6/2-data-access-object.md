@@ -46,7 +46,7 @@ public interface Dao<T, K> {
 }
 ```
 
-Metodi `create` tallentaa annetun olion tietokantaan, metodi `read` hakee olion tietokannasta parametrina annetulla avaimella, metodi `update` lataa olion uudestaan tietokannasta (tyypillisesti olettaen, että parametrina annetulla oliolla on määriteltynä avain), metodi `delete` poistaa olion annetulla avaimella, ja metodi `list` hakee kaikki oliot tietokannasta.
+Metodi `create` tallentaa annetun olion tietokantaan, metodi `read` hakee olion tietokannasta parametrina annetulla avaimella, metodi `update` päivittää parametrina annetun olion tiedot tietokantaan (tyypillisesti olettaen, että tietokannasta löytyy parametrina annetun olion avainta vastaava rivi), metodi `delete` poistaa olion annetulla avaimella, ja metodi `list` hakee kaikki oliot tietokannasta.
 
 *Tällaisen rajapinnan toteuttavia tietokannan käsittelyyn käytettäviä luokkia kutsutaan arkikielessä CRUDeiksi.*
 
