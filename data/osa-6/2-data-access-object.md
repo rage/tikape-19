@@ -378,6 +378,7 @@ public Asiakas read(Integer key) throws SQLException {
 ```
 
 Tässä käytännössä annetaan Spring-sovelluskehykselle ja tarkemmin sen tarjoamalle `BeanPropertyRowMapper`-oliolle vastuu `Asiakas`-olion luomisesta. Tämä vaatii sen, että käsiteltävällä luokalla -- tässä `Asiakas` -- on parametriton konstruktori sekä getterit ja setterit.
+Mikäli tietokannasta ei löydy yhtään kyselyyn vastaavaa riviä tulee queryForObject-metodi heittämään EmptyResultDataAccessException-poikkeuksen. Jos taas tietokannasta löytyy enemmän kuin yksi rivi tulee queryForObject-metodi heittämään IncorrectResultSizeDataAccessException-poikkeuksen.
 
 <programming-exercise name='AsiakasDaon Täydennys' tmcname='osa06-Osa06_03.AsiakasDaonTaydennys'>
 
@@ -483,7 +484,7 @@ public Asiakas create(Asiakas asiakas) throws SQLException {
         PreparedStatement stmt = connection.prepareStatement(
             "INSERT INTO Asiakas"
             + " (nimi, puhelinnumero, katuosoite, postinumero, postitoimipaikka)"
-            + " VALUES (?, ?, ?, ?, ?)");
+            + " VALUES (?, ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             stmt.setString(1, asiakas.getNimi());
             stmt.setString(2, asiakas.getPuhelinnumero());
             stmt.setString(3, asiakas.getKatuosoite());
@@ -492,7 +493,7 @@ public Asiakas create(Asiakas asiakas) throws SQLException {
             return stmt;
     }, keyHolder);
 
-    int id = keyHolder.getKey();
+    int id = keyHolder.getKey().intValue();
     return read(id);
 }
 ```
