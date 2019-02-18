@@ -16,7 +16,7 @@ hidden: false
 
 Esimerkkiemme sovelluslogiikka ja tietokantalogiikka on toistaiseksi ollut samaan kasaan nivottuna. Tämä käytäntö voi pitkässä juoksussa johtaa hyvin sekavaan koodiin.
 
-Tietokantasovelluksia tyypillisesti konkreettinen tiedon hakemis- ja tallennustoiminnallisuus abstrahoidaan siten, että ohjelmoijan ei tarvitse nähdä sitä jatkuvasti. Tämä tiedon käsittelyn abstrahointi tunnetaan Data Access Object (DAO) -suunnittelumallina.
+Tietokantasovelluksissa tyypillisesti konkreettinen tiedon hakemis- ja tallennustoiminnallisuus abstrahoidaan siten, että ohjelmoijan ei tarvitse nähdä sitä jatkuvasti. Tämä tiedon käsittelyn abstrahointi tunnetaan Data Access Object (DAO) -suunnittelumallina.
 
 
 <text-box variant='learningObjectives' name='Data Access Object (DAO)'>
@@ -140,7 +140,7 @@ import java.sql.*;
 public class AsiakasDao implements Dao<Asiakas, Integer> {
 
     @Override
-    public void create(Asiakas object) throws SQLException {
+    public void create(Asiakas asiakas) throws SQLException {
         Connection connection = DriverManager.getConnection("jdbc:h2:./asiakkaat", "sa", "");
 
         PreparedStatement stmt = connection.prepareStatement("INSERT INTO Asiakas"
@@ -440,7 +440,7 @@ Tämän avulla `create`-metodi voitaisiin toteuttaa esimerkiksi juuri luodun asi
 
 ```java
 @Override
-public Asiakas create(Asiakas object) throws SQLException {
+public Asiakas create(Asiakas asiakas) throws SQLException {
     Connection connection = DriverManager.getConnection("jdbc:h2:./asiakkaat", "sa", "");
 
     PreparedStatement stmt = connection.prepareStatement("INSERT INTO Asiakas"
@@ -476,7 +476,7 @@ Vastaaava toiminnallisuus löytyy myös Spring-sovelluskehyksestä. Spring-sovel
 
 ```java
 @Override
-public Asiakas create(Asiakas object) throws SQLException {
+public Asiakas create(Asiakas asiakas) throws SQLException {
     KeyHolder keyHolder = new GeneratedKeyHolder();
 
     jdbcTemplate.update(connection -> {
