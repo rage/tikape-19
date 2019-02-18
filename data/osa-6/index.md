@@ -8,7 +8,7 @@ hidden: true
 <deadline>25.2.2019</deadline>
 
 
-Tunnistat olio-ohjelmoinnista tuttujen luokkien ja ietokantataulujen välisen yhteyden. Tunnet Data Access Object (DAO) -suunnittelumallin ja ymmärrät sen toiminnan. Tiedät DAO-suunnittelumallin mahdollisia haittapuolia ja osaat kuvata N+1 -kyselyn ongelman. Tunnet käsitteen SQL-injektio ja tunnet menetelmiä SQL-injektioiden estämiseen.
+Kertaat ja tunnistat olio-ohjelmoinnista tuttujen luokkien ja tietokantataulujen välisen yhteyden. Opit Data Access Object (DAO) -suunnittelumallin ja tutustut sen käyttökohteisiin. Opit DAO-suunnittelumallin haittapuolista ja tiedät mistä N+1 -kyselyn ongelmassa on kyse. Tunnet käsitteen SQL-injektio ja tunnet menetelmiä SQL-injektioiden estämiseen.
 
 
 <please-login></please-login>

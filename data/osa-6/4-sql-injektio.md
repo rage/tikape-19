@@ -29,7 +29,7 @@ SQL-injektiolla tarkoitetaan epätoivotun ohjelmakoodin syöttämistä osaksi SQ
   <figcaption>http://xkcd.com/327/ -- Exploits of a Mom. </figcaption>
 </figure>
 
-Tarkastellaan esimerkkiä. Oletetaan, että käytössämme on tietokantataulu `Students`, jossa on sarake `name`. Tällöin tiedon lisäämiseen käytettävä kysely on (esimerkiksi) seuraava.
+Tarkastellaan sarjakuvan esimerkkiä. Oletetaan, että käytössämme on tietokantataulu `Students`, jossa on sarake `name`. Tällöin tiedon lisäämiseen käytettävä kysely on (esimerkiksi) seuraava.
 
 ```sql
 INSERT INTO Students (name) VALUES ('Robert');
@@ -56,8 +56,10 @@ System.out.println("Minkä niminen opiskelija lisätään?");
 String nimi = lukija.nextLine();
 
 // ...
-Connection connection = DriverManager.getConnection("jdbc:h2:./students", "sa", "");
-PreparedStatement stmt = connection.prepareStatement("INSERT INTO Students (name) VALUES (?)");
+Connection connection =
+  DriverManager.getConnection("jdbc:h2:./students", "sa", "");
+PreparedStatement stmt =
+  connection.prepareStatement("INSERT INTO Students (name) VALUES (?)");
 statement.setString(1, nimi);
 
 // ...
@@ -76,35 +78,30 @@ System.out.println("Minkä niminen opiskelija lisätään?");
 String nimi = lukija.nextLine();
 
 // ...
-Connection connection = DriverManager.getConnection("jdbc:h2:./students", "sa", "");
-PreparedStatement stmt = connection.prepareStatement("INSERT INTO Students (name) VALUES ('" + nimi "')");
+Connection connection =
+  DriverManager.getConnection("jdbc:h2:./students", "sa", "");
+PreparedStatement stmt =
+  connection.prepareStatement("INSERT INTO Students (name) VALUES ('" + nimi "')");
 
 // ...
 
 ResultSet rs = stmt.executeUpdate();
 ```
 
-Kun käyttäjän syöttämä merkkijono lisätään suoraan osaksi kyselyä, voi käyttäjä yrittää syöttää muitakin SQL-lauseita komentoonsa. Yllä oleva esimerkki toimii joissakin tietokannanhallintajärjestelmissä -- joissakin tietokannanhallintajärjestelmissä taas tulee lisätä erillisiä parametreja yhteyden muodostamiseen.
+Kun käyttäjän syöttämä merkkijono lisätään suoraan osaksi kyselyä, voi käyttäjä yrittää syöttää muitakin SQL-lauseita komentoonsa. Yllä oleva esimerkki toimii vain joissakin tietokannanhallintajärjestelmissä -- osassa JDBC-ajureista kyselyjen määrää on rajattu.
 
 Esimerkiksi `MySQL`-tietokannanhallintajärjestelmä sallii oletuksena vain yhden SQL-kyselyn suorittamisen yhdessä `executeUpdate`-kutsussa. Mikäli yllä olevan esimerkin haluaa toimimaan sielläkin, tulee yhteyden muodostamiseen lisätä vielä erillinen parametri `allowMultiQueries=true`, joka antaa luvan useamman kyselyn suorittamiseen.
 
 ```java
-Scanner lukija = new Scanner(System.in);
-System.out.println("Minkä niminen opiskelija lisätään?");
-String nimi = lukija.nextLine();
-
 // ...
-Connection connection = DriverManager.getConnection("jdbc:mysql:tietokannan_osoite?allowMultiQueries=true", "sa", "");
-PreparedStatement stmt = connection.prepareStatement("INSERT INTO Students (name) VALUES ('" + nimi "')");
-
+Connection connection =
+  DriverManager.getConnection("jdbc:mysql:tietokannan_osoite?allowMultiQueries=true", "tunnus", "salasana");
 // ...
-
-ResultSet rs = stmt.executeUpdate();
 ```
 
-Tietokantataulujen poistamisen lisäksi SQL-injektiot mahdollistavat kaikenlaisia muita ongelmia. Mikäli tietokantaa käyttävä verkkosivu ei tarkasta tietokannasta haettavaa tietoa ennen sen näyttämistä käyttäjälle, voi tietokantaan syötetty virheellinen tieto mahdollistaa esimerkiksi tietojen kalasteluun käytettävät hyökkäykset (näytetään esimerkiksi käyttäjätunnus-salasana -kenttä, jonka tiedot lähetetäänkin jollekin toiselle palvelimelle).
+Tietokantataulujen poistamisen lisäksi SQL-injektiot mahdollistavat kaikenlaisia muita ongelmia. Mikäli tietokantaa käyttävä verkkosivu ei tarkasta tietokannasta haettavaa tietoa ennen sen näyttämistä käyttäjälle, voi tietokantaan syötetty virheellinen tieto mahdollistaa esimerkiksi tietojen kalasteluun käytettävät hyökkäykset. Tällaisessa tilanteessa tietokantaan onkin esimerkiksi tallennettuna lomake, joka pyytää käyttäjältä käyttäjätunnusta ja salasanaa, ja joka lähettää käyttäjän syöttämät tiedot jollekin toiselle palvelimelle.
 
-Yksinkertaisempia hyökkäyksiä ovat esimerkiksi ylimääräisten tietojen hakemiset -- mikäli kyselyyn saa syötetty vaikkapa merkkijono `OR 1=1`, näytetään tietokannasta paljon enemmän tietoja kuin alunperin on tarkoitettu. Esimerkiksi kysely
+Yksinkertaisempia hyökkäyksiä ovat esimerkiksi ylimääräisten tietojen hakemiset -- mikäli kyselyyn saa syötetty vaikkapa merkkijonon `OR 1=1`, näytetään tietokannasta paljon enemmän tietoja kuin alunperin on tarkoitettu. Esimerkiksi kysely
 
 
 ```sql
@@ -113,11 +110,33 @@ SELECT * FROM Students WHERE name = 'Rob' OR 1=1;
 
 Näyttäisi kaikkien opiskelijoiden tiedot, sillä tarkastus `1=1` on aina totta.
 
+Sama simppeli muunnos auttaa ohittamaan useat kirjautumiset. Käyttäjätunnuksen tarkastus tehdään tietokannoissa usein seuraavassa muodossa:
+
+```sql
+SELECT * FROM Users
+  WHERE username = 'tunnus'
+    AND password = 'salasana';
+```
+
+Mikäli kyselyyn saa syötettyä ehdon `OR 1=1` on kyselyn vastauksena aina joukko käyttäjiä -- olettaen, että tietokannassa yleensä ottaen on käyttäjä. Tällöin kirjautuminen onnistuu vaikkei salasanaa tai käyttäjätunnusta tietäisikään.
 
 
-<programming-exercise name='SQL-injektio' tmcname='osa06-Osa06_01.LuokkakaaviostaLuokiksi'>
+```sql
+SELECT * FROM Users
+  WHERE username = 'tunnus'
+    AND password = 'salasana'
+    OR 1=1;
+```
 
-Tehtäväpohjassa on sovellus, joka mahdollistaa huonekalujen lisäämisen, listaamisen ja poistamisen. Muokkaa sovellusta siten, että huonekalujen poistamisessa on SQL-injektiomahdollisuus. Tällä hetkellä huonekalun, jonka id on 3, poistaminen onnistuu POST-pyynnöllä sovelluksen polkuun `/delete/3`. SQL-injektion tulee muuntaa tilannetta siten, että esimerkiksi pyyntö osoitteeseen ``/delete/3%20OR%2042=42` poistaakin kaikki tietokannan rivit. Edellisessä esimerkissä `%20` on osoitteissa käytettävä välilyönnin merkki.
+Yksinkertaisin -- ja materiaalissa jo käytettykin --  tapa SQL-injektioiden estämiseen on parameterisoitujen kyselyiden käyttö. Näissä tietokantakysely muodostetaan siten, että kyselyyn määritellään kohdat, joihin annettavat arvot syötetään. Tämän jälkeen arvot annetaan erikseen parametreina.
+
+<programming-exercise name='SQL-injektio' tmcname='osa06-Osa06_04.SQLInjektio'>
+
+Tehtäväpohjassa on sovellus, joka mahdollistaa huonekalujen lisäämisen, hakemisen ja listaamisen. Muokkaa sovellusta siten, että sekä lisäämis- että hakemistoiminnallisuudessa on mahdollisuus SQL-injektion tekemiseen.
+
+Tehtäväpohjassa ei ole testejä. Palauta tehtävä kun sovelluksessa on mahdollisuus tehdä SQL-injektiot.
 
 </programming-exercise>
 
+
+<quiznator id="5c6a65d9ddb6b814af32527d"></quiznator>

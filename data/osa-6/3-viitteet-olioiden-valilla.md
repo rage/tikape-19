@@ -64,14 +64,20 @@ public class TilausDao implements Dao<Tilaus, Integer> {
     AsiakasDao asiakasDao;
 
     @Override
+    public void create(Tilaus tilaus) throws SQLException {
+	    // ei toteutettu
+    }
+
+    @Override
     public Tilaus read(Integer key) throws SQLException {
-        List<Tilaus> tilaukset = jdbcTemplate.query("SELECT * FROM Tilaus WHERE ID = ?",
-            (rs, rowNum) -> new Tilaus(rs.getInt("id"),
+        List<Tilaus> tilaukset =
+            jdbcTemplate.query("SELECT * FROM Tilaus WHERE ID = ?",
+                (rs, rowNum) -> new Tilaus(rs.getInt("id"),
                                    asiakasDao.read(rs.getInt("asiakas_id")),
                                    rs.getDate("aika"),
                                    rs.getString("kuljetustapa"),
                                    rs.getBoolean("vastaanotettu"),
-                                   rs.getBoolean("toimitettu")));
+                                   rs.getBoolean("toimitettu")),
             key);
 
         if (tilaukset.isEmpty()) {
@@ -80,12 +86,6 @@ public class TilausDao implements Dao<Tilaus, Integer> {
 
         return tilaukset.get(0);
     }
-
-    @Override
-    public void create(Tilaus tilaus) throws SQLException {
-	    // ei toteutettu
-    }
-
 
     @Override
     public Tilaus update(Tilaus object) throws SQLException {
@@ -133,8 +133,9 @@ Luodaan seuraavaksi toteutus metodille `list`. Toteutuksessa on otettu mallia me
 ```java
 @Override
 public List<Tilaus> list() throws SQLException {
-    List<Tilaus> tilaukset = jdbcTemplate.query("SELECT * FROM Tilaus",
-        (rs, rowNum) -> new Tilaus(rs.getInt("id"),
+    List<Tilaus> tilaukset =
+        jdbcTemplate.query("SELECT * FROM Tilaus",
+            (rs, rowNum) -> new Tilaus(rs.getInt("id"),
                                    asiakasDao.read(rs.getInt("asiakas_id")),
                                    rs.getDate("aika"),
                                    rs.getString("kuljetustapa"),
@@ -206,18 +207,20 @@ private Tilaus fromRs(ResultSet rs, HashMap<Integer, Asiakas> asiakkaat) {
     t.setBoolean(rs.getBoolean("Tilaus.vastaanotettu"));
     t.setBoolean(rs.getBoolean("Tilaus.toimitettu"));
 
-    if(!asiakkaat.containsKey(rs.getInt("Asiakas.id"))) {
+    int asiakasId = rs.getInt("Asiakas.id");
+
+    if (!asiakkaat.containsKey(asiakasId)) {
         Asiakas a = new Asiakas(
-            rs.getInt("Asiakas.id"),
+            asiakasId,
             rs.getString("Asiakas.nimi"),
             rs.getString("Asiakas.puhelinnumero"),
             rs.getString("Asiakas.katuosoite"),
             rs.getInt("Asiakas.postinumero"),
             rs.getString("Asiakas.postitoimipaikka"));
-        asiakkaat.put(rs.getInt("Asiakas.id"),)
+        asiakkaat.put(asiakasId, a);
     }
 
-    Asiakas a = asiakkaat.get(rs.getInt("Asiakas.id"));
+    Asiakas a = asiakkaat.get(asiakasId);
 
     t.setAsiakas(a);
 
