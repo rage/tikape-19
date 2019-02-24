@@ -102,13 +102,11 @@ const IndexPage = () => (
             <TableRow>
               <TableCell>7</TableCell>
               <TableCell>
-                Tunnet sekvenssikaaviot ja osaat kuvata sovelluksesi toimintaa
-                sekvenssikaavioiden avulla. Tunnet joitakin kirjastoja
-                yksinkertaisten SQL-kyselyiden automatisointiin ja tiedät näihin
-                liittyviä ongelmia. Tunnet pinnallisesti muutamia NoSQL- ja
-                NewSQL-tietokantoja. Tunnet GDPR-lainsäädännön ja tiedät miten
-                se vaikuttaa henkilöihin liittyvän tiedon tallentamiseen ja
-                käsittelyyn.
+                Tunnet pinnallisesti tietokannanhallintajärjestelmien historiaa
+                ja tunnet muitakin kuin relaatiotietokannanhallintajärjestelmiä.
+                Tiedät termit ACID ja BASE. Tiedät mitä henkilötiedoilla
+                tarkoitetaan ja tiedät muutamia GDPR-lainsäädännön oleellisia
+                kohtia henkilötietojen käsittelyyn liittyen.
               </TableCell>
             </TableRow>
           </TableBody>
