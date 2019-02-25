@@ -1,7 +1,7 @@
 ---
 path: '/osa-7/1-muita-tietokannanhallintajarjestelmia'
 title: 'Muita tietokannanhallintajärjestelmiä'
-hidden: true
+hidden: false
 ---
 
 
@@ -16,18 +16,6 @@ hidden: true
 
 
 <quiznator id="5c72d1d899236814c5bbd215"></quiznator>
-
-http://www.web-integration.info/en/blog/history-and-trends-in-the-development-of-databases/
-
-
-
-TODO: essee -- tutustu osoitteessa bla olevaan artikkeliin.
-
-<text-box variant='hint' name='Oppimistavoitteet'>
-
-Tutustu myös Wikipedian artikkeliin <a href="https://en.wikipedia.org/wiki/Eventual_consistency" target="_blank">Eventual consistency</a>, mikä käsittelyy myös termiä BASE.
-
-</text-box>
 
 
 Relaatiomalli ja SQL ovat hyvin ilmaisuvoimainen kombinaatio ja relaatiotietokannoilla pystytään ainakin teoriassa hoitamaan lähes kaikki mahdolliset tiedonhallintatarpeet. Relaatiotietokannat dominoivatkin yhä tietokantaskeneä. 2000-luvulla alkoi kuitenkin nousta esiin uudentyyppisiä tietokantaratkaisuja, joita kuvaamaan lanseerattiin vuonna 2009 termi *NoSQL*.

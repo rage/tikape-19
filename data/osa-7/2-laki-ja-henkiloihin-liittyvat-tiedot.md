@@ -1,13 +1,13 @@
 ---
 path: '/osa-7/2-laki-ja-henkiloihin-liittyvat-tiedot'
 title: 'Laki ja henkilöihin liittyvien tietojen käsittely'
-hidden: true
+hidden: false
 ---
 
 
 <text-box variant='learningObjectives' name='Oppimistavoitteet'>
 
-- Tunnet GDPR-lainsäädännön ja tiedät miten se vaikuttaa henkilöihin liittyvän tiedon tallentamiseen ja käsittelyyn.
+- Tunnet GDPR-lainsäädännön pääpiirteittäin ja tiedät miten se vaikuttaa henkilöihin liittyvän tiedon tallentamiseen ja käsittelyyn.
 
 </text-box>
 
@@ -53,6 +53,9 @@ Henkilötiedot ovat henkilötietoja vaikka ne hajauttaisi useammalle palvelimell
 Mikäli henkilötiedot (pseudo)anonymisoidaan eli niistä poistetaan henkilöön viittaavat tiedot, mutta henkilö on yhä tunnistettavissa pienen "myyräntyön" jälkeen, ovat tiedot yhä henkilötietoja. Mikäli henkilöä ei voida tunnistaa anonymisoiduista henkilötiedoista minkäänlaisen menetelmän avulla, ei tietoja enää nähdä henkilötietoina.
 
 
+<quiznator id="5c7391f53972a91474107780"></quiznator>
+
+
 ## Milloin henkilötietoja saa käsitellä?
 
 GDPR määrittelee kuusi mahdollista syytä henkilötietojen käsittelyyn. Mikäli yksi tai useampi seuraavista ehdoista pätee henkilötietojen käsittelytilanteessa, on henkilötietojen käsittely sallittua.
@@ -86,5 +89,5 @@ Näiden lisäksi yritysten ja julkisten organisaatioiden välillä on eroja tiet
 Esimerkiksi Suomen koulutusjärjestelmällä on laillinen vastuu koulutuksen järjestämisestä -- omien koulutustietojen poistaminen ei yliopiston rekisteristä (todennäköisesti) onnistu, eikä yliopiston erikseen tule pyytää lupaa koulutustietojen tallentamiseen. Vastaavia poikkeuksia löytyy myös tieteelliseen tutkimukseen liittyen.
 
 
-
+<quiznator id="5c7392f699236814c5bbd382"></quiznator>
 
