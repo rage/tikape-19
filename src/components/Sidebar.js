@@ -105,7 +105,7 @@ var content2 = [
   { separator: true },
 ]
 
-var futurePages = [{ title: "Osa 7", tba: "25.2.2019" }]
+var futurePages = [] //  { title: "Osa 7", tba: "25.2.2019" }
 
 const MobileWrapper = styled.div`
   @media only screen and (max-width: 1200px) {
