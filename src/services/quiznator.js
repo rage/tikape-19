@@ -41,10 +41,10 @@ export async function fetchQuiznatorProgress() {
       part: "osa06",
       tag: "tietokantojen-perusteet-k2019-6",
     },
-    // {
-    //   part: "osa07",
-    //   tag: "tietokantojen-perusteet-k2019-7",
-    // },
+    {
+      part: "osa07",
+      tag: "tietokantojen-perusteet-k2019-7",
+    },
   ]
   const quizIdInformation = await fetchQuizIds()
   const allQuizIds = flatten(quizIdInformation.map(o => o.quizIds))
