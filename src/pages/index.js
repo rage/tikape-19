@@ -35,6 +35,11 @@ const IndexPage = () => (
           yliopiston tietojenkäsittelytieteen laitoksen kurssia Tietokantojen
           perusteet (TKT10004), joka on viiden opintopisteen kurssi.
         </p>
+        <p>
+          <strong>
+            Alla kuvattu aikataulu vastaa kesän 2019 kurssitoteutusta.
+          </strong>
+        </p>
       </section>
 
       <section id="sisältö-ja-aikataulu">
@@ -47,52 +52,43 @@ const IndexPage = () => (
         </p>
         <p>
           Kurssin sisältö tarkentuu kurssin edetessä. Alla on kuvattuna
-          osakohtainen materiaalin julkaisuaikataulu sekä materiaalissa olevien
-          tehtävien viimeiset palautuspäivämäärät.
+          materiaalissa olevien tehtävien viimeiset palautuspäivämäärät.
         </p>
         <Table>
           <TableHead>
             <TableRow>
               <TableCell>Aikataulu</TableCell>
-              <TableCell>Julkaisu</TableCell>
               <TableCell>Deadline</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
               <TableCell>Osa 1</TableCell>
-              <TableCell>14.1.2019</TableCell>
-              <TableCell>21.1.2019</TableCell>
+              <TableCell>13.5.2019</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Osa 2</TableCell>
-              <TableCell>21.1.2019</TableCell>
-              <TableCell>28.1.2019</TableCell>
+              <TableCell>20.5.2019</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Osa 3</TableCell>
-              <TableCell>28.1.2019</TableCell>
-              <TableCell>4.2.2019</TableCell>
+              <TableCell>27.5.2019</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Osa 4</TableCell>
-              <TableCell>4.2.2019</TableCell>
-              <TableCell>11.2.2019</TableCell>
+              <TableCell>3.6.2019</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Osa 5</TableCell>
-              <TableCell>11.2.2019</TableCell>
-              <TableCell>18.2.2019</TableCell>
+              <TableCell>10.6.2019</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Osa 6</TableCell>
-              <TableCell>18.2.2019</TableCell>
-              <TableCell>25.2.2019</TableCell>
+              <TableCell>17.6.2019</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Osa 7</TableCell>
-              <TableCell>25.2.2019</TableCell>
-              <TableCell>4.3.2019</TableCell>
+              <TableCell>24.6.2019</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -113,15 +109,15 @@ const IndexPage = () => (
           <TableBody>
             <TableRow>
               <TableCell>Suunnitteluprojekti</TableCell>
-              <TableCell>28.1.2019</TableCell>
-              <TableCell>11.2.2019</TableCell>
-              <TableCell>18.2.2019</TableCell>
+              <TableCell>20.5.2019</TableCell>
+              <TableCell>3.6.2019</TableCell>
+              <TableCell>10.6.2019</TableCell>
             </TableRow>
             <TableRow>
               <TableCell>Ohjelmointiprojekti</TableCell>
-              <TableCell>11.2.2019</TableCell>
-              <TableCell>25.2.2019</TableCell>
-              <TableCell>4.3.2019</TableCell>
+              <TableCell>3.6.2019</TableCell>
+              <TableCell>17.6.2019</TableCell>
+              <TableCell>24.6.2019</TableCell>
             </TableRow>
           </TableBody>
         </Table>
@@ -136,42 +132,6 @@ const IndexPage = () => (
         </p>
       </section>
 
-      <section id="ilmoittautuminen">
-        <h2>Ilmoittautuminen</h2>
-        <p>
-          Kurssille ilmoittautuminen tapahtuu kolmea eri väylää riippuen
-          taustastasi.
-        </p>
-        <ul>
-          <li>
-            Helsingin yliopiston opiskelijat ilmoittautuvat kurssille suoraan
-            WebOodin kautta.
-          </li>
-          <li>
-            Helsingin yliopiston Avoimen yliopiston nykyiset ja tulevat
-            opiskelijat ilmoittautuvat osoitteessa{" "}
-            <OutboundLink
-              href="https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=126422231
-            </OutboundLink>
-          </li>
-          <li>
-            DEFA-hankkeeseen osallistuvat opiskelijat ilmoittautuvat osoitteessa{" "}
-            <OutboundLink
-              href="https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=124756797"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              https://www.avoin.helsinki.fi/palvelut/esittely.aspx?o=124756797
-            </OutboundLink>
-          </li>
-        </ul>
-        <p>Kurssi on kaikille maksuton.</p>
-      </section>
-
       <section id="kokeet">
         <h2>Kokeet</h2>
         <p>
@@ -181,9 +141,9 @@ const IndexPage = () => (
           tehtävien ja projektien perusteella.
         </p>
         <ul>
-          <li>Kurssikoe: Lauantai 9.3.2019 klo 10-14</li>
-          <li>Uusintakoe 1: Lauantai 13.4.2019 klo 10-14</li>
-          <li>Uusintakoe 2: Keskiviikko 15.5.2019 klo 10-14</li>
+          <li>Kurssikoe: Lauantai 29.6.2019 klo 10-14</li>
+          <li>Uusintakoe 1: Lauantai 27.7.2019 klo 10-14</li>
+          <li>Uusintakoe 2: Keskiviikko 17.8.2019 klo 10-14</li>
         </ul>
         <p>
           Uusintakokeisiin osallistutaan mikäli osallistuja ei läpäise
@@ -191,9 +151,7 @@ const IndexPage = () => (
           Moodle-järjestelmässä.
         </p>
         <p>
-          Helsingin yliopiston opiskelijat voivat suorittaa kurssin myös
-          erillistentillä Examinariumissa. Tenttimateriaalina on kurssin
-          materiaali (ml. tehtävät ja projektit).
+          Tenttimateriaalina on kurssin materiaali (ml. tehtävät ja projektit).
         </p>
       </section>
     </Container>

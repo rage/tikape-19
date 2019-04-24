@@ -85,6 +85,7 @@ const IndexPage = () => (
 
       <section id="kokeet">
         <h2>Kokeet</h2>
+        <p>Alla oleva aikataulu koskee kesän 2019 kurssitoteutusta.</p>
         <p>
           Kurssista järjestetään yksi koe sekä kaksi uusintaa. Kokeen hyväksytty
           suorittaminen johtaa kurssin läpäisyyn, mikäli kurssin tehtävät ja
@@ -92,9 +93,9 @@ const IndexPage = () => (
           tehtävien ja projektien perusteella.
         </p>
         <ul>
-          <li>Kurssikoe: Lauantai 9.3.2019 klo 10-14</li>
-          <li>Uusintakoe 1: Lauantai 13.4.2019 klo 10-14</li>
-          <li>Uusintakoe 2: Keskiviikko 15.5.2019 klo 10-14</li>
+          <li>Kurssikoe: Lauantai 29.6.2019 klo 10-14</li>
+          <li>Uusintakoe 1: Lauantai 27.7.2019 klo 10-14</li>
+          <li>Uusintakoe 2: Keskiviikko 17.8.2019 klo 10-14</li>
         </ul>
         <p>
           Uusintakokeisiin osallistutaan mikäli osallistuja ei läpäise
@@ -102,9 +103,7 @@ const IndexPage = () => (
           Moodle-järjestelmässä.
         </p>
         <p>
-          Helsingin yliopiston opiskelijat voivat suorittaa kurssin myös
-          erillistentillä Examinariumissa. Tenttimateriaalina on kurssin
-          materiaali (ml. tehtävät ja projektit).
+          Tenttimateriaalina on kurssin materiaali (ml. tehtävät ja projektit).
         </p>
       </section>
     </Container>
