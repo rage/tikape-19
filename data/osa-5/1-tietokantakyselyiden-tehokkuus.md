@@ -23,6 +23,8 @@ Tietokantaan tehtävä SQL-kielinen kysely voidaan suorittaa useammalla eri tava
 
 ## Tietokantakyselyn tarkastelu
 
+*Huom! Tietokantakyselyiden tarkastelu EXPLAIN QUERY PLAN -komennon avulla ei ole koeasiaa.*
+
 Tietokantakyselyiden suoritusstrategiaa voi tarkastella tietokannanhallintajärjestelmäkohtaisen apukyselyn avulla. SQLitessä kyselyn sisältöön pääsee kommennolla `EXPLAIN QUERY PLAN`, jota seuraa konkreettinen kysely. Suoritusstrategia sisältää tiedon läpikäytävistä tietokannoista sekä kyselyn muodosta. Kyselyn muoto on joko "SCAN" tai "SEARCH". Muoto SCAN käy koko tietokantataulun läpi ja SEARCH tarkastelee tietokantatauluun liittyvää indeksiä.
 
 Tarkastellaan tätä konkreettisen esimerkin kautta. Oletetaan, että käytössämme on tietokanta, jossa on seuraavat tietokantataulut.

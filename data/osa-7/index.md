@@ -5,7 +5,7 @@ overview: true
 hidden: false
 ---
 
-<deadline>4.3.2019</deadline>
+<deadline>24.6.2019</deadline>
 
 
 Tunnet pinnallisesti tietokannanhallintajärjestelmien historiaa ja tunnet muitakin kuin relaatiotietokannanhallintajärjestelmiä. Tiedät termit ACID ja BASE. Tiedät mitä henkilötiedoilla tarkoitetaan ja tiedät muutamia GDPR-lainsäädännön oleellisia kohtia henkilötietojen käsittelyyn liittyen.
