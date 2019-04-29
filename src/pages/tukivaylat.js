@@ -40,8 +40,8 @@ const IndexPage = () => (
       </p>
       <p>
         Pääset Moodleen tästä linkistä:{" "}
-        <OutboundLink href="https://moodle.helsinki.fi/course/view.php?id=29094">
-          https://moodle.helsinki.fi/course/view.php?id=29094
+        <OutboundLink href="https://moodle.helsinki.fi/course/view.php?id=33642">
+          https://moodle.helsinki.fi/course/view.php?id=33642
         </OutboundLink>
         .
       </p>
