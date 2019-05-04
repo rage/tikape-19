@@ -42,7 +42,9 @@ INSERT INTO Henkilo (syntymavuosi, nimi)
 
 <sqltrainer-exercise name="Tiedon lisääminen tietokantaan">
 
-Tee SQL-harjoittelujärjestelmän aiheesta "Moar data!" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+Tee SQL-harjoittelujärjestelmän aiheesta "Moar data!" vähintään neljä harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+
+Huom! Mikäli järjestelmän tarjoama harjoitustehtävä on sellainen, ettet pysty ratkaisemaan sitä annetun ohjeen perusteella, saat uuden tehtävän palaamalla harjoitussivulle ("Practice") ja valitsemalla aiheen harjoittelun uudestaan. Annathan palautetta myös ratkaisemistasi tehtävistä lomakkeen avulla -- tämä mahdollistaa tehtävien paremman suosittelun tulevaisuudessa.
 
 </sqltrainer-exercise>
 
@@ -119,7 +121,7 @@ UPDATE Henkilo
 
 <sqltrainer-exercise name="Tiedon päivittäminen">
 
-Tee SQL-harjoittelujärjestelmän aiheesta "Oops, this was not what I wanted to add!" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+Tee SQL-harjoittelujärjestelmän aiheesta "Oops, this was not what I wanted to add!" vähintään neljä harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
 
 </sqltrainer-exercise>
 

@@ -171,7 +171,9 @@ Yhteisen käytännön ja kyselyiden selkeyden takia noudatamme tällä kurssilla
 
 <sqltrainer-exercise name="Tiedon hakeminen yhdestä tietokantataulusta">
 
-Tee SQL-harjoittelujärjestelmän aiheesta "Simple select statements" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+Tee SQL-harjoittelujärjestelmän aiheesta "Simple select statements" vähintään neljä harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+
+Huom! Mikäli järjestelmän tarjoama harjoitustehtävä on sellainen, ettet pysty ratkaisemaan sitä annetun ohjeen perusteella, saat uuden tehtävän palaamalla harjoitussivulle ("Practice") ja valitsemalla aiheen harjoittelun uudestaan. Annathan palautetta myös ratkaisemistasi tehtävistä lomakkeen avulla -- tämä mahdollistaa tehtävien paremman suosittelun tulevaisuudessa.
 
 </sqltrainer-exercise>
 
@@ -297,7 +299,9 @@ Tulosten järjestys voi olla joko nouseva (_ascending_ eli `ASC` -- oletus) tai 
 
 <sqltrainer-exercise name="Tulosten rajaaminen ja järjestäminen">
 
-Tee SQL-harjoittelujärjestelmän aiheesta "Filtering and ordering" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+Tee SQL-harjoittelujärjestelmän aiheesta "Filtering and ordering" vähintään neljä harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+
+Huom! Mikäli järjestelmän tarjoama harjoitustehtävä on sellainen, ettet pysty ratkaisemaan sitä annetun ohjeen perusteella, saat uuden tehtävän palaamalla harjoitussivulle ("Practice") ja valitsemalla aiheen harjoittelun uudestaan. Annathan palautetta myös ratkaisemistasi tehtävistä lomakkeen avulla -- tämä mahdollistaa tehtävien paremman suosittelun tulevaisuudessa.
 
 </sqltrainer-exercise>
 

@@ -233,7 +233,9 @@ SELECT RaakaAine.nimi FROM Annos
 
 <sqltrainer-exercise name="Muutaman taulun yhdistäminen">
 
-Tee SQL-harjoittelujärjestelmän aiheesta "Selecting data from a few tables" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+Tee SQL-harjoittelujärjestelmän aiheesta "Selecting data from a few tables" vähintään neljä harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+
+Huom! Mikäli järjestelmän tarjoama harjoitustehtävä on sellainen, ettet pysty ratkaisemaan sitä annetun ohjeen perusteella, saat uuden tehtävän palaamalla harjoitussivulle ("Practice") ja valitsemalla aiheen harjoittelun uudestaan. Annathan palautetta myös ratkaisemistasi tehtävistä lomakkeen avulla -- tämä mahdollistaa tehtävien paremman suosittelun tulevaisuudessa.
 
 </sqltrainer-exercise>
 
@@ -511,7 +513,9 @@ SELECT DISTINCT Asiakas.nimi AS asiakas
 
 <sqltrainer-exercise name="Useamman taulun yhdistäminen">
 
-Tee SQL-harjoittelujärjestelmän aiheesta "Selecting data from more tables" vähintään kaksi harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+Tee SQL-harjoittelujärjestelmän aiheesta "Selecting data from more tables" vähintään neljä harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+
+Huom! Mikäli järjestelmän tarjoama harjoitustehtävä on sellainen, ettet pysty ratkaisemaan sitä annetun ohjeen perusteella, saat uuden tehtävän palaamalla harjoitussivulle ("Practice") ja valitsemalla aiheen harjoittelun uudestaan. Annathan palautetta myös ratkaisemistasi tehtävistä lomakkeen avulla -- tämä mahdollistaa tehtävien paremman suosittelun tulevaisuudessa.
 
 </sqltrainer-exercise>
 
@@ -637,7 +641,9 @@ Verkko on täynnä hyviä aiheeseen liittyviä oppaita. Tutustu osoitteessa <a h
 
 <sqltrainer-exercise name="Muita liitostyyppejä">
 
-Tee SQL-harjoittelujärjestelmän aiheesta "Any joins left?" kaksi harjoitustehtävää (nappi "START PRACTICE!").
+Tee SQL-harjoittelujärjestelmän aiheesta "Any joins left?" vähintään neljä harjoitustehtävää (nappi "START PRACTICE!") sekä luo aiheeseen yksi uusi tehtävä (nappi "CREATE NEW CONTENT!") . Voit kirjoittaa tehtävänannon englannin sijaan halutessasi myös suomeksi tai ruotsiksi.
+
+Huom! Mikäli järjestelmän tarjoama harjoitustehtävä on sellainen, ettet pysty ratkaisemaan sitä annetun ohjeen perusteella, saat uuden tehtävän palaamalla harjoitussivulle ("Practice") ja valitsemalla aiheen harjoittelun uudestaan. Annathan palautetta myös ratkaisemistasi tehtävistä lomakkeen avulla -- tämä mahdollistaa tehtävien paremman suosittelun tulevaisuudessa.
 
 </sqltrainer-exercise>
 
