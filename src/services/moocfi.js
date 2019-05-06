@@ -7,7 +7,7 @@ import uuidv4 from "uuid/v4"
 const { fetch } = fetchPonyfill()
 const BASE_URL = "https://tmc.mooc.fi/api/v8"
 const ORGANIZATION = "mooc"
-const COURSE = "tikape-k19"
+const COURSE = "tikape-kesa-19"
 
 const tmcClient = new TmcClient(
   "59a09eef080463f90f8c2f29fbf63014167d13580e1de3562e57b9e6e4515182",
