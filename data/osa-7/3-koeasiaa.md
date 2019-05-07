@@ -11,7 +11,7 @@ hidden: false
 
 </text-box>
 
-Tämän kurssin koe järjestetään lauantaina 9.3.2019 klo 10-14 kurssin Moodle-järjestelmässä. Katso kokeeseen liittyvät tiedot tarkemmin sivulta [arvostelu](/arvostelu). Mikäli tenttiaika ei sovi, mutta pystyt tekemään tentin välillä 10-12.3., ota yhteyttä kurssin vastuuhenkilöön arto.hellas@helsinki.fi.
+Tämän kurssin koe järjestetään kurssin Moodle-järjestelmässä. Katso kokeeseen liittyvät tiedot tarkemmin sivulta [arvostelu](/arvostelu).
 
 Seuraavaksi esitellään kurssin eräs vanha koe, jota käytetään myös kertaamiseen -- vain osaan kysymyksistä kysytään tässä vastauksia.
 
