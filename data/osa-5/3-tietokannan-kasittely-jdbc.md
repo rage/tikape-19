@@ -20,7 +20,7 @@ Mikäli TMC:n käyttöönotossa on ongelmia, katsothan myös Ohjelmoinnin MOOCin
 
 <br/>
 
-Tietokantojen perusteet-kurssilla organisaatioksi tulee valita TMC:ssä "**MOOC**" ja kurssiksi "**Tietokantojen perusteet, kevät 2019**". TMC:n käyttäjätunnukset ovat samat kuin mitä käytät tässä materiaalissa.
+Tietokantojen perusteet-kurssilla organisaatioksi tulee valita TMC:ssä "**MOOC**" ja kurssiksi "**Tietokantojen perusteet, kesä 2019**". TMC:n käyttäjätunnukset ovat samat kuin mitä käytät tässä materiaalissa.
 
 Aloitetaan.
 
