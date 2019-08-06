@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Tietokantojen perusteet - 2019",
-    siteUrl: `https://tikape-19.mooc.fi`,
+    siteUrl: `https://tietokantojen-perusteet-19.mooc.fi`,
   },
   plugins: [
     "gatsby-plugin-react-helmet",
