@@ -93,10 +93,6 @@ var content2 = [
     title: "Osaamistavoitteet",
     path: "/osaamistavoitteet",
   },
-  {
-    title: "Arvostelu ja kokeet",
-    path: "/arvostelu",
-  },
   { title: "Tukiväylät", path: "/tukivaylat" },
   {
     title: "Opettajille ja opinto-ohjaajille",

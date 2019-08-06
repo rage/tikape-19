@@ -5,7 +5,7 @@ overview: true
 hidden: false
 ---
 
-<deadline>27.5.2019</deadline>
+<deadline>23.9.2019</deadline>
 
 
 Tässä osassa opit menetelmiä tiedon ja tietokannan kuvaamiseen. Opit käsiteanalyysin askeleet ja harjoittelet käsitekaavion luomista ongelma-alueen kuvauksesta käsiteanalyysin askeleita noudattaen. Opit muuntamaan käsiteanalyysin tuloksena saatavan käsitekaavion tietokantakaavioksi.

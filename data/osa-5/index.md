@@ -5,7 +5,7 @@ overview: true
 hidden: false
 ---
 
-<deadline>10.6.2019</deadline>
+<deadline>7.10.2019</deadline>
 
 Opit menetelmiä tietokantakyselyiden tehokkuuden tarkasteluun. Tutustut käsitteeseen indeksi ja opit milloin tietokantatauluihin kannattaa määritellä indeksejä. Tutustut tietokannan denormalisointiin ja opit luomaan tietokantaa käyttävän Java-kielisen sovelluksen.
 

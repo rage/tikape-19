@@ -40,8 +40,8 @@ const IndexPage = () => (
       </p>
       <p>
         Pääset Moodleen tästä linkistä:{" "}
-        <OutboundLink href="https://moodle.helsinki.fi/course/view.php?id=33642">
-          https://moodle.helsinki.fi/course/view.php?id=33642
+        <OutboundLink href="https://moodle.helsinki.fi/course/view.php?id=34054">
+          https://moodle.helsinki.fi/course/view.php?id=34054
         </OutboundLink>
         .
       </p>
@@ -52,6 +52,10 @@ const IndexPage = () => (
         <code>Send code to TMC Pastebin</code>" ja valitse avautuvasta ikkunasta
         "<code>Send</code>". Tämän jälkeen saat linkin koodiisi, jonka voit
         jakaa keskustelukanavalla apupyynnön yhteydessä.
+      </p>
+      <p>
+        Voit kysyä tehtäviin apua myös kurssihenkilökunnalta
+        harjoitustilaisuuksien yhteydessä.
       </p>
     </Container>
   </Layout>

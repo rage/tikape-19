@@ -11,7 +11,7 @@ hidden: false
 
 </text-box>
 
-Tämän kurssin koe järjestetään kurssin Moodle-järjestelmässä. Katso kokeeseen liittyvät tiedot tarkemmin sivulta [arvostelu](/arvostelu).
+Tämän kurssin koe järjestetään kurssin Moodle-järjestelmässä.
 
 Seuraavaksi esitellään kurssin eräs vanha koe, jota käytetään myös kertaamiseen -- vain osaan kysymyksistä kysytään tässä vastauksia.
 

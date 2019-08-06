@@ -5,7 +5,7 @@ overview: true
 hidden: false
 ---
 
-<deadline>13.5.2019</deadline>
+<deadline>9.9.2019</deadline>
 
 
 Tässä osassa tutustut tietokantoihin ilmiönä ja niiden rooliin digitalisaatiossa. Osan jälkeen tunnet käsitteet tieto, tietokannanhallintajärjestelmä, relaatiotietokanta, tietokanta, tietokantataulu, pääavain ja viiteavain. Opit tietokantakyselyiden muodostamiseen käytettävän SQL-kielen toimintaperiaatteet, ja opit hakemaan SQL-kielen avulla tietoa yhdestä tai useammasta tietokantataulusta.
