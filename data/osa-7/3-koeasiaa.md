@@ -104,11 +104,3 @@ Prof. Dr. auf der Relation on vihjannut saksalaiselle yritykselle että olet tul
 
 5. Listaa ruokalajit, joiden valmistukseen tarvitaan yli 20 raaka-ainetta.
 
-
-<sqltrainer-exercise name="Kyselyiden harjoittelu">
-
-Tee SQL-harjoittelujärjestelmän jokaisesta aiheesta vielä kaksi harjoitustehtävää (nappi "START PRACTICE!"). Tee nämä vasta 10.6. jälkeen.
-
-Huom! Mikäli järjestelmän tarjoama harjoitustehtävä on sellainen, ettet pysty ratkaisemaan sitä annetun ohjeen perusteella, saat uuden tehtävän palaamalla harjoitussivulle ("Practice") ja valitsemalla aiheen harjoittelun uudestaan. Annathan palautetta myös ratkaisemistasi tehtävistä lomakkeen avulla -- tämä mahdollistaa tehtävien paremman suosittelun tulevaisuudessa.
-
-</sqltrainer-exercise>
